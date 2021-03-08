@@ -106,3 +106,64 @@
     height: 122px;
   }
 }
+
+.contact_hero {
+  height: calc(100vh - 80px);
+
+  .wp-block-cover__inner-container {
+    width: 100%;
+  }
+
+  .wp-block-group__inner-container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .wp-block-contact-form-7-contact-form-selector {
+    width: 100%;
+    max-width: 500px;
+    background-color: rgba(255, 255, 255, .6);
+    border-radius: 12px;
+    padding: 2rem 1rem;
+
+    :focus {
+      outline: none;
+    }
+
+    label {
+      color: black;
+      // text-transform: uppercase;
+    }
+
+    input {
+      background-color: transparent;
+      border: none;
+      border-bottom: 2px solid black;
+      width: 80%;
+    }
+
+    textarea {
+      background-color: rgba(255, 255, 255, .5);
+      border-radius: 12px;
+      border: none;
+      width: 100% !important;
+      padding: 0.5rem 1rem;
+    }
+
+    .submit_button {
+      width: 75%;
+      text-align: right;
+      margin-left: auto;
+      
+      input {
+        border: none;
+        background-color: #001220;
+        padding: 12px 6px;
+        color: white;
+        font-size: 18px;
+        margin-right: -1rem;
+        border-radius: 12px 0px 0px 12px;
+      }
+    }
+  }
+}

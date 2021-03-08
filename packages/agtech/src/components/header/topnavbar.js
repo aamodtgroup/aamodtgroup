@@ -29,7 +29,7 @@ const TopNavContainer = styled.nav`
   padding: 15px 50px;
   background-color: #fff;
   transition: padding 0.5s ease;
-  z-index: 1;
+  z-index: 99;
   max-width: 100%;
   width: 100%;
   border-bottom: 1px solid #e0e0e0;

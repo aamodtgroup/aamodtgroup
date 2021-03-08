@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://backend.aamodtgroup.com/sitemap_index.xml
