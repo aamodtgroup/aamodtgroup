@@ -113,6 +113,11 @@
 .contact_hero {
   height: calc(100vh - 80px);
 }
+@media (max-width: 600px) {
+  .contact_hero {
+    height: auto;
+  }
+}
 .contact_hero .wp-block-cover__inner-container {
   width: 100%;
 }
@@ -160,3 +165,5 @@
   margin-right: -1rem;
   border-radius: 12px 0px 0px 12px;
 }
+
+/*# sourceMappingURL=main.css.map */

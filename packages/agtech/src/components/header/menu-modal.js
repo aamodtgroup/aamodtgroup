@@ -11,10 +11,7 @@ const MenuModal = ({ state }) => {
         {items.map((item) => {
           if (!item.child_items) {
             return (
-              <MenuLink
-                key={item.ID}
-                link={item.url}
-              >
+              <MenuLink key={item.ID} link={item.url}>
                 {item.title}
               </MenuLink>
             );
@@ -22,19 +19,13 @@ const MenuModal = ({ state }) => {
             const childItems = item.child_items;
             return (
               <NavItemWithChildMobile key={item.ID}>
-                <MenuLink
-                  key={item.ID}
-                  link={item.url}
-                >
+                <MenuLink key={item.ID} link={item.url}>
                   {item.title}
                 </MenuLink>
                 <ChildMenuMobile className="submenu_mobile">
                   {childItems.map((childItem) => {
                     return (
-                      <MenuLink
-                        key={childItem.ID}
-                        link={childItem.url}
-                      >
+                      <MenuLink key={childItem.ID} link={childItem.url}>
                         {childItem.title}
                       </MenuLink>
                     );
@@ -61,6 +52,7 @@ const MenuContent = styled.div`
   position: absolute;
   text-align: center;
   right: 0;
+  top: 25px;
   display: grid;
   grid-auto-rows: min-content;
   margin-top: 3rem;
@@ -74,7 +66,7 @@ const MenuContent = styled.div`
     content: "";
     position: absolute;
     top: -5px;
-    right: 10px;
+    right: 5px;
     border-radius: 5px;
     background: inherit;
     width: 36px;
@@ -94,15 +86,15 @@ const MenuLink = styled(Link)`
   font-size: 20px;
   font-weight: 600;
   text-align: center;
-  padding: .8rem 0;
-  color:var(--black);
-    display: block;
-    position: relative;
-    z-index: 999;
-    transition: all 0.3s ease 0s;
+  padding: 0.8rem 0;
+  color: var(--black);
+  display: block;
+  position: relative;
+  z-index: 999;
+  transition: all 0.3s ease 0s;
   &:hover,
   &:focus {
-    color:var(--brand) !important;
+    color: var(--brand) !important;
   }
 `;
 
@@ -110,14 +102,12 @@ const NavItemWithChildMobile = styled.div`
   position: relative;
   display: block;
 
-
   @media (min-width: 745px) {
     :hover .submenu_mobile {
       visibility: visible;
       opacity: 1;
     }
   }
-  
 `;
 
 const ChildMenuMobile = styled.div`

@@ -110,6 +110,10 @@
 .contact_hero {
   height: calc(100vh - 80px);
 
+  @media (max-width: 600px) {
+    height: auto;
+  }
+
   .wp-block-cover__inner-container {
     width: 100%;
   }
