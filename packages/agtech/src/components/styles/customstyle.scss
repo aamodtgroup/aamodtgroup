@@ -88,3 +88,21 @@
     grid-template-columns: repeat( 1, 1fr ) !important;
   }
 }
+
+.iframely-embed {
+  height: 122px;
+  margin: 0 auto;
+
+  .iframely-responsive {
+    margin: 0;
+  }
+
+  .iframely-embed {
+    margin: 0;
+  }
+
+  .iframely-responsive {
+    padding-bottom: 0;
+    height: 122px;
+  }
+}

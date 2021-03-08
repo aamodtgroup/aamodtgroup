@@ -2,6 +2,7 @@ import React from "react";
 import { connect, styled } from "frontity";
 import Link from "@frontity/components/link";
 import logo from "../../images/logo.png";
+import Script from "@frontity/components/script"
 //import Mailchimp from "./newsletter";
 
  
@@ -27,7 +28,9 @@ const Footer = ({ state }) => {
         <hr className="divider div1" />
         <div className="footer-grid">
           <div className="footer-widget">
-            <img src={logo} alt="logo" width="150px" height="50px" />            
+            <img src={logo} alt="logo" width="150px" height="50px" />   
+            <div id="wcb" className="carbonbadge"></div>
+            <Script src="https://unpkg.com/website-carbon-badges@1.1.1/b.min.js" defer></Script>         
           </div>
           <div className="footer-widget">
             <h4 className="widget-title">Tjenester</h4>
@@ -88,6 +91,12 @@ const Container = styled.footer`
   margin-top: 2rem;
   margin-bottom: 2rem;
   color:#0077b5;
+  #wcb {
+    --b1: #0077b5;
+    --b2: #000;
+    text-align: left;
+    margin-top: 1rem;
+  }
   .footer-grid {
     padding-top: 50px;
     padding-bottom: 50px;
@@ -229,7 +238,7 @@ const Container = styled.footer`
     padding: 20px 15px;
     .footer-grid {
       display: grid;
-      grid-template-rows: 70px repeat(3,auto);
+      grid-template-rows: auto repeat(3,auto);
       grid-template-columns: 1fr 1fr;
       padding-top: 25px;
       padding-bottom: 0px;
