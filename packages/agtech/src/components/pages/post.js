@@ -10,7 +10,7 @@ const Post = ({ state, actions, libraries }) => {
   // Get the data of the post.
   const post = state.source[data.type][data.id];
   // Get a human readable date.
-  const date = dayjs(post.date).format("DD.MM.YYYY")
+  const date = dayjs(post.date).format("DD.MM.YYYY");
   // Get the data of the author.
   const author = state.source.author[post.author];
   // Get the html2react component.
@@ -41,13 +41,13 @@ const Post = ({ state, actions, libraries }) => {
         </div>
       </Header>
 
-      {post.hero_image &&        
+      {post.hero_image && (
         <BlogHero>
           <div className="blog-hero-inner">
-              <img src={post.hero_image} />
+            <img src={post.hero_image} />
           </div>
         </BlogHero>
-      }
+      )}
 
       <Content>
         <Html2React html={post.content.rendered} />
@@ -59,7 +59,7 @@ const Post = ({ state, actions, libraries }) => {
 export default connect(Post);
 
 const ArticleContainer = styled.div`
-  width:100%;
+  width: 100%;
   max-width: 100%;
   margin: 0 auto;
   margin-top: 80px;
@@ -93,7 +93,7 @@ const Header = styled.div`
 const BlogHero = styled.div`
   padding: 2rem 0;
   text-align: center;
-  background: linear-gradient(0deg, rgb(242, 243, 252) 50%, #fff 50% );
+  background: linear-gradient(0deg, rgb(242, 243, 252) 50%, #fff 50%);
 
   .blog-hero-inner {
     max-width: 1200px;
@@ -198,7 +198,6 @@ const Content = styled.div`
       &::before {
         content: "";
         display: block;
-        padding-top: 56.25%;
       }
     }
     iframe {
@@ -240,7 +239,6 @@ const Content = styled.div`
       float: left;
       margin-right: 24px;
     }
-    
   }
 
   @media (max-width: 900px) {
