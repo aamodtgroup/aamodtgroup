@@ -1,17 +1,22 @@
 import React from "react";
 import { connect, styled } from "frontity";
 import Link from "../link";
-import logo from "../../images/logo.png";
+import logo from "../../images/logo.svg";
+import darkLogo from "../../images/darklogo.svg"
 import Script from "@frontity/components/script";
 
 const Footer = ({ state }) => {
+  const { mode } = state.theme;
+
   return (
     <>
       <Container>
         <hr className="divider div1" />
         <div className="footer-grid">
           <div className="footer-widget">
-            <img src={logo} alt="logo" width="150px" height="50px" />
+            <Link link="/" alt="Forside link">
+              <img src={mode === 'light' ? logo : darkLogo} alt="logo" width="150px" height="50px" />
+            </Link>
             <div id="wcb" className="carbonbadge"></div>
             <Script
               src="https://unpkg.com/website-carbon-badges@1.1.1/b.min.js"
@@ -145,12 +150,19 @@ const Container = styled.footer`
   padding: 0;
   margin-top: 2rem;
   margin-bottom: 2rem;
-  color: #0077b5;
   #wcb {
     --b1: #0077b5;
     --b2: #000;
     text-align: left;
     margin-top: 1rem;
+  }
+  #wcb_a {
+    background: var(--darkbackground);
+    color: var(--darktext);
+  }
+  #wcb_g {
+    background: var(--background);
+    border: .13em solid var(--b1);
   }
   .footer-grid {
     padding-top: 50px;
@@ -166,7 +178,7 @@ const Container = styled.footer`
       margin-left: 32px;
     }
     .widget-title {
-      color: #0077b5;
+      color: var(--title);
       margin-bottom: 0.5rem;
       font-size: 18px;
       font-weight: 600;
@@ -183,10 +195,10 @@ const Container = styled.footer`
         .widget-list-link {
           text-decoration: none;
           transition: all 0.3s ease;
-          color: #000;
+          color: var(--text);
           font-size: 16px;
           &:hover {
-            color: var(--brand);
+            color: #0077b5;
           }
         }
       }
@@ -198,7 +210,7 @@ const Container = styled.footer`
     height: 1px;
     border: 0;
     margin: 0;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid var(--border);
     padding: 0;
   }
   .copyright-grid {
@@ -211,10 +223,10 @@ const Container = styled.footer`
   .copyright {
     font-size: 14px;
     margin: 1rem 0;
-    color: #333;
+    color: var(--text);
   }
   .copyright a {
-    color: #333;
+    color: var(--text);
   }
   @media screen and (max-width: 800px) {
     padding: 20px 15px;

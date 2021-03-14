@@ -10,7 +10,7 @@ const description404 = (
       😕
     </span>
     <br></br>
-    <button><Link link="/">Tilbake til hjem</Link></button>
+    <button className="wp-block-button__link"><Link link="/">Tilbake til hjem</Link></button>
   </>
 );
 
@@ -43,27 +43,6 @@ const Container = styled.div`
   margin: 0;
   padding: 24px;
   text-align: center;
-  button {
-    box-sizing: content-box;
-    border: solid var(--black);
-    border-width: thin;
-    background-color: transparent;
-    height: 1.8em;
-    line-height: 1.8em;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 6px;
-    margin-top: 24px;
-    font-size: 16px;
-    font-weight: 500;
-    cursor: pointer;
-    a {
-      color: #043959;
-    }
-    :hover {
-      opacity: .85;
-    }
-  }
 `;
 
 const Title = styled.h1`

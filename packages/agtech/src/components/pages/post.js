@@ -92,7 +92,8 @@ const Header = styled.div`
 const BlogHero = styled.div`
   padding: 2rem 0;
   text-align: center;
-  background: linear-gradient(0deg, rgb(242, 243, 252) 50%, #fff 50%);
+  background: linear-gradient(0deg, var(--postbackground) 50%, var(--background) 50%);
+  transition: background 1s;
 
   .blog-hero-inner {
     max-width: 1200px;
@@ -143,13 +144,12 @@ const Author = styled.p`
 `;
 
 const DateWrapper = styled.p`
-  color: rgba(12, 17, 43, 0.9);
   font-size: 1em;
   display: inline;
 `;
 
 const Content = styled.div`
-  background: rgb(242, 243, 252);
+  background: var(--postbackground);
   word-break: break-word;
   padding: 2rem 0;
   * {
@@ -208,10 +208,6 @@ const Content = styled.div`
       left: 0;
       border: 0;
     }
-  }
-  a {
-    color: var(--brand);
-    text-decoration: underline;
   }
 
   /* WordPress Core Align Classes */

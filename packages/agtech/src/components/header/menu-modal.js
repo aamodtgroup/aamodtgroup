@@ -2,22 +2,27 @@ import React from "react";
 import { styled, connect } from "frontity";
 import Link from "../link";
 import logo from "../../images/logo_white.svg";
+import darklogo from "../../images/darklogo.svg";
 import facebook from "../../images/facebook.png";
 import linkedin from "../../images/linkedin.png";
 import email from "../../images/email.png";
 import instagram from "../../images/instagram.png";
 import github from "../../images/github.png";
+import Toggle from "../toggle";
 
 const MenuModal = ({ state }) => {
   const items = state.source.get(`/menu/${state.theme.menuUrl}/`).items;
+  const { mode } = state.theme;
 
   return (
     <>
       <BigMenu>
         <div className="menu-header">
           <Link link="/" alt="Forside link">
-            <img src={logo} alt="logo" width="150px" height="50px" />
+            <img src={mode === 'light' ? logo : darklogo} alt="logo" width="150px" height="50px" />
           </Link>
+          <Toggle />
+          <div className="empty-div"></div>
         </div>
         <BigMenuInner>
           <MenuContent as="nav">
@@ -83,7 +88,7 @@ const BigMenu = styled.div`
   left:0;
   right:0;
   bottom: 0;
-  background-color: var(--brand);
+  background-color: var(--menubackground);
   box-sizing: border-box;
 
   .menu-header {
@@ -92,10 +97,21 @@ const BigMenu = styled.div`
     height: 81px;
     display: flex;
     padding: 15px 50px;
+    justify-content: space-between;
 
     img {
       width: 150px;
       height: 50px;
+    }
+
+    .toggleicon {
+      height: 25px;
+      width: 25px;
+    }
+
+    .empty-div {
+      width: 40px;
+      height: 40px;
     }
 
     @media (max-width: 1230px) {
@@ -205,7 +221,7 @@ const MenuLink = styled(Link)`
   font-weight: 600;
   text-align: left;
   padding: 0.8rem 0;
-  color: var(--white);
+  color: #fff;
   display: block;
   position: relative;
   z-index: 999;

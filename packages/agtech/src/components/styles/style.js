@@ -7,7 +7,7 @@ const customStyle = css`
 }
 
 .media-text {
-  background-color: var(--background);
+  background-color: var(--darkbackground);
   border-radius: 15px;
   padding: 55px;
   h2 {
@@ -15,10 +15,10 @@ const customStyle = css`
     font-weight: 600;
     letter-spacing: 0.02em;
     margin-bottom: 1rem;
-    color: var(--white);
+    color: var(--darktext);
   }
   p {
-    color: var(--blue-text);
+    color: #80bbda;
     font-size: 24px;
     line-height: 1.5;
   }
@@ -89,24 +89,6 @@ const customStyle = css`
   }
   @media (max-width: 600px) {
     grid-template-columns: repeat( 1, 1fr ) !important;
-  }
-}
-
-.iframely-embed {
-  height: 122px;
-  margin: 0 auto;
-
-  .iframely-responsive {
-    margin: 0;
-  }
-
-  .iframely-embed {
-    margin: 0;
-  }
-
-  .iframely-responsive {
-    padding-bottom: 0;
-    height: 122px;
   }
 }
 

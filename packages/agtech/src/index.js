@@ -22,6 +22,7 @@ const marsTheme = {
       autoPrefetch: "in-view",
       menu: [],
       menuUrl: "menu",
+      mode: "light",
       isMobileMenuOpen: false,
       featured: {
         showOnList: false,
@@ -41,6 +42,12 @@ const marsTheme = {
       },
       closeMobileMenu: ({ state }) => {
         state.theme.isMobileMenuOpen = false;
+      },
+      setLightMode: ({state}) => {
+        state.theme.mode = 'light';
+      },
+      setDarkMode: ({state}) => {
+        state.theme.mode = 'dark';
       },
       beforeSSR: async ({ state, actions }) => {
         await actions.source.fetch(`/menu/${state.theme.menuUrl}/`);

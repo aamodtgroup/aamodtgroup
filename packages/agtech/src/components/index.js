@@ -23,6 +23,7 @@ import TopNavbar from "./header/topnavbar";
 const Theme = ({ state }) => {
   // Get information about the current URL.
   const data = state.source.get(state.router.link);
+  const { mode } = state.theme;
 
   return (
     <>
@@ -33,6 +34,27 @@ const Theme = ({ state }) => {
       <Global styles={css(gutenbergTheme)} />
       <Global styles={customStyle} />
       <Global styles={globalStyles} />
+      <Global styles={ css`
+        :root {
+          --text: ${mode === 'light' ? '#212121': '#fff'};
+          --darktext: ${mode === 'light' ? '#fff': '#fff'};
+          --background: ${mode === 'light' ? '#fff': '#121212'};
+          --menubackground: ${mode === 'light' ? '#0077b5': '#121212'};
+          --postbackground: ${mode === 'light' ? '#F2F3FC': '#1E1E1E'};
+          --darkbackground: ${mode === 'light' ? '#042a4e': '#1E1E1E'};
+          --border: ${mode === 'light' ? '#e0e0e0': '#333'};
+          --title: ${mode === 'light' ? '#0077b5': '#80bbda'};
+          --link: ${mode === 'light' ? '#0077b5': '#80bbda'};
+          --button: ${mode === 'light' ? '#0077b5': '#1E1E1E'};
+          --menutogglehover: ${mode === 'light' ? '#0077b5': '#80bbda'};
+          --menutogglehoverclose: ${mode === 'light' ? '#000': '#80bbda'};
+          --code: ${mode === 'light' ? '#121212': '#343434'};
+          --transition: .3s linear;
+        }
+        body {
+            background-color: ${mode === 'light' ? '#fff': '#121212'};
+            color: ${mode === 'light' ? '#212121': '#fff'};
+        }`} />
 
       {/* Loads fonts. */}
       <FontFace />
@@ -74,13 +96,9 @@ const Theme = ({ state }) => {
 export default connect(Theme);
 
 const globalStyles = css`
-  :root {
-    --brand: #0077b5;
-    --black: #000000;
-    --white: #ffffff;
-    --bodycolor: #343434;
-    --blue-text: #80bbda;
-    --background: #002f48;
+  * {
+    transition: color var(--transition);
+    transition: background-color var(--transition);
   }
   ::-webkit-scrollbar {
     display: none;
@@ -95,18 +113,17 @@ const globalStyles = css`
   }
   body {
     margin: 0;
-    color: #043959;
     font-family: "Roboto", sans-serif;
   }
   p {
     font-family: "Roboto", sans-serif;
     font-size: 20px;
-    color: var(--black);
+    color: var(--text);
     line-height: 1.7;
   }
   ul {
     font-size: 20px;
-    color: var(--black);
+    color: var(--text);
   }
   li {
     margin: 1rem auto !important;
@@ -119,10 +136,10 @@ const globalStyles = css`
   h6 {
     font-family: "Poppins", sans-serif;
     font-weight: 600;
-    color: var(--black);
+    color: var(--text);
   }
   a {
-    color: var(--brand);
+    color: var(--link);
   }
   #root {
     display: flex;

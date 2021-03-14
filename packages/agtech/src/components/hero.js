@@ -50,7 +50,7 @@ const HeroContainer = styled.div`
     font-weight: 600;
     width: 100%;
     max-width: 620px;
-    color: var(--white);
+    color: #fff;
   }
   p {
     font-size: 24px;

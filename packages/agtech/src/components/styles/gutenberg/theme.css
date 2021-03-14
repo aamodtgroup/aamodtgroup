@@ -16,9 +16,8 @@
   font-size: 15px;
   color: #fff;
   padding: 1.2em 1em;
-  border: 1px solid #ddd;
   border-radius: 12px;
-  background-color: #000; }
+  background-color: var(--code); }
 
 .wp-block-embed figcaption {
   color: #555d66;

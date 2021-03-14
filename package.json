@@ -27,8 +27,5 @@
     "dayjs": "^1.10.4",
     "frontity": "^1.14.2",
     "frontity-contact-form-7": "./packages/frontity-contact-form-7"
-  },
-  "devDependencies": {
-    "sass": "^1.32.8"
   }
 }
