@@ -19,7 +19,7 @@ const Footer = ({ state }) => {
             ></Script>
           </div>
           {/* <div className="footer-widget">
-            <h4 className="widget-title">Tjenester</h4>
+            <h2 className="widget-title">Tjenester</h2>
             <ul className="widget-list">
               <li><Link className="widget-list-link" link="/">Link 1</Link></li>
               <li><Link className="widget-list-link" link="/">Link 2</Link></li>
@@ -27,7 +27,7 @@ const Footer = ({ state }) => {
             </ul>
           </div> */}
           <div className="footer-widget">
-            <h4 className="widget-title">Sitemap</h4>
+            <h2 className="widget-title">Sitemap</h2>
             <ul className="widget-list">
               <li>
                 <Link className="widget-list-link" link="/">
@@ -47,7 +47,7 @@ const Footer = ({ state }) => {
             </ul>
           </div>
           <div className="footer-widget">
-            <h4 className="widget-title">Tech</h4>
+            <h2 className="widget-title">Tech</h2>
             <ul className="widget-list">
               <li>
                 <Link
@@ -82,7 +82,7 @@ const Footer = ({ state }) => {
             </ul>
           </div>
           <div className="footer-widget">
-            <h4 className="widget-title">Følg oss</h4>
+            <h2 className="widget-title">Følg oss</h2>
             <ul className="widget-list">
               <li>
                 <Link

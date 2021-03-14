@@ -50,17 +50,19 @@ const MenuModal = ({ state }) => {
             })}
           </MenuContent>
           <div className="small-menu">
-          <Link link="https://www.linkedin.com/company/aamodtgroup/" target="_blank"><img src={linkedin} /></Link>
-          <br />
-          <Link link="https://www.facebook.com/aamodtgroup/" target="_blank"><img src={facebook} /></Link>
-          <br />
-          <Link link="https://www.instagram.com/aamodtgroup/" target="_blank"><img src={instagram} /></Link>
-          <br />
-          <Link link="https://www.github.com/aamodtgroup/" target="_blank"><img src={github} /></Link>
-          <br />
-          <Link link="mailto:kasper@aamodtgroup.com"><img src={email} /></Link>
+            <Link link="https://www.linkedin.com/company/aamodtgroup/" target="_blank"><img src={linkedin} /></Link>
+            <Link link="https://www.facebook.com/aamodtgroup/" target="_blank"><img src={facebook} /></Link>
+            <Link link="https://www.instagram.com/aamodtgroup/" target="_blank"><img src={instagram} /></Link>
+            <Link link="https://www.github.com/aamodtgroup/" target="_blank"><img src={github} /></Link>
+            <Link link="mailto:kasper@aamodtgroup.com"><img src={email} /></Link>
           </div>
         </BigMenuInner>
+        <div className="menu-footer">
+          <p className="copyright">© 2021 Aamodt Group</p>
+          <p className="copyright align-right">
+            <Link link="/personvern">Personvern</Link>
+          </p>
+        </div>
       </BigMenu>
     </>
   );
@@ -100,13 +102,57 @@ const BigMenu = styled.div`
       padding: 15px;
     }
   }
+  .menu-footer {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 81px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .copyright {
+      color: white !important;
+      font-weight: 400;
+      width: 100%;
+
+      a {
+        color: white;
+        transition: color .2s ease;
+
+        &:hover,
+        &:focus {
+          color: #cce4f0 !important;
+        }
+      }
+    }
+    .align-right {
+      text-align: right;
+    }
+    @media (max-width: 600px) {
+      flex-wrap: wrap;
+      margin-top: 1rem;
+      align-items: flex-start;
+      height: auto;
+
+      p {
+        margin: 0;
+      }
+      .align-right {
+        text-align: left;
+      }
+    }
+    @media (max-width: 1230px) {
+      padding: 0 15px;
+    }
+  }
 `;
 
 const BigMenuInner = styled.div`
   z-index: 1;
   width: 100%;
   max-width: 1200px;
-  height: calc(100% - 81px);
+  height: calc(100% - 81px - 81px);
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -114,6 +160,8 @@ const BigMenuInner = styled.div`
   box-sizing: border-box;
 
   .small-menu {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
     img {
       height: 32px;
       width: 32px;
@@ -124,7 +172,12 @@ const BigMenuInner = styled.div`
         transform: rotate(360deg);
       }
     }
-
+    @media (max-width: 600px) {
+      grid-template-columns: repeat(2, 1fr);
+      img {
+        margin: 5px;
+      }
+    }
   }
 
   @media (max-width: 600px) {
@@ -156,9 +209,10 @@ const MenuLink = styled(Link)`
   display: block;
   position: relative;
   z-index: 999;
+  transition: color .2s ease;
   &:hover,
   &:focus {
-    color: var(--black) !important;
+    color: #cce4f0 !important;
   }
   @media (max-width: 600px) {
     font-size: 40px;
