@@ -19,13 +19,14 @@
   "dependencies": {
     "@aamodtgroup/agtech": "./packages/agtech",
     "@frontity/core": "^1.11.0",
+    "@frontity/google-tag-manager-analytics": "^1.2.1",
     "@frontity/head-tags": "^1.1.1",
     "@frontity/html2react": "^1.6.1",
     "@frontity/tiny-router": "^1.4.0",
     "@frontity/wp-source": "^1.11.2",
     "dayjs": "^1.10.4",
     "frontity": "^1.14.2",
-    "frontity-contact-form-7": "^0.1.7"
+    "frontity-contact-form-7": "./packages/frontity-contact-form-7"
   },
   "devDependencies": {
     "sass": "^1.32.8"

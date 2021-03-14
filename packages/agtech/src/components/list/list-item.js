@@ -1,8 +1,6 @@
 import React from "react";
 import { connect, styled } from "frontity";
-import Link from "@frontity/components/link";
-import FeaturedMedia from "../featured-media";
-import Image from "@frontity/components/image";
+import Link from "../link";
 /**
  * Item Component
  *
@@ -11,24 +9,23 @@ import Image from "@frontity/components/image";
  * - Author: name of author and published date
  * - FeaturedMedia: the featured image/video of the post
  */
- const Item = ({ state, item }) => {
+const Item = ({ state, item }) => {
   const data = state.source.get(state.router.link);
   return (
     <>
       <Article>
-        <div className="image">
-          <Link link={item.link}>
-            <img src={state.source.attachment[item.featured_media].source_url}/>
-          </Link>
-        </div>
         <Link link={item.link}>
+          <div className="image">
+            <img
+              src={state.source.attachment[item.featured_media].source_url}
+            />
+          </div>
           <Title dangerouslySetInnerHTML={{ __html: item.title.rendered }} />
         </Link>
       </Article>
     </>
   );
 };
-
 
 // Connect the Item to gain access to `state` as a prop
 export default connect(Item);
@@ -42,7 +39,7 @@ const Article = styled.article`
     margin-bottom: 1rem;
   }
   .image img {
-    transition: transform .5s ease;
+    transition: transform 0.5s ease;
     object-fit: cover;
     height: 300px;
     width: 100%;

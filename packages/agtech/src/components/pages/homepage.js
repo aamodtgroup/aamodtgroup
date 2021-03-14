@@ -1,11 +1,9 @@
 import React, { useEffect } from "react";
 import { connect, styled } from "frontity";
-import Link from "@frontity/html2react/processors/link";
 import List from "../list";
 import Hero from "../hero";
 
 //import Image from "@frontity/components/image";
-
 
 const HomePage = ({ state, actions, libraries }) => {
   // Get information about the current URL.
@@ -15,17 +13,15 @@ const HomePage = ({ state, actions, libraries }) => {
 
   // Get the html2react component.
   const Html2React = libraries.html2react.Component;
-  //const BannerSlider = homepage.acf.banner_slider; 
- 
+  //const BannerSlider = homepage.acf.banner_slider;
 
   useEffect(() => {
     actions.source.fetch("/");
     List.preload();
   }, []);
 
-
   // Load the post, but only if the data is ready.
-  return data.isReady ? (        
+  return data.isReady ? (
     <Content>
       <Hero />
       <Html2React html={homepage.content.rendered} />
@@ -37,8 +33,7 @@ export default connect(HomePage);
 
 const Content = styled.div`
   width: 100%;
-  position:relative;
-  margin-top: 80px;
+  position: relative;
   .wp-block-group__inner-container {
     width: 100%;
     max-width: 1200px;

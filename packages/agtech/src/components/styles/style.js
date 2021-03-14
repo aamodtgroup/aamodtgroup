@@ -1,3 +1,6 @@
+import { css } from "frontity";
+
+const customStyle = css`
 .wp-block-group {
   margin-top: 80px;
   margin-bottom: 80px;
@@ -171,3 +174,6 @@
     }
   }
 }
+`;
+
+export default customStyle;

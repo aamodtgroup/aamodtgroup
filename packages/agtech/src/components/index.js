@@ -1,6 +1,5 @@
 import React from "react";
 import { connect, Global, css, styled, Head } from "frontity";
-import Link from "./link";
 import favicon from "../images/favicon.png";
 import Switch from "@frontity/components/switch";
 import Footer from "./footer/footer";
@@ -10,10 +9,11 @@ import Page from "./pages/page";
 import HomePage from "./pages/homepage";
 import Loading from "./pages/loading";
 import PageError from "./pages/page-error";
+import FontFace from "./styles/font-face"
 import gutenbergStyle from "./styles/gutenberg/style.css";
 import gutenbergTheme from "./styles/gutenberg/theme.css";
 import BootstrapCss from "./styles/bootstrap.css";
-import customStyle from "../dist/css/main.css";
+import customStyle from "./styles/style.js";
 import TopNavbar from "./header/topnavbar";
 
 /**
@@ -26,24 +26,24 @@ const Theme = ({ state }) => {
 
   return (
     <>
-      {/* Add some metatags to the <head> of the HTML. */}
-      <Head>
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <html lang="no" />
-        <link rel="shortcut icon" type="image/jpg" href={favicon} />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap"
-          rel="stylesheet"
-        />
-      </Head>
-
       {/* Add some global styles for the whole site, like body or a's. 
       Not classes here because we use CSS-in-JS. Only global HTML tags. */}
       <Global styles={css(BootstrapCss)} />
       <Global styles={css(gutenbergStyle)} />
       <Global styles={css(gutenbergTheme)} />
-      <Global styles={css(customStyle)} />
+      <Global styles={customStyle} />
       <Global styles={globalStyles} />
+
+      {/* Loads fonts. */}
+      <FontFace />
+      
+      {/* Add some metatags to the <head> of the HTML. */}
+      <Head>
+        <link rel="preconnect" href="https://backend.aamodtgroup.com/" />
+        <link rel="preconnect" href="https://api.websitecarbon.com/" />
+        <html lang="no" />
+        <link rel="shortcut icon" type="image/jpg" href={favicon} />
+      </Head>
 
       {/* Add the header of the site. */}
       <HeadContainer>
@@ -164,7 +164,9 @@ const globalStyles = css`
   }
 `;
 
-const HeadContainer = styled.div``;
+const HeadContainer = styled.div`
+  height: 81px;
+`;
 
 const FooterContainer = styled.div`
   display: flex;

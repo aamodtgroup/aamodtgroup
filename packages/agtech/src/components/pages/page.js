@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { connect, styled } from "frontity";
-import Link from "@frontity/html2react/processors/link";
 import List from "../list";
 
 const Page = ({ state, actions, libraries }) => {
@@ -34,12 +33,22 @@ export default connect(Page);
 
 const Content = styled.div`
   width: 100%;
-  position:relative;
-  margin-top: 80px;
+  position: relative;
   .wp-block-group__inner-container {
     width: 100%;
     max-width: 1200px;
     margin: 0px auto;
+  }
+  @media (max-width: 600px) {
+    h1 {
+      font-size: 26px;
+    }
+    h2 {
+      font-size: 24px;
+    }
+    h3 {
+      font-size: 20px;
+    }
   }
   @media (max-width: 1230px) {
     .wp-block-group__inner-container {

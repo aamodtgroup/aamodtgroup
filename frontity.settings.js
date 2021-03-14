@@ -1,26 +1,23 @@
 const settings = {
-  "name": "aamodtgroup",
-  "state": {
-    "frontity": {
-      "url": "https://aamodtgroup.com",
-      "title": "Aamodt Group",
-      "description": "WordPress installation for Frontity development"
+  name: "aamodtgroup",
+  state: {
+    frontity: {
+      url: "https://aamodtgroup.com",
+      title: "Aamodt Group",
+      description: "Konsulenter innen utvikling og drift"
     }
   },
-  "packages": [
+  packages: [
     {
-      "name": "@aamodtgroup/agtech",
-      "state": {
-        "theme": {}
-      }
+      name: "@aamodtgroup/agtech",
     },
     {
-      "name": "@frontity/wp-source",
-      "state": {
-        "source": {
-          "url": "https://backend.aamodtgroup.com",
-          "homepage": "/hjem",
-          "postTypes": [
+      name: "@frontity/wp-source",
+      state: {
+        source: {
+          url: "https://backend.aamodtgroup.com",
+          homepage: "/hjem",
+          postTypes: [
             {
               type: "blogg",
               endpoint: "blogg",
@@ -28,6 +25,14 @@ const settings = {
           ],
         }
       }
+    },
+    {
+      name: "@frontity/google-tag-manager-analytics",
+      state: {
+        googleTagManagerAnalytics: {
+          containerId: "GTM-KLB4V9S",
+        }
+      },
     },
     "@frontity/tiny-router",
     "@frontity/html2react",

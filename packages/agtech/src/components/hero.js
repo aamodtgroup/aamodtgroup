@@ -1,16 +1,21 @@
 import React from "react";
 import { connect, styled } from "frontity";
-import Link from "@frontity/components/link";
+import Link from "./link";
 
-const Hero = ({ state }) => {
+const Hero = () => {
   return (
     <>
       <HeroContainer>
         <div className="hero-inner">
           <h1>Aamodt Group - Konsulenter innen utvikling og drift</h1>
           <p>Vi hjelper deg med alle dine behov innen utvikling og drift.</p>
-          <div className="buttons">
+          {/* <div className="buttons">
             <Link link="/kontakt-oss/">
+              <button className="wp-block-button__link">Kontakt oss</button>
+            </Link>
+          </div> */}
+          <div className="buttons">
+            <Link link="mailto:kasper@aamodtgroup.com">
               <button className="wp-block-button__link">Kontakt oss</button>
             </Link>
           </div>

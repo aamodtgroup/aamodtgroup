@@ -1,16 +1,16 @@
 import React from "react";
 import { styled, connect } from "frontity";
-import Link from "@frontity/components/link";
+import Link from "../link";
 import Error404 from "../../images/404.svg";
 
 const description404 = (
   <>
-    <strong>That page can’t be found{" "}</strong>
+    <strong>Denne siden kan ikke bli funnet{" "}</strong>
     <span role="img" aria-label="confused face">
       😕
     </span>
     <br></br>
-    <button><Link link="/">Back to home</Link></button>
+    <button><Link link="/">Tilbake til hjem</Link></button>
   </>
 );
 
@@ -26,7 +26,7 @@ const description = (
 const Page404 = ({ state }) => {
   const data = state.source.get(state.router.link);
 
-  const title = "Oops! Something went wrong";
+  const title = "Oops! Noe gikk galt";
 
   return (
     <Container>
@@ -41,7 +41,6 @@ export default connect(Page404);
 const Container = styled.div`
   width: 800px;
   margin: 0;
-  margin-top: 80px;
   padding: 24px;
   text-align: center;
   button {

@@ -4,7 +4,6 @@ import iframe from "@frontity/html2react/processors/iframe";
 import link from "@frontity/html2react/processors/link";
 import menuHandler from "./components/handlers/menu-handler";
 
-
 const marsTheme = {
   name: "@aamodtgroup/agtech",
   roots: {
@@ -20,7 +19,7 @@ const marsTheme = {
      * relevant state. It is scoped to the `theme` namespace.
      */
     theme: {
-      autoPrefetch: "hover",
+      autoPrefetch: "in-view",
       menu: [],
       menuUrl: "menu",
       isMobileMenuOpen: false,
