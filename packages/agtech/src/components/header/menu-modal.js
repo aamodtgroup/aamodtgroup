@@ -21,8 +21,6 @@ const MenuModal = ({ state }) => {
           <Link link="/" alt="Forside link">
             <img src={mode === 'light' ? logo : darklogo} alt="logo" width="150px" height="50px" />
           </Link>
-          <Toggle />
-          <div className="empty-div"></div>
         </div>
         <BigMenuInner>
           <MenuContent as="nav">
@@ -103,17 +101,7 @@ const BigMenu = styled.div`
       width: 150px;
       height: 50px;
     }
-
-    .toggleicon {
-      height: 25px;
-      width: 25px;
-    }
-
-    .empty-div {
-      width: 40px;
-      height: 40px;
-    }
-
+    
     @media (max-width: 1230px) {
       padding: 15px;
     }

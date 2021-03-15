@@ -17,8 +17,10 @@ const TopNavbar = ({ state }) => {
               <img src={mode === 'light' ? logo : darkLogo} alt="logo" width="150px" height="50px" />
             </Link>
           </Logo>
-          <Toggle />
-          <MobileMenu />
+          <div className="buttons">
+            <Toggle />
+            <MobileMenu />
+          </div>
       </TopNavContainer>
     </>
   );
@@ -40,6 +42,9 @@ const TopNavContainer = styled.nav`
   max-width: 100%;
   width: 100%;
   border-bottom: 1px solid var(--border);
+  .buttons {
+    display: flex;
+  }
   @media (max-width: 1230px) {
     padding: 15px;
   }

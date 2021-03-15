@@ -1,5 +1,6 @@
 import React from "react";
 import { connect, Global, css, styled, Head } from "frontity";
+import CookieConsent from "react-cookie-consent";
 import favicon from "../images/favicon.png";
 import Switch from "@frontity/components/switch";
 import Footer from "./footer/footer";
@@ -48,6 +49,9 @@ const Theme = ({ state }) => {
           --button: ${mode === 'light' ? '#0077b5': '#1E1E1E'};
           --menutogglehover: ${mode === 'light' ? '#0077b5': '#80bbda'};
           --menutogglehoverclose: ${mode === 'light' ? '#000': '#80bbda'};
+          --cookiebar: ${mode === 'light' ? '#fff': '#0077b5'};
+          --cookiebarbutton: ${mode === 'light' ? '#0077b5': '#fff'};
+          --cookiebartext: ${mode === 'light' ? '#fff': '#0077b5'};
           --code: ${mode === 'light' ? '#121212': '#343434'};
           --transition: .3s linear;
         }
@@ -89,6 +93,19 @@ const Theme = ({ state }) => {
       <FooterContainer>
         <Footer />
       </FooterContainer>
+      <CookieConsent
+        location="bottom"
+        buttonText="Godta"
+        enableDeclineButton
+        declineButtonText="Avslå"
+        cookieName="tagmanager"
+        style={{ background: "var(--cookiebar)", color: "var(--text)" }}
+        buttonStyle={{ background: "var(--cookiebarbutton)", color: "var(--cookiebartext)", fontSize: "16px", borderRadius: "12px" }}
+        declineButtonStyle={{ borderRadius: "12px" }}
+        expires={365}
+      >
+        Dette nettstedet bruker informasjonskapsler for å forbedre brukeropplevelsen.{" "}
+      </CookieConsent>
     </>
   );
 };
@@ -178,6 +195,15 @@ const globalStyles = css`
     :hover img {
       transform: scale(1.05);
     }
+  }
+  .CookieConsent {
+    width: 400px !important;
+    bottom: 2rem !important;
+    left: auto !important;
+    right: 2rem !important;
+    border-radius: 12px;
+    justify-content: flex-end !important;
+    box-shadow: rgb(0 0 0 / 16%) 0px 2px 4px !important;
   }
 `;
 

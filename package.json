@@ -26,6 +26,7 @@
     "@frontity/wp-source": "^1.11.2",
     "dayjs": "^1.10.4",
     "frontity": "^1.14.2",
-    "frontity-contact-form-7": "./packages/frontity-contact-form-7"
+    "frontity-contact-form-7": "./packages/frontity-contact-form-7",
+    "react-cookie-consent": "^6.2.3"
   }
 }

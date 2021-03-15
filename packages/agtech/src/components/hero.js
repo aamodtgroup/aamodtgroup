@@ -79,7 +79,7 @@ const HeroContainer = styled.div`
   }
 
   @media (max-width: 600px) {
-    height: 600px;
+    height: auto;
     min-height: 600px;
     background: -webkit-linear-gradient(
         -90deg,

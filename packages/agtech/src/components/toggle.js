@@ -26,6 +26,7 @@ const Box = styled.div`
     justify-content: center;
     margin: 0 1rem;
     cursor: pointer;
+    z-index: 5;
 
     img {
         height: 25px;
