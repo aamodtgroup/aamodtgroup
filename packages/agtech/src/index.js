@@ -48,10 +48,10 @@ const marsTheme = {
         const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
         if (window.localStorage.getItem("mode") === "light") {
           state.theme.mode = 'light';
-        } else if (prefersDarkScheme.matches) {
+        } else if (window.localStorage.getItem("mode") === "dark") {
           state.theme.mode = 'dark';
         } else {
-          if (window.localStorage.getItem("mode") === "dark") {
+          if (prefersDarkScheme.matches) {
             state.theme.mode = 'dark';
           }
         }
