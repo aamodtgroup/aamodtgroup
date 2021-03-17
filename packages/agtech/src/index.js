@@ -3,9 +3,8 @@ import image from "@frontity/html2react/processors/image";
 import iframe from "@frontity/html2react/processors/iframe";
 import link from "@frontity/html2react/processors/link";
 import menuHandler from "./components/handlers/menu-handler";
-import customStyle from "./components/styles/style";
 
-const marsTheme = {
+const agtech = {
   name: "@aamodtgroup/agtech",
   roots: {
     /**
@@ -20,7 +19,7 @@ const marsTheme = {
      * relevant state. It is scoped to the `theme` namespace.
      */
     theme: {
-      autoPrefetch: "in-view",
+      autoPrefetch: "hover",
       menu: [],
       menuUrl: "menu",
       mode: "light",
@@ -84,4 +83,4 @@ const marsTheme = {
   },
 };
 
-export default marsTheme;
+export default agtech;

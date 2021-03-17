@@ -11,10 +11,10 @@ import HomePage from "./pages/homepage";
 import Loading from "./pages/loading";
 import PageError from "./pages/page-error";
 import FontFace from "./styles/font-face"
-import gutenbergStyle from "./styles/gutenberg/style.css";
-import gutenbergTheme from "./styles/gutenberg/theme.css";
+import gutenbergStyle from "./styles/gutenberg/style.min.css";
+import gutenbergTheme from "./styles/gutenberg/theme.min.css";
 import BootstrapCss from "./styles/bootstrap.css";
-import customStyle from "./styles/style.js";
+import customStyle from "./styles/style";
 import TopNavbar from "./header/topnavbar";
 
 /**
@@ -53,12 +53,9 @@ const Theme = ({ state }) => {
           --cookiebarbutton: ${mode === 'light' ? '#0077b5': '#fff'};
           --cookiebartext: ${mode === 'light' ? '#fff': '#0077b5'};
           --code: ${mode === 'light' ? '#121212': '#343434'};
-          --transition: .3s linear;
-        }
-        body {
-            background-color: ${mode === 'light' ? '#fff': '#121212'};
-            color: ${mode === 'light' ? '#212121': '#fff'};
-        }`} />
+          --transition: 500ms;
+        }` }
+      />
 
       {/* Loads fonts. */}
       <FontFace />
@@ -131,6 +128,8 @@ const globalStyles = css`
   body {
     margin: 0;
     font-family: "Roboto", sans-serif;
+    background-color: var(--background);
+    color: var(--text);
   }
   p {
     font-family: "Roboto", sans-serif;

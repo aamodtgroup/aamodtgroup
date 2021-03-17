@@ -7,17 +7,22 @@ const Hero = () => {
     <>
       <HeroContainer>
         <div className="hero-inner">
-          <h1>Aamodt Group - Konsulenter innen utvikling og drift</h1>
-          <p>Vi hjelper deg med alle dine behov innen utvikling og drift.</p>
-          {/* <div className="buttons">
-            <Link link="/kontakt-oss/">
-              <button className="wp-block-button__link">Kontakt oss</button>
-            </Link>
-          </div> */}
-          <div className="buttons">
-            <Link link="mailto:kasper@aamodtgroup.com">
-              <button className="wp-block-button__link">Kontakt oss</button>
-            </Link>
+          <div>
+            <h1>Aamodt Group - Konsulenter innen utvikling og drift</h1>
+            <p>Vi hjelper deg med alle dine behov innen utvikling og drift.</p>
+            {/* <div className="buttons">
+              <Link link="/kontakt-oss/">
+                <button className="wp-block-button__link">Kontakt oss</button>
+              </Link>
+            </div> */}
+            <div className="buttons">
+              <Link link="/blogg/">
+                <button className="wp-block-button__link">Blogg</button>
+              </Link>
+              <Link link="mailto:kasper@aamodtgroup.com">
+                <button className="wp-block-button__link">Kontakt oss</button>
+              </Link>
+            </div>
           </div>
         </div>
       </HeroContainer>
@@ -31,7 +36,8 @@ const HeroContainer = styled.div`
   display: flex;
   height: calc(100vh - 80px);
   min-height: calc(100vh - 80px);
-  align-items: flex-end;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   max-width: 100vw;
   background: -webkit-linear-gradient(
@@ -60,12 +66,15 @@ const HeroContainer = styled.div`
     color: var(--blue-text);
   }
   .hero-inner {
+    display: flex;
+    align-items: flex-end;
     width: 1200px;
-    padding-bottom: 5rem;
+    height: 80%;
   }
 
   .buttons .wp-block-button__link {
     margin-bottom: 1rem;
+    margin-right: 1rem;
   }
 
   @media (min-width: 1230px) {

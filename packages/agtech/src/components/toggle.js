@@ -11,8 +11,8 @@ const Toggle = ({ actions, state }) => {
     return (
         <Box onClick={ mode === "light" ? setDarkMode  : setLightMode }>
             <Switch>
-                <img className="toggleicon" src={sun} height="25px" width="25px" when={mode === "dark"}/>
-                <img className="toggleicon" height="25px" width="25px" src={moon}/>
+                <img className="toggleicon" src={sun} height="25px" width="25px" alt="Light mode toggle" when={mode === "dark"}/>
+                <img className="toggleicon" src={moon} height="25px" width="25px" alt="Dark mode toggle"/>
             </Switch>
         </Box>
     )

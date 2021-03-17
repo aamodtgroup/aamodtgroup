@@ -3,7 +3,7 @@ import { connect, styled } from "frontity";
 import Link from "../link";
 import logo from "../../images/logo.svg";
 import darkLogo from "../../images/darklogo.svg"
-import Script from "@frontity/components/script";
+// import Script from "@frontity/components/script";
 
 const Footer = ({ state }) => {
   const { mode } = state.theme;
@@ -17,11 +17,11 @@ const Footer = ({ state }) => {
             <Link link="/" alt="Forside link">
               <img src={mode === 'light' ? logo : darkLogo} alt="logo" width="150px" height="50px" />
             </Link>
-            <div id="wcb" className="carbonbadge"></div>
+            {/* <div id="wcb" className="carbonbadge"></div>
             <Script
               src="https://unpkg.com/website-carbon-badges@1.1.1/b.min.js"
               defer
-            ></Script>
+            ></Script> */}
           </div>
           {/* <div className="footer-widget">
             <h2 className="widget-title">Tjenester</h2>
@@ -150,20 +150,20 @@ const Container = styled.footer`
   padding: 0;
   margin-top: 2rem;
   margin-bottom: 2rem;
-  #wcb {
-    --b1: #0077b5;
-    --b2: #000;
-    text-align: left;
-    margin-top: 1rem;
-  }
-  #wcb_a {
-    background: var(--darkbackground);
-    color: var(--darktext);
-  }
-  #wcb_g {
-    background: var(--background);
-    border: .13em solid var(--b1);
-  }
+  // #wcb {
+  //   --b1: #0077b5;
+  //   --b2: #000;
+  //   text-align: left;
+  //   margin-top: 1rem;
+  // }
+  // #wcb_a {
+  //   background: var(--darkbackground);
+  //   color: var(--darktext);
+  // }
+  // #wcb_g {
+  //   background: var(--background);
+  //   border: .13em solid var(--b1);
+  // }
   .footer-grid {
     padding-top: 50px;
     padding-bottom: 50px;
