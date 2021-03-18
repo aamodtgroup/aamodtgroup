@@ -44,11 +44,11 @@ const Footer = ({ state }) => {
                   Blogg
                 </Link>
               </li>
-              {/* <li>
+              <li>
                 <Link className="widget-list-link" link="/kontakt-oss/">
                   Kontakt oss
                 </Link>
-              </li> */}
+              </li>
             </ul>
           </div>
           <div className="footer-widget">

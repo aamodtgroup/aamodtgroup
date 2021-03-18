@@ -10,16 +10,11 @@ const Hero = () => {
           <div>
             <h1>Aamodt Group - Konsulenter innen utvikling og drift</h1>
             <p>Vi hjelper deg med alle dine behov innen utvikling og drift.</p>
-            {/* <div className="buttons">
-              <Link link="/kontakt-oss/">
-                <button className="wp-block-button__link">Kontakt oss</button>
-              </Link>
-            </div> */}
             <div className="buttons">
               <Link link="/blogg/">
                 <button className="wp-block-button__link">Blogg</button>
               </Link>
-              <Link link="mailto:kasper@aamodtgroup.com">
+              <Link link="/kontakt-oss/">
                 <button className="wp-block-button__link">Kontakt oss</button>
               </Link>
             </div>

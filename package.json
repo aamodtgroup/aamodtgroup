@@ -18,6 +18,7 @@
   "prettier": {},
   "dependencies": {
     "@aamodtgroup/agtech": "./packages/agtech",
+    "@aamodtgroup/frontity-contact-form-7": "^0.1.0",
     "@frontity/core": "^1.11.0",
     "@frontity/google-tag-manager-analytics": "^1.2.1",
     "@frontity/head-tags": "^1.1.1",
@@ -26,7 +27,6 @@
     "@frontity/wp-source": "^1.11.2",
     "dayjs": "^1.10.4",
     "frontity": "^1.14.2",
-    "frontity-contact-form-7": "./packages/frontity-contact-form-7",
     "react-cookie-consent": "^6.2.3"
   }
 }
