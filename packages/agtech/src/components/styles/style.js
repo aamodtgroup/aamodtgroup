@@ -11,7 +11,6 @@ const customStyle = css`
     border-radius: 15px;
     padding: 55px;
     h2 {
-      font-size: 48px;
       font-weight: 600;
       letter-spacing: 0.02em;
       margin-bottom: 1rem;
@@ -19,8 +18,10 @@ const customStyle = css`
     }
     p {
       color: #80bbda;
-      font-size: 24px;
       line-height: 1.5;
+    }
+    li {
+      color: var(--darktext);
     }
     .wp-block-column {
       display: flex;
@@ -58,12 +59,6 @@ const customStyle = css`
       .wp-block-image img {
         height: 300px;
       }
-      h2 {
-        font-size: 24px;
-      }
-      p {
-        font-size: 20px;
-      }
     }
   }
 
@@ -76,10 +71,6 @@ const customStyle = css`
     }
     .ag-title {
       color: var(--black);
-      h3 {
-        font-size: 24px;
-        font-weight: 600;
-      }
       :hover {
         color: var(--brand);
       }
@@ -92,11 +83,24 @@ const customStyle = css`
     }
   }
 
-  .contact_hero {
-    height: calc(100vh - 80px);
+  .ag-grid-heading {
+    display: flex;
+    align-items: center;
 
-    @media (max-width: 600px) {
-      height: auto;
+    h2 {
+      margin-right: 1rem;
+    }
+
+    a {
+      font-size: 18px;
+    }
+  }
+
+  .contact_hero {
+    height: auto;
+
+    @media (min-width: 600px) {
+      height: calc(100vh - 71px);
     }
 
     .wp-block-cover__inner-container {
@@ -146,7 +150,7 @@ const customStyle = css`
         
         input {
           border: none;
-          background-color: #001220;
+          background-color: #011727;
           padding: 12px 6px;
           color: white;
           font-size: 18px;

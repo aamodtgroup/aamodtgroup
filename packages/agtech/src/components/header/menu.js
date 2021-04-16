@@ -10,15 +10,12 @@ function MobileMenu({ state, actions }) {
       <MenuToggle onClick={actions.theme.toggleMobileMenu}>
         {isMobileMenuOpen ? (
           <>
-            {/* Add some style to the body when menu is open,
-            to prevent body scroll */}
             <CloseIcon color={mode === 'light' ? "white": "white"} size="25px" />
           </>
         ) : (
           <HamburgerIcon color={mode === 'light' ? "black": "white"} size="25px" />
         )}
       </MenuToggle>
-      {/* If the menu is open, render the menu modal */}
       {isMobileMenuOpen && <MenuModal />}
     </>
   );
@@ -39,16 +36,8 @@ const MenuToggle = styled.button`
   &:focus {
     outline:0;
   }
-  .opensvg, .closesvg {
-    transition: all .3s ease;
-  }
-  &:hover {
-    .opensvg {
-      color:var(--menutogglehover);
-    }
-    .closesvg {
-      color:var(--menutogglehoverclose);
-    }
+  @media (min-width: 800px) {
+    display: none;
   }
 `;
 

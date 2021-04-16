@@ -1,6 +1,7 @@
 import React from "react";
 import { connect, styled } from "frontity";
 import Link from "../link";
+import postimage from "../../images/agtechcard.png";
 /**
  * Item Component
  *
@@ -10,15 +11,18 @@ import Link from "../link";
  * - FeaturedMedia: the featured image/video of the post
  */
 const Item = ({ state, item }) => {
-  const data = state.source.get(state.router.link);
+  if(item.featured_media) {
+    var featuredImage = state.source.attachment[item.featured_media].source_url;
+  } else {
+    var featuredImage = postimage;
+  }
+
   return (
     <>
       <Article>
         <Link link={item.link}>
           <div className="image">
-            <img
-              src={state.source.attachment[item.featured_media].source_url}
-            />
+            <img src={featuredImage}/>
           </div>
           <Title dangerouslySetInnerHTML={{ __html: item.title.rendered }} />
         </Link>

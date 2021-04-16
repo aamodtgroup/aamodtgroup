@@ -39,17 +39,6 @@ const Content = styled.div`
     max-width: 1200px;
     margin: 0px auto;
   }
-  @media (max-width: 600px) {
-    h1 {
-      font-size: 26px;
-    }
-    h2 {
-      font-size: 24px;
-    }
-    h3 {
-      font-size: 20px;
-    }
-  }
   @media (max-width: 1230px) {
     .wp-block-group__inner-container {
       max-width: 1230px;

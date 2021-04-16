@@ -1,36 +1,55 @@
 import React from "react";
 import { connect, styled } from "frontity";
-import Switch from "@frontity/components/switch";
-import sun from "../images/sun.svg";
-import moon from "../images/moon.svg";
-
+import { DarkModeIcon, TextSizeIcon } from "./header/menu-icon";
 
 const Toggle = ({ actions, state }) => {
-    const { setLightMode, setDarkMode } = actions.theme;
-    const { mode } = state.theme;
+    const { setLightMode, setDarkMode, setNormalText, setLargeText } = actions.theme;
+    const { isMobileMenuOpen, mode, text } = state.theme;
     return (
-        <Box onClick={ mode === "light" ? setDarkMode  : setLightMode }>
-            <Switch>
-                <img className="toggleicon" src={sun} height="25px" width="25px" alt="Light mode toggle" when={mode === "dark"}/>
-                <img className="toggleicon" src={moon} height="25px" width="25px" alt="Dark mode toggle"/>
-            </Switch>
-        </Box>
+        <ToggleContainer>
+            <Box onClick={ text === "normal" ? setLargeText  : setNormalText } className="box2">
+                {isMobileMenuOpen ? (
+                    <TextSizeIcon color="#fff" size="25px" />
+                ) : (
+                    <TextSizeIcon color="var(--text)" size="25px" />
+                )}
+            </Box>
+            <Box onClick={ mode === "light" ? setDarkMode  : setLightMode } className="box1">
+                {isMobileMenuOpen ? (
+                    <DarkModeIcon color="#fff" size="25px" />
+                ) : (
+                    <DarkModeIcon color="var(--text)" size="25px" />
+                )}
+            </Box>
+        </ToggleContainer>
     )
 }
 
 export default connect(Toggle);
 
+const ToggleContainer = styled.div`
+    display: flex;
+    height: auto;
+    width: auto;
+    z-index: 5;
+`;
+
+
 const Box = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 1rem;
-    cursor: pointer;
+    background: transparent;
+    border: 0;
+    padding: 0;
     z-index: 5;
-
-    img {
-        height: 25px;
-        width: 25px;
+    height: 40px;
+    width: 40px;
+    outline:0;
+    cursor: pointer;
+    transition: all .3s ease;
+    &:focus {
+        outline:0;
     }
 `;
 

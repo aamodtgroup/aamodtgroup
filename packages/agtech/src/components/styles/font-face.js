@@ -8,6 +8,7 @@ import Poppins400 from "../../fonts/poppins400.woff2";
 import Poppins500 from "../../fonts/poppins500.woff2";
 import Poppins600 from "../../fonts/poppins600.woff2";
 import Poppins700 from "../../fonts/poppins700.woff2";
+import ApercuMonoPro from "../../fonts/apercuMonoProBold.woff2";
 
 const FontFace = () => {
     return (
@@ -60,6 +61,13 @@ const FontFace = () => {
                     font-family: "Roboto";
                     src: url(${Roboto700});
                     font-weight: 700;
+                    font-display: swap;
+                    font-style: normal;
+                }
+                @font-face {
+                    font-family: "Apercu Mono Pro";
+                    src: url(${ApercuMonoPro});
+                    font-weight: bold;
                     font-display: swap;
                     font-style: normal;
                 }

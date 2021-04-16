@@ -8,6 +8,7 @@ import linkedin from "../../images/linkedin.png";
 import email from "../../images/email.png";
 import instagram from "../../images/instagram.png";
 import github from "../../images/github.png";
+import Logo from "./menu-logo";
 import Toggle from "../toggle";
 
 const MenuModal = ({ state }) => {
@@ -18,9 +19,7 @@ const MenuModal = ({ state }) => {
     <>
       <BigMenu>
         <div className="menu-header">
-          <Link link="/" alt="Forside link">
-            <img src={mode === 'light' ? logo : darklogo} alt="logo" width="150px" height="50px" />
-          </Link>
+          <Logo />
         </div>
         <BigMenuInner>
           <MenuContent as="nav">
@@ -92,10 +91,11 @@ const BigMenu = styled.div`
   .menu-header {
     width: 100%;
     max-width: 100%;
-    height: 81px;
+    height: 71px;
     display: flex;
     padding: 15px 50px;
     justify-content: space-between;
+    align-items: center;
 
     img {
       width: 150px;
@@ -110,7 +110,7 @@ const BigMenu = styled.div`
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    height: 81px;
+    height: 71px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -156,7 +156,7 @@ const BigMenuInner = styled.div`
   z-index: 1;
   width: 100%;
   max-width: 1200px;
-  height: calc(100% - 81px - 81px);
+  height: calc(100% - 71px - 71px);
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -170,9 +170,9 @@ const BigMenuInner = styled.div`
       height: 32px;
       width: 32px;
       margin: 5px 0;
+      transition: 500ms;
 
       :hover {
-        transition: .5s;
         transform: rotate(360deg);
       }
     }

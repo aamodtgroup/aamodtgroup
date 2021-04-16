@@ -75,14 +75,7 @@ const Header = styled.div`
     margin: 0 auto;
   }
 
-  h1 {
-    font-size: 64px;
-  }
-
   @media (max-width: 1000px) {
-    h1 {
-      font-size: 40px;
-    }
     .blog-header-inner {
       padding: 0 15px;
     }
@@ -101,6 +94,7 @@ const BlogHero = styled.div`
     margin: 0 auto;
     overflow: hidden;
     border-radius: 12px;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 16%);
 
     img {
       width: 100%;

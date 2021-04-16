@@ -5,19 +5,18 @@ import MobileMenu from "./menu";
 import logo from "../../images/logo.svg";
 import darkLogo from "../../images/darklogo.svg";
 import Toggle from "../toggle";
+import Logo from "./logo";
+import Nav from "./nav";
 
-const TopNavbar = ({ state }) => {
+const Header = ({ state }) => {
   const { mode } = state.theme;
 
   return (
     <>
       <TopNavContainer>
-          <Logo>
-            <Link link="/" alt="Forside link">
-              <img src={mode === 'light' ? logo : darkLogo} alt="logo" width="150px" height="50px" />
-            </Link>
-          </Logo>
+          <Logo />
           <div className="buttons">
+            <Nav />
             <Toggle />
             <MobileMenu />
           </div>
@@ -26,7 +25,7 @@ const TopNavbar = ({ state }) => {
   );
 };
 
-export default connect(TopNavbar);
+export default connect(Header);
 
 const TopNavContainer = styled.nav`
   position: fixed;
@@ -47,12 +46,5 @@ const TopNavContainer = styled.nav`
   }
   @media (max-width: 1230px) {
     padding: 15px;
-  }
-`;
-
-const Logo = styled.div`
-  img {
-    width: 150px;
-    height: 50px;
   }
 `;

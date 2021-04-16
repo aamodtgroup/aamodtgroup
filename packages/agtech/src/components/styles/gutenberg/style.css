@@ -30,7 +30,6 @@ a:hover {
   overflow-wrap: break-word;
   padding: 6px 18px;
   background-color: var(--button);
-  font-size: 18px;
   letter-spacing: 0.02em; }
   .wp-block-button__link:hover, .wp-block-button__link:focus, .wp-block-button__link:active, .wp-block-button__link:visited {
     background-color: #042a4e; }

@@ -3,7 +3,6 @@ import { connect, styled } from "frontity";
 import Link from "../link";
 import logo from "../../images/logo.svg";
 import darkLogo from "../../images/darklogo.svg"
-// import Script from "@frontity/components/script";
 
 const Footer = ({ state }) => {
   const { mode } = state.theme;
@@ -17,26 +16,18 @@ const Footer = ({ state }) => {
             <Link link="/" alt="Forside link">
               <img src={mode === 'light' ? logo : darkLogo} alt="logo" width="150px" height="50px" />
             </Link>
-            {/* <div id="wcb" className="carbonbadge"></div>
-            <Script
-              src="https://unpkg.com/website-carbon-badges@1.1.1/b.min.js"
-              defer
-            ></Script> */}
           </div>
-          {/* <div className="footer-widget">
-            <h2 className="widget-title">Tjenester</h2>
-            <ul className="widget-list">
-              <li><Link className="widget-list-link" link="/">Link 1</Link></li>
-              <li><Link className="widget-list-link" link="/">Link 2</Link></li>
-              <li><Link className="widget-list-link" link="/">Link 3</Link></li>
-            </ul>
-          </div> */}
           <div className="footer-widget">
             <h2 className="widget-title">Sitemap</h2>
             <ul className="widget-list">
               <li>
                 <Link className="widget-list-link" link="/">
                   Hjem
+                </Link>
+              </li>
+              <li>
+                <Link className="widget-list-link" link="/prosjekter/">
+                  Prosjekter
                 </Link>
               </li>
               <li>
@@ -150,20 +141,6 @@ const Container = styled.footer`
   padding: 0;
   margin-top: 2rem;
   margin-bottom: 2rem;
-  // #wcb {
-  //   --b1: #0077b5;
-  //   --b2: #000;
-  //   text-align: left;
-  //   margin-top: 1rem;
-  // }
-  // #wcb_a {
-  //   background: var(--darkbackground);
-  //   color: var(--darktext);
-  // }
-  // #wcb_g {
-  //   background: var(--background);
-  //   border: .13em solid var(--b1);
-  // }
   .footer-grid {
     padding-top: 50px;
     padding-bottom: 50px;
@@ -180,11 +157,11 @@ const Container = styled.footer`
     .widget-title {
       color: var(--title);
       margin-bottom: 0.5rem;
-      font-size: 18px;
+      font-size: var(--h6size);
       font-weight: 600;
     }
     p {
-      font-size: 16px;
+      font-size: var(--footerp);
     }
     .widget-list {
       list-style: none;
@@ -196,7 +173,7 @@ const Container = styled.footer`
           text-decoration: none;
           transition: all 0.3s ease;
           color: var(--text);
-          font-size: 16px;
+          font-size: var(--footerp);
           &:hover {
             color: #0077b5;
           }
@@ -221,12 +198,13 @@ const Container = styled.footer`
     text-align: right;
   }
   .copyright {
-    font-size: 14px;
+    font-size: var(--footerp);
     margin: 1rem 0;
     color: var(--text);
   }
   .copyright a {
     color: var(--text);
+    font-size: var(--footerp);
   }
   @media screen and (max-width: 800px) {
     padding: 20px 15px;

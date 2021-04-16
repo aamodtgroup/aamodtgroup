@@ -9,30 +9,34 @@ const settings = {
   },
   packages: [
     {
-      name: "@aamodtgroup/agtech",
+      "name": "@aamodtgroup/agtech",
     },
     {
-      name: "@frontity/wp-source",
-      state: {
-        source: {
-          url: "https://backend.aamodtgroup.com",
-          homepage: "/hjem",
-          postTypes: [
+      "name": "@frontity/wp-source",
+      "state": {
+        "source": {
+          "url": "https://backend.aamodtgroup.com",
+          "homepage": "hjem",
+          "postTypes": [
             {
-              type: "blogg",
-              endpoint: "blogg",
+              "type": "blogg",
+              "endpoint": "blogg"
             },
+            {
+              "type": "prosjekter",
+              "endpoint": "prosjekter"
+            }
           ],
         }
       }
     },
     {
-      name: "@frontity/google-tag-manager-analytics",
-      state: {
-        googleTagManagerAnalytics: {
-          containerId: "GTM-KLB4V9S",
+      "name": "@frontity/google-tag-manager-analytics",
+      "state": {
+        "googleTagManagerAnalytics": {
+          "containerId": "GTM-KLB4V9S",
         }
-      },
+      }
     },
     "@frontity/tiny-router",
     "@frontity/html2react",

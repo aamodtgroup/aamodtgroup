@@ -1,6 +1,6 @@
 import React from "react";
 import { connect, Global, css, styled, Head } from "frontity";
-import CookieConsent from "react-cookie-consent";
+//import CookieConsent from "react-cookie-consent";
 import favicon from "../images/favicon.png";
 import Switch from "@frontity/components/switch";
 import Footer from "./footer/footer";
@@ -10,12 +10,13 @@ import Page from "./pages/page";
 import HomePage from "./pages/homepage";
 import Loading from "./pages/loading";
 import PageError from "./pages/page-error";
-import FontFace from "./styles/font-face"
+import FontFace from "./styles/font-face";
+import DarkMode from "./styles/dakmode";
 import gutenbergStyle from "./styles/gutenberg/style.min.css";
 import gutenbergTheme from "./styles/gutenberg/theme.min.css";
 import BootstrapCss from "./styles/bootstrap.css";
 import customStyle from "./styles/style";
-import TopNavbar from "./header/topnavbar";
+import Header from "./header/header";
 
 /**
  * Theme is the root React component of our theme. The one we will export
@@ -24,7 +25,6 @@ import TopNavbar from "./header/topnavbar";
 const Theme = ({ state }) => {
   // Get information about the current URL.
   const data = state.source.get(state.router.link);
-  const { mode } = state.theme;
 
   return (
     <>
@@ -35,30 +35,12 @@ const Theme = ({ state }) => {
       <Global styles={css(gutenbergTheme)} />
       <Global styles={customStyle} />
       <Global styles={globalStyles} />
-      <Global styles={ css`
-        :root {
-          --text: ${mode === 'light' ? '#212121': '#fff'};
-          --darktext: ${mode === 'light' ? '#fff': '#fff'};
-          --background: ${mode === 'light' ? '#fff': '#121212'};
-          --menubackground: ${mode === 'light' ? '#0077b5': '#121212'};
-          --postbackground: ${mode === 'light' ? '#F2F3FC': '#1E1E1E'};
-          --darkbackground: ${mode === 'light' ? '#042a4e': '#1E1E1E'};
-          --border: ${mode === 'light' ? '#e0e0e0': '#333'};
-          --title: ${mode === 'light' ? '#0077b5': '#80bbda'};
-          --link: ${mode === 'light' ? '#0077b5': '#80bbda'};
-          --button: ${mode === 'light' ? '#0077b5': '#1E1E1E'};
-          --menutogglehover: ${mode === 'light' ? '#0077b5': '#80bbda'};
-          --menutogglehoverclose: ${mode === 'light' ? '#000': '#80bbda'};
-          --cookiebar: ${mode === 'light' ? '#fff': '#0077b5'};
-          --cookiebarbutton: ${mode === 'light' ? '#0077b5': '#fff'};
-          --cookiebartext: ${mode === 'light' ? '#fff': '#0077b5'};
-          --code: ${mode === 'light' ? '#121212': '#343434'};
-          --transition: 500ms;
-        }` }
-      />
 
       {/* Loads fonts. */}
       <FontFace />
+
+      {/* Loads darkmode. */}
+      <DarkMode />
       
       {/* Add some metatags to the <head> of the HTML. */}
       <Head>
@@ -70,7 +52,7 @@ const Theme = ({ state }) => {
 
       {/* Add the header of the site. */}
       <HeadContainer>
-        <TopNavbar />
+        <Header />
       </HeadContainer>
 
       {/* Add the main section. It renders a different component depending
@@ -81,6 +63,7 @@ const Theme = ({ state }) => {
           <List when={data.isArchive} />
           <HomePage when={data.isHome} />
           <Page when={data.isPage} />
+          <Page when={data.isProsjekter} />
           <Post when={data.isPostType} />
           <PageError when={data.isError} />
         </Switch>
@@ -90,7 +73,7 @@ const Theme = ({ state }) => {
       <FooterContainer>
         <Footer />
       </FooterContainer>
-      <CookieConsent
+      {/* <CookieConsent
         location="bottom"
         buttonText="Godta"
         enableDeclineButton
@@ -102,7 +85,7 @@ const Theme = ({ state }) => {
         expires={365}
       >
         Dette nettstedet bruker informasjonskapsler for å forbedre brukeropplevelsen.{" "}
-      </CookieConsent>
+      </CookieConsent> */}
     </>
   );
 };
@@ -113,6 +96,11 @@ const globalStyles = css`
   * {
     transition: color var(--transition);
     transition: background-color var(--transition);
+    font-size: 18px;
+
+    @media (max-width: 600px) {
+      font-size: 15px;
+    }
   }
   ::-webkit-scrollbar {
     display: none;
@@ -133,13 +121,15 @@ const globalStyles = css`
   }
   p {
     font-family: "Roboto", sans-serif;
-    font-size: 20px;
+    font-size: var(--textsize);
     color: var(--text);
     line-height: 1.7;
+    transition: font-size var(--transition) !important;
   }
   ul {
     font-size: 20px;
-    color: var(--text);
+    font-size: var(--textsize);
+    transition: font-size var(--transition) !important;
   }
   li {
     margin: 1rem auto !important;
@@ -153,9 +143,34 @@ const globalStyles = css`
     font-family: "Poppins", sans-serif;
     font-weight: 600;
     color: var(--text);
+    transition: font-size var(--transition) !important;
+  }
+  h1 {
+    font-size: var(--h1size);
+  }
+  h2 {
+    font-size: var(--h2size);
+  }
+  h3 {
+    font-size: var(--h3size);
+  }
+  h4 {
+    font-size: var(--h4size);
+  }
+  h5 {
+    font-size: var(--h5size);
+  }
+  h6 {
+    font-size: var(--h6size);
   }
   a {
     color: var(--link);
+    font-size: var(--asize);
+    transition: font-size var(--transition) !important;
+
+    :hover {
+      text-decoration: none;
+    }
   }
   #root {
     display: flex;
@@ -183,6 +198,7 @@ const globalStyles = css`
       width: 100%;
       border-radius: 8px;
       margin-bottom: 1rem;
+      box-shadow: 0 2px 4px rgb(0 0 0 / 16%);
     }
     .ag-image img {
       transition: transform 0.5s ease;
@@ -207,13 +223,12 @@ const globalStyles = css`
 `;
 
 const HeadContainer = styled.div`
-  height: 81px;
+  height: 71px;
 `;
 
 const FooterContainer = styled.div`
   display: flex;
   width: 100%;
-  // margin-top: auto;
 `;
 
 const Main = styled.div`

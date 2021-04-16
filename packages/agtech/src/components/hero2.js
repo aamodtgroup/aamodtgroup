@@ -6,20 +6,7 @@ const Hero = () => {
   return (
     <>
       <HeroContainer>
-        <div className="hero-inner">
-          <div>
-            <h1>Aamodt Group - Konsulenter innen utvikling og drift</h1>
-            <p>Vi hjelper deg med alle dine behov innen utvikling og drift.</p>
-            <div className="buttons">
-              <Link link="/blogg/">
-                <button className="wp-block-button__link">Blogg</button>
-              </Link>
-              <Link link="/kontakt-oss/">
-                <button className="wp-block-button__link">Kontakt oss</button>
-              </Link>
-            </div>
-          </div>
-        </div>
+
       </HeroContainer>
     </>
   );
@@ -35,14 +22,6 @@ const HeroContainer = styled.div`
   justify-content: center;
   width: 100%;
   max-width: 100vw;
-  background: -webkit-linear-gradient(
-      -90deg,
-      rgba(0, 0, 0, 0),
-      rgba(0, 0, 0, 1)
-    ),
-    url(https://backend.aamodtgroup.com/wp-content/uploads/2021/03/AdobeStock_314816591-scaled.jpeg);
-  background-size: cover;
-  background-position: 50% 50%;
   margin: 0 auto;
   color: white;
   h1 {
