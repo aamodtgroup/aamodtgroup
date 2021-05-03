@@ -1,7 +1,8 @@
 import React from "react";
 import { styled, connect } from "frontity";
 import Link from "../link";
-import Error404 from "../../images/404.svg";
+import Lottie from "react-lottie-player";
+import animationData from "../../lottie/404.json";
 
 const description404 = (
   <>
@@ -30,7 +31,7 @@ const Page404 = ({ state }) => {
 
   return (
     <Container>
-      {data.is404 ? <Img src={Error404} alt="404"></Img> : <Title>title</Title>}
+      {data.is404 ? <Lottie loop animationData={animationData} play style={{ width: 500, height: 500 }}/> : <Title>title</Title>}
       <Description>{data.is404 ? description404 : description}</Description>
     </Container>
   );
@@ -39,7 +40,10 @@ const Page404 = ({ state }) => {
 export default connect(Page404);
 
 const Container = styled.div`
-  width: 800px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 500px;
   margin: 0;
   padding: 24px;
   text-align: center;
@@ -57,11 +61,4 @@ const Description = styled.div`
   line-height: 1.6em;
   color: var(--text);
   margin: 24px 0;
-`;
-
-const Img = styled.img`
-  height: 303px;
-  width: 350px;
-  max-width: 100%;
-  margin-bottom: 24px;
 `;
