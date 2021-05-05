@@ -4,9 +4,7 @@ import TopBar from "../components/window-top-bar.js";
 
 export const webBrowser  = {
   name: "web-browser",
-  test: ({ node }) =>
-    node.type === "element" &&
-    node.props?.className?.split(" ").includes("has-browser-window"),
+  test: ({ node }) => node.type === "element" && node.props?.className?.split(" ").includes("has-browser-window"),
 
   processor: ({ node }) => {
     const topFrame = {

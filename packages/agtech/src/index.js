@@ -20,7 +20,7 @@ const agtech = {
      * relevant state. It is scoped to the `theme` namespace.
      */
     theme: {
-      autoPrefetch: "hover",
+      autoPrefetch: "in-view",
       menu: [],
       menuUrl: "menu",
       mode: "light",
