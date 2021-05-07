@@ -1,19 +1,15 @@
 import React from "react";
 import { styled, connect } from "frontity";
 import Link from "../link";
-import logo from "../../images/logo_white.svg";
-import darklogo from "../../images/darklogo.svg";
 import facebook from "../../images/facebook.png";
 import linkedin from "../../images/linkedin.png";
 import email from "../../images/email.png";
 import instagram from "../../images/instagram.png";
 import github from "../../images/github.png";
 import Logo from "./menu-logo";
-import Toggle from "../toggle";
 
 const MenuModal = ({ state }) => {
   const items = state.source.get(`/menu/${state.theme.menuUrl}/`).items;
-  const { mode } = state.theme;
 
   return (
     <>

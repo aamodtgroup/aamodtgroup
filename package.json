@@ -21,10 +21,10 @@
     "@aamodtgroup/frontity-contact-form-7": "^0.1.11",
     "@frontity/core": "^1.13.0",
     "@frontity/google-tag-manager-analytics": "^1.2.1",
-    "@frontity/head-tags": "^1.1.1",
     "@frontity/html2react": "^1.6.2",
     "@frontity/tiny-router": "^1.4.2",
     "@frontity/wp-source": "^1.11.4",
+    "@frontity/yoast": "^2.1.1",
     "dayjs": "^1.10.4",
     "frontity": "^1.15.0",
     "react-lottie-player": "^1.3.1"
