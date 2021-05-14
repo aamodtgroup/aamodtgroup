@@ -1,17 +1,34 @@
 import { css } from "frontity";
 
 const customStyle = css`
-  .wp-block-group {
-    margin-top: 80px;
-    margin-bottom: 80px;
+  .wp-block-section {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
   }
+
+  .wp-block-section__inner-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0;
+
+    @media (max-width: 1030px) {
+      max-width: 1030px;
+      padding-right: 15px;
+      padding-left: 15px;
+      width: auto;
+    }
+  }
+
+  .wp-block-columns {
+    margin-bottom: 0;
+}
 
   .media-text {
     background-color: var(--darkbackground);
     border-radius: 15px;
     padding: 55px;
     h2 {
-      font-weight: 600;
       letter-spacing: 0.02em;
       margin-bottom: 1rem;
       color: var(--darktext);
@@ -50,7 +67,7 @@ const customStyle = css`
         margin-left: 0px;
       }
       .wp-block-group {
-        margin: 20px 0;
+        margin: 20px;
       }
       .wp-block-image {
         border-radius: 0;
@@ -69,10 +86,31 @@ const customStyle = css`
     .hentry {
       margin: 0px;
     }
-    .ag-title {
-      color: var(--black);
+    .ag-title h2 {
+      font-weight: 400;
+      font-size: 1.75rem;
       :hover {
         color: var(--brand);
+      }
+    }
+    .ag-card {
+      .ag-image {
+        overflow: hidden;
+        height: 300px;
+        width: 100%;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        box-shadow: 0 2px 4px rgb(0 0 0 / 16%);
+      }
+      .ag-image img {
+        transition: transform 0.5s ease;
+        object-fit: cover;
+        height: 300px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+      :hover img {
+        transform: scale(1.05);
       }
     }
     @media (max-width: 1000px) {
@@ -96,69 +134,104 @@ const customStyle = css`
     }
   }
 
-  .contact_hero {
-    height: auto;
+  input, textarea {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: transparent;
+    font-size: .875rem;
+    display: block;
+    min-height: 44px;
+    padding: .6875rem 1.6875rem .75rem;
+    margin-bottom: 1rem;
+  }
 
-    @media (min-width: 600px) {
-      height: calc(100vh - 71px);
+  * {
+    transition: color var(--transition);
+    transition: background-color var(--transition);
+    font-size: 18px;
+
+    @media (max-width: 600px) {
+      font-size: 15px;
     }
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  html {
+    box-sizing: border-box;
+  }
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";;
+    background-color: var(--background);
+    color: var(--text);
+  }
+  p {
+    font-size: 1rem;
+    color: var(--text);
+    line-height: 1.6;
+    transition: font-size var(--transition) !important;
+  }
+  ul {
+    font-size: 20px;
+    font-size: var(--textsize);
+    transition: font-size var(--transition) !important;
+  }
+  li {
+    margin: 1rem auto !important;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Recoleta", sans-serif;
+    color: var(--text);
+    transition: font-size var(--transition) !important;
+  }
+  h1 {
+    font-size: 3rem;
+    font-weight: 500;
+  }
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 500;
+  }
+  h3 {
+    font-size: 2rem;
+    font-weight: 500;
+  }
+  h4 {
+    font-size: 1.66rem;
+    font-weight: 400;
+  }
+  h5 {
+    font-size: 1.33rem;
+    font-weight: 400;
+  }
+  h6 {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+  a {
+    font-size: 1rem;
+    color: var(--link);
+    transition: font-size var(--transition) !important;
 
-    .wp-block-cover__inner-container {
-      width: 100%;
+    :hover {
+      text-decoration: none;
     }
-
-    .wp-block-group__inner-container {
-      padding-left: 0 !important;
-      padding-right: 0 !important;
-    }
-
-    .wp-block-contact-form-7-contact-form-selector {
-      width: 100%;
-      max-width: 500px;
-      background-color: rgba(255, 255, 255, .6);
-      border-radius: 12px;
-      padding: 2rem 1rem;
-
-      :focus {
-        outline: none;
-      }
-
-      label {
-        color: black;
-        // text-transform: uppercase;
-      }
-
-      input {
-        background-color: transparent;
-        border: none;
-        border-bottom: 2px solid black;
-        width: 80%;
-      }
-
-      textarea {
-        background-color: rgba(255, 255, 255, .5);
-        border-radius: 12px;
-        border: none;
-        width: 100% !important;
-        padding: 0.5rem 1rem;
-      }
-
-      .submit_button {
-        width: 75%;
-        text-align: right;
-        margin-left: auto;
-        
-        input {
-          border: none;
-          background-color: #011727;
-          padding: 12px 6px;
-          color: white;
-          font-size: 18px;
-          margin-right: -1rem;
-          border-radius: 12px 0px 0px 12px;
-        }
-      }
-    }
+  }
+  #root {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
   }
 `;
 export default customStyle;

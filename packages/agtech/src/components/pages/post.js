@@ -30,24 +30,17 @@ const Post = ({ state, actions, libraries }) => {
   return data.isReady ? (
     <ArticleContainer>
       <Header>
-        <div className="blog-header-inner">
-          <h1>{post.title.rendered}</h1>
+        <div className="title-excerpt">
           <div>
-            <DateWrapper>
-              {" "}
-              <b>{date}</b>
-            </DateWrapper>
+            <p className="date"><span>{date}</span> - <span className="capitalize">{post.type}</span></p>
+            <h1>{post.title.rendered}</h1>
+            <div className="excerpt"><Html2React html={post.excerpt.rendered} /></div>
           </div>
         </div>
+        <div className="image">
+          <img src={state.source.attachment[post.featured_media].source_url} />
+        </div>
       </Header>
-
-      {post.hero_image && (
-        <BlogHero>
-          <div className="blog-hero-inner">
-            <img src={post.hero_image} />
-          </div>
-        </BlogHero>
-      )}
 
       <Content>
         <Html2React html={post.content.rendered} />
@@ -66,84 +59,78 @@ const ArticleContainer = styled.div`
 `;
 
 const Header = styled.div`
+  width: 100%;
+  max-width: 1000px;
   padding: 2rem 0;
-  text-align: center;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
 
-  .blog-header-inner {
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
-  }
-
-  @media (max-width: 1000px) {
-    .blog-header-inner {
-      padding: 0 15px;
+  .excerpt {
+    p {
+      font-family: Baskervville, sans-serif; 
     }
   }
-`;
 
-const BlogHero = styled.div`
-  padding: 2rem 0;
-  text-align: center;
-  background: linear-gradient(0deg, var(--postbackground) 50%, var(--background) 50%);
-  transition: background 1s;
+  .title-excerpt {
+    display: flex;
+    align-items: center;
+  }
 
-  .blog-hero-inner {
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
+  .image {
+    height: 350px;
+    width: 350px;
+    border-radius: 15px;
     overflow: hidden;
-    border-radius: 12px;
-    box-shadow: 0 2px 4px rgb(0 0 0 / 16%);
-
+    margin: 0 auto;
+  
     img {
-      width: 100%;
-      height: 450px;
+      width: 350px;
+      height: 350px;
       object-fit: cover;
-      transition: height 1s ease;
+      transition: all 1s ease;
     }
   }
+
+  .date span {
+    font-size: .8rem;
+    border-bottom: 2px solid var(--brand);
+  }
+
+  .capitalize {
+    text-transform: capitalize;
+  }
+
   @media (max-width: 1000px) {
-    .blog-hero-inner {
-      border-radius: 0;
+    padding: 2rem 1rem;
+    .image {
+      width: 300px;
+      height: 300px;
 
       img {
-        height: 325px;
-        border-radius: 12px;
+        width: 300px;
+        height: 300px;
       }
     }
   }
-  @media (max-width: 600px) {
-    .blog-hero-inner {
+
+  @media (max-width: 650px) {
+    grid-template-columns: repeat(1,1fr);
+    .image {
+      margin: 0;
+      margin-top: 2rem;
+      width: 300px;
+      height: 300px;
+
       img {
-        height: 200px;
+        width: 300px;
+        height: 300px;
       }
     }
   }
-  @media (max-width: 1230px) {
-    padding-right: 15px;
-    padding-left: 15px;
-  }
-`;
-
-const StyledLink = styled(Link)`
-  padding: 15px 0;
-`;
-
-const Author = styled.p`
-  color: rgba(12, 17, 43, 0.9);
-  font-size: 1em;
-  display: inline;
-  text-transform: capitalize;
-`;
-
-const DateWrapper = styled.p`
-  font-size: 1em;
-  display: inline;
 `;
 
 const Content = styled.div`
-  background: var(--postbackground);
   word-break: break-word;
   padding: 2rem 0;
   * {
@@ -153,6 +140,9 @@ const Content = styled.div`
   }
   p:first-of-type {
     margin-top: 0;
+  }
+  p, h1, h2, h3, h4, h5, h6 {
+    font-family: Baskervville, sans-serif; 
   }
 
   img {

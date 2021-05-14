@@ -1,5 +1,8 @@
 import { connect, css, Global } from "frontity";
 import React from "react";
+import arrow from "../../images/arrow_right.svg";
+import arrowWhite from "../../images/arrow_right_white.svg";
+
 
 const DarkMode = ({ state }) => {
     const { mode, text } = state.theme;
@@ -40,6 +43,18 @@ const DarkMode = ({ state }) => {
                     --h6size: ${text === 'normal' ? '1.25rem' : '1.75rem'};
                     --footerp: ${text === 'normal' ? '16px' : '20px'};
                     --navlinks: ${text === 'normal' ? '18px' : '24px'};
+                }
+
+                html {
+                    font-size: ${text === 'normal' ? '18px' : '22px'};
+
+                    @media (max-width: 600px) {
+                        font-size: ${text === 'normal' ? '15px' : '18px'};
+                    }
+                }
+
+                .buttons .wp-block-button__link.underline:after {
+                    background-image: url(${mode === 'light' ? arrow : arrowWhite});
                 }
             `}
             />

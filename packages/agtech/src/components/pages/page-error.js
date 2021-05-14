@@ -2,7 +2,7 @@ import React from "react";
 import { styled, connect } from "frontity";
 import Link from "../link";
 import Lottie from "react-lottie-player";
-import animationData from "../../lottie/404.json";
+import animationData from "../../lottie/space404.json";
 
 const description404 = (
   <>
@@ -31,7 +31,7 @@ const Page404 = ({ state }) => {
 
   return (
     <Container>
-      {data.is404 ? <Lottie loop animationData={animationData} play style={{ width: 500, height: 500 }}/> : <Title>title</Title>}
+      {data.is404 ? <div className="lottie-div"><Lottie loop animationData={animationData} play style={{ width: 500, height: 500 }}/></div> : <Title>title</Title>}
       <Description>{data.is404 ? description404 : description}</Description>
     </Container>
   );
@@ -47,6 +47,11 @@ const Container = styled.div`
   margin: 0;
   padding: 24px;
   text-align: center;
+
+  .lottie-div {
+    background-color: white;
+    border-radius: 100%;
+  }
 `;
 
 const Title = styled.h1`

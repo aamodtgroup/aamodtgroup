@@ -21,7 +21,6 @@ const agtech = {
      */
     theme: {
       autoPrefetch: "in-view",
-      menu: [],
       menuUrl: "menu",
       mode: "light",
       text: "normal",

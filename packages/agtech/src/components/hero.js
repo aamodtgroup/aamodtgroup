@@ -1,23 +1,24 @@
 import React from "react";
 import { connect, styled } from "frontity";
 import Link from "./link";
+import arrow from "../images/arrow_right.svg";
+import arrowWhite from "../images/arrow_right_white.svg";
+
 
 const Hero = () => {
   return (
     <>
-      <HeroContainer>
-        <div className="hero-inner">
-          <div>
-            <h1>Aamodt Group - Konsulenter innen utvikling og drift</h1>
-            <p>Vi hjelper deg med alle dine behov innen utvikling og drift.</p>
-            <div className="buttons">
-              <Link link="/blogg/">
-                <button className="wp-block-button__link">Blogg</button>
-              </Link>
-              <Link link="/kontakt-oss/">
-                <button className="wp-block-button__link">Kontakt oss</button>
-              </Link>
-            </div>
+      <HeroContainer className="wp-block-section">
+        <div className="wp-block-section__inner-container">
+          <h1>Aamodt Group - Konsulenter innen utvikling og drift</h1>
+          <p>Vi hjelper deg med alle dine behov innen utvikling og drift.</p>
+          <div className="buttons">
+            <Link link="/blogg/">
+              <button className="wp-block-button__link underline">Blogg</button>
+            </Link>
+            <Link link="/kontakt-oss/">
+              <button className="wp-block-button__link underline">Kontakt oss</button>
+            </Link>
           </div>
         </div>
       </HeroContainer>
@@ -28,72 +29,49 @@ const Hero = () => {
 export default connect(Hero);
 
 const HeroContainer = styled.div`
-  display: flex;
-  height: calc(100vh - 71px);
-  min-height: calc(100vh - 71px);
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  max-width: 100vw;
-  background: -webkit-linear-gradient(
-      -90deg,
-      rgba(0, 0, 0, 0),
-      rgba(0, 0, 0, 1)
-    ),
-    url(https://backend.aamodtgroup.com/wp-content/uploads/2021/03/AdobeStock_314816591-scaled.jpeg);
-  background-size: cover;
-  background-position: 50% 50%;
-  margin: 0 auto;
-  color: white;
+
   h1 {
+    font-family: recoleta;
+    font-weight: 500;
     margin-bottom: 1rem;
-    font-size: var(--h1sizehero);
-    font-weight: 600;
-    width: 100%;
-    max-width: 620px;
-    color: #fff;
   }
+
   p {
     margin-bottom: 2rem;
-    width: 100%;
-    max-width: 620px;
-    color: var(--blue-text);
-  }
-  .hero-inner {
-    display: flex;
-    align-items: flex-end;
-    width: 1200px;
-    height: 80%;
   }
 
   .buttons .wp-block-button__link {
     margin-bottom: 1rem;
-    margin-right: 1rem;
-  }
+    margin-right: 2rem;
+    position: relative;
 
-  @media (min-width: 1230px) {
-    justify-content: center;
-  }
+    &.underline {
+      background: transparent;
+      color: var(--text);
+      border-radius: 0px;
+      border-bottom: 2px solid var(--text);
+      padding: 0;
+      padding-right: 1.875em;
+      padding-bottom: .375em;
+      font-size: .875rem;
 
-  @media (max-width: 1230px) {
-    padding-left: 15px;
-    padding-right: 15px;
-    width: auto;
-  }
+      :after {
+        content: "";
+        position: absolute;
+        top: .15rem;
+        right: 0;
+        width: 24px;
+        height: 24px;
+        transition: .25s ease;
+        background-size: contain;
+        background-position: 50%;
+        background-repeat: no-repeat;
+      }
 
-  @media (max-width: 600px) {
-    height: auto;
-    min-height: 600px;
-    background: -webkit-linear-gradient(
-        -90deg,
-        rgba(0, 0, 0, 0.75),
-        rgba(0, 0, 0, 0.75)
-      ),
-      url(https://backend.aamodtgroup.com/wp-content/uploads/2021/03/AdobeStock_314816591-scaled.jpeg);
-    background-size: cover;
-    background-position: 60% 50%;
-    h1 {
-      font-size: var(--h1size);
+      :hover:after {
+        transform: translateX(3px);
+      }
     }
   }
+
 `;

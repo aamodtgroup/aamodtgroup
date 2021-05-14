@@ -15,7 +15,7 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "url": "https://backend.aamodtgroup.com",
+          "url": "https://wp.aamodtgroup.com",
           "homepage": "hjem",
           "postTypes": [
             {

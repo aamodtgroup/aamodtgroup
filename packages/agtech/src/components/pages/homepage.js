@@ -32,19 +32,4 @@ const HomePage = ({ state, actions, libraries }) => {
 export default connect(HomePage);
 
 const Content = styled.div`
-  width: 100%;
-  position: relative;
-  .wp-block-group__inner-container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0px auto;
-  }
-  @media (max-width: 1230px) {
-    .wp-block-group__inner-container {
-      max-width: 1230px;
-      padding-right: 15px;
-      padding-left: 15px;
-      width: auto;
-    }
-  }
 `;

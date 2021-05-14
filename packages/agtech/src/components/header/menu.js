@@ -10,6 +10,7 @@ function MobileMenu({ state, actions }) {
       <MenuToggle onClick={actions.theme.toggleMobileMenu}>
         {isMobileMenuOpen ? (
           <>
+            <Global styles={{ body: { overflowY: "hidden" } }} />
             <CloseIcon color={mode === 'light' ? "white": "white"} size="25px" />
           </>
         ) : (
