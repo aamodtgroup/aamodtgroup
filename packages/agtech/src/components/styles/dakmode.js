@@ -11,6 +11,7 @@ const DarkMode = ({ state }) => {
             <Global 
                 styles={css`
                 :root {
+                    --brand: #0077b5;
                     --text: ${mode === 'light' ? '#212121': '#fff'};
                     --darktext: ${mode === 'light' ? '#fff': '#fff'};
                     --background: ${mode === 'light' ? '#fff': '#121212'};

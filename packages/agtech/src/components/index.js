@@ -46,9 +46,7 @@ const Theme = ({ state }) => {
       </Head>
 
       {/* Add the header of the site. */}
-      <HeadContainer>
-        <Header />
-      </HeadContainer>
+      <Header />
 
       {/* Add the main section. It renders a different component depending
       on the type of URL we are in. */}
@@ -68,28 +66,11 @@ const Theme = ({ state }) => {
       <FooterContainer>
         <Footer />
       </FooterContainer>
-      {/* <CookieConsent
-        location="bottom"
-        buttonText="Godta"
-        enableDeclineButton
-        declineButtonText="Avslå"
-        cookieName="tagmanager"
-        style={{ background: "var(--cookiebar)", color: "var(--text)" }}
-        buttonStyle={{ background: "var(--cookiebarbutton)", color: "var(--cookiebartext)", fontSize: "16px", borderRadius: "12px" }}
-        declineButtonStyle={{ borderRadius: "12px" }}
-        expires={365}
-      >
-        Dette nettstedet bruker informasjonskapsler for å forbedre brukeropplevelsen.{" "}
-      </CookieConsent> */}
     </>
   );
 };
 
 export default connect(Theme);
-
-const HeadContainer = styled.div`
-  padding: 25px 0;
-`;
 
 const FooterContainer = styled.div`
   display: flex;

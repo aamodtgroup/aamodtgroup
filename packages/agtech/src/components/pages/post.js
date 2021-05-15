@@ -3,6 +3,7 @@ import { connect, styled } from "frontity";
 import Link from "../link";
 import List from "../list";
 import dayjs from "dayjs";
+import postimage from "../../images/agtechcard.png";
 
 const Post = ({ state, actions, libraries }) => {
   // Get information about the current URL.
@@ -15,6 +16,12 @@ const Post = ({ state, actions, libraries }) => {
   const author = state.source.author[post.author];
   // Get the html2react component.
   const Html2React = libraries.html2react.Component;
+
+  if(post.featured_media) {
+    var featuredImage = state.source.attachment[post.featured_media].source_url;
+  } else {
+    var featuredImage = postimage;
+  }
 
   /**
    * Once the post has loaded in the DOM, prefetch both the
@@ -38,7 +45,7 @@ const Post = ({ state, actions, libraries }) => {
           </div>
         </div>
         <div className="image">
-          <img src={state.source.attachment[post.featured_media].source_url} />
+          <img src={featuredImage} />
         </div>
       </Header>
 
@@ -82,7 +89,7 @@ const Header = styled.div`
     width: 350px;
     border-radius: 15px;
     overflow: hidden;
-    margin: 0 auto;
+    margin: auto;
   
     img {
       width: 350px;
@@ -93,7 +100,7 @@ const Header = styled.div`
   }
 
   .date span {
-    font-size: .8rem;
+    font-size: .9rem;
     border-bottom: 2px solid var(--brand);
   }
 
@@ -117,14 +124,13 @@ const Header = styled.div`
   @media (max-width: 650px) {
     grid-template-columns: repeat(1,1fr);
     .image {
-      margin: 0;
       margin-top: 2rem;
-      width: 300px;
-      height: 300px;
+      width: 100%;
+      height: auto;
 
       img {
-        width: 300px;
-        height: 300px;
+        width: 100%;
+        height: auto;
       }
     }
   }
@@ -143,6 +149,10 @@ const Content = styled.div`
   }
   p, h1, h2, h3, h4, h5, h6 {
     font-family: Baskervville, sans-serif; 
+  }
+
+  h2 {
+    font-size: 1.75rem;
   }
 
   img {
