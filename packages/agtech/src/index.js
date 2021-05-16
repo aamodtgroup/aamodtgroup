@@ -25,6 +25,7 @@ const agtech = {
       mode: "light",
       text: "normal",
       isMobileMenuOpen: false,
+      isSearchModalOpen: false,
       featured: {
         showOnList: false,
         showOnPost: false,
@@ -43,6 +44,12 @@ const agtech = {
       },
       closeMobileMenu: ({ state }) => {
         state.theme.isMobileMenuOpen = false;
+      },
+      openSearchModal: ({ state }) => {
+        state.theme.isSearchModalOpen = true;
+      },
+      closeSearchModal: ({ state }) => {
+        state.theme.isSearchModalOpen = false;
       },
       afterCSR: ({ state }) => {
         const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");

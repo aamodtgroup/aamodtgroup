@@ -20,11 +20,13 @@ const settings = {
           "postTypes": [
             {
               "type": "blogg",
-              "endpoint": "blogg"
+              "endpoint": "blogg",
+              "archive": "blogg"
             },
             {
               "type": "prosjekter",
-              "endpoint": "prosjekter"
+              "endpoint": "prosjekter",
+              "archive": "prosjekter"
             }
           ],
         }

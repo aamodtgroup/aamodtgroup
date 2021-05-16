@@ -1,6 +1,6 @@
 import React from "react";
 import { styled, connect, Global } from "frontity";
-import { CloseIcon, HamburgerIcon } from "./menu-icon";
+import { CloseIcon, HamburgerIcon } from "../icons";
 import MenuModal from "./menu-modal";
 
 function MobileMenu({ state, actions }) {

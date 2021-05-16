@@ -5,6 +5,7 @@ import {useTransition, animated} from 'react-spring';
 import { useInView } from 'react-intersection-observer';
 import TopNavbar from "./topnavbar";
 import Navbar from "./navbar";
+import SearchModal from "../search/search-modal";
 
 const Header = () => {
   const [ref, inView] = useInView();
@@ -26,6 +27,7 @@ const Header = () => {
             </animated.div>
           )
       )}
+      <SearchModal />
     </>
   );
 };

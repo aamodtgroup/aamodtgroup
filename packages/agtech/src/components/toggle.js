@@ -1,20 +1,27 @@
 import React from "react";
 import { connect, styled } from "frontity";
-import { DarkModeIcon, TextSizeIcon } from "./header/menu-icon";
+import { DarkModeIcon, TextSizeIcon, SearchIcon } from "./icons";
 
 const Toggle = ({ actions, state }) => {
-    const { setLightMode, setDarkMode, setNormalText, setLargeText } = actions.theme;
-    const { isMobileMenuOpen, mode, text } = state.theme;
+    const { setLightMode, setDarkMode, openSearchModal, closeSearchModal, setNormalText, setLargeText } = actions.theme;
+    const { isMobileMenuOpen, isSearchModalOpen, mode, text } = state.theme;
     return (
         <ToggleContainer>
-            <Box onClick={ text === "normal" ? setLargeText  : setNormalText } className="box2">
+            <Box onClick={ isSearchModalOpen === false ? openSearchModal  : closeSearchModal } aria-label="Click to open search bar">
+                {isMobileMenuOpen ? (
+                    <SearchIcon color="#fff" size="25px" />
+                ) : (
+                    <SearchIcon color="var(--text)" size="25px" />
+                )}
+            </Box>
+            <Box onClick={ text === "normal" ? setLargeText  : setNormalText } aria-label="Click to set large text">
                 {isMobileMenuOpen ? (
                     <TextSizeIcon color="#fff" size="25px" />
                 ) : (
                     <TextSizeIcon color="var(--text)" size="25px" />
                 )}
             </Box>
-            <Box onClick={ mode === "light" ? setDarkMode  : setLightMode } className="box1">
+            <Box onClick={ mode === "light" ? setDarkMode  : setLightMode } aria-label="Click to toggle darkmode">
                 {isMobileMenuOpen ? (
                     <DarkModeIcon color="#fff" size="25px" />
                 ) : (
@@ -35,7 +42,7 @@ const ToggleContainer = styled.div`
 `;
 
 
-const Box = styled.div`
+const Box = styled.button`
     display: flex;
     align-items: center;
     justify-content: center;

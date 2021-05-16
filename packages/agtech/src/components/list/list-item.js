@@ -19,12 +19,14 @@ const Item = ({ state, item }) => {
 
   return (
     <>
-      <Article>
+      <Article className="ag-card">
         <Link link={item.link}>
-          <div className="image">
+          <div className="ag-image">
             <img src={featuredImage}/>
           </div>
-          <Title dangerouslySetInnerHTML={{ __html: item.title.rendered }} />
+          <div className="ag-title">
+          <h2 dangerouslySetInnerHTML={{ __html: item.title.rendered }} />
+          </div>
         </Link>
       </Article>
     </>
