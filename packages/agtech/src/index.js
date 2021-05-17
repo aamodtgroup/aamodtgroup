@@ -26,6 +26,7 @@ const agtech = {
       text: "normal",
       isMobileMenuOpen: false,
       isSearchModalOpen: false,
+      filter: "",
       featured: {
         showOnList: false,
         showOnPost: false,

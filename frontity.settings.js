@@ -17,6 +17,7 @@ const settings = {
         "source": {
           "url": "https://wp.aamodtgroup.com",
           "homepage": "hjem",
+          "categoryBase": "kategori",
           "postTypes": [
             {
               "type": "blogg",

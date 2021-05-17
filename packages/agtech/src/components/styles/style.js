@@ -22,7 +22,7 @@ const customStyle = css`
 
   .wp-block-columns {
     margin-bottom: 0;
-}
+  }
 
   .media-text {
     background-color: var(--darkbackground);

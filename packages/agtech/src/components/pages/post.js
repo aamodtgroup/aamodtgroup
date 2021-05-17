@@ -143,7 +143,12 @@ const Content = styled.div`
     max-width: 650px;
     width: 100%;
     margin: 2rem auto;
+
+    img {
+      margin: 0;
+    }
   }
+
   p:first-of-type {
     margin-top: 0;
   }

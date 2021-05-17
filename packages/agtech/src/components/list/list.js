@@ -2,6 +2,7 @@ import React from "react";
 import { connect, styled, decode } from "frontity";
 import Item from "./list-item";
 import Pagination from "./pagination";
+import Link from "../link";
 
 const List = ({ state }) => {
   // Get the data of the current list.
@@ -9,10 +10,12 @@ const List = ({ state }) => {
 
   if(data.isBloggArchive) {
     var title = 'Blogg';
-  }
-
-  if(data.isProsjekterArchive) {
+  } else if(data.isProsjekterArchive) {
     var title = 'Prosjekter';
+  } else if(data.isTaxonomy) {
+    var title = decode(state.source[data.taxonomy][data.id].name)
+  } else {
+    var title = '';
   }
 
   return (
@@ -21,11 +24,15 @@ const List = ({ state }) => {
       <div className="wp-block-section">
         <div className="wp-block-section__inner-container">
           <h2>{title}</h2>
+          <div className="category-list">
+            <Link link="/blogg/" className="category-button">Alle</Link>
+            <Link link="/kategori/frontity/" className="category-button">Frontity</Link>
+            <Link link="/kategori/wordpress/" className="category-button">WordPress</Link>
+          </div>
           <div className="ag-grid">
             <>
             {data.items.map(({ type, id }) => {
               const item = state.source[type][id];
-              // Render one Item component for each one.
               return <Item key={item.id} item={item} />;
             })}
             </>
@@ -41,4 +48,16 @@ const List = ({ state }) => {
 export default connect(List);
 
 const Container = styled.section`
+  .category-list {
+    display: flex;
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+
+  .category-button {
+    padding: 10px 30px;
+    border: 2px solid var(--text);
+    border-radius: 8px;
+    color: var(--text);
+  }
 `;
