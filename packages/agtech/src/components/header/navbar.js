@@ -12,8 +12,8 @@ const NavBar = () => {
         <Logo />
         <Nav />
         <div className="buttons">
-        <Toggle />
-        <MobileMenu />
+            <Toggle />
+            <MobileMenu />
         </div>
     </NavContainer>
   );

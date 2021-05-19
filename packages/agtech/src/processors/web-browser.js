@@ -22,10 +22,13 @@ export const webBrowser  = {
       box-shadow: 0 2px 4px rgb(0 0 0 / 16%);
       background-color: var(--browserbar);
       border-radius: 12px;
-      display: inline-flex;
+      display: block;
       flex-flow: column nowrap;
       overflow: hidden;
       width: 100%;
+      span {
+        margin: 0;
+      }
       /* override the default WP styles */
       .wp-block-image {
         margin: 0;

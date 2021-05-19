@@ -17,11 +17,20 @@ const Post = ({ state, actions, libraries }) => {
   // Get the html2react component.
   const Html2React = libraries.html2react.Component;
 
+  const categoryId = post.categories;
+  if ( categoryId.length !== 0 ) {
+    var category = state.source.category[categoryId].name;
+    var categorylink = state.source.category[categoryId].link;
+  } else {
+    var category = "Blogg";
+    var categorylink = "/blogg/";
+  };
+
   if(post.featured_media) {
     var featuredImage = state.source.attachment[post.featured_media].source_url;
   } else {
     var featuredImage = postimage;
-  }
+  };
 
   /**
    * Once the post has loaded in the DOM, prefetch both the
@@ -39,7 +48,7 @@ const Post = ({ state, actions, libraries }) => {
       <Header>
         <div className="title-excerpt">
           <div>
-            <p className="date"><span>{date}</span> - <span className="capitalize">{post.type}</span></p>
+            <p className="date"><span>{date}</span> - <Link link={categorylink}><span className="capitalize">{category}</span></Link></p>
             <h1>{post.title.rendered}</h1>
             <div className="excerpt"><Html2React html={post.excerpt.rendered} /></div>
           </div>
@@ -90,6 +99,7 @@ const Header = styled.div`
     border-radius: 15px;
     overflow: hidden;
     margin: auto;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 16%);
   
     img {
       width: 350px;
@@ -102,6 +112,10 @@ const Header = styled.div`
   .date span {
     font-size: .9rem;
     border-bottom: 2px solid var(--brand);
+  }
+
+  span {
+    color: var(--text);
   }
 
   .capitalize {
@@ -146,6 +160,13 @@ const Content = styled.div`
 
     img {
       margin: 0;
+    }
+  }
+
+  .wp-block-image.alignwide {
+    max-width: 850px;
+    span {
+      max-width: 850px;
     }
   }
 
