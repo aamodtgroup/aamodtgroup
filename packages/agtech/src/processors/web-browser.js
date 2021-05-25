@@ -2,7 +2,7 @@ import { css } from "frontity";
 
 import TopBar from "../components/window-top-bar.js";
 
-export const webBrowser  = {
+const webBrowser  = {
   name: "web-browser",
   test: ({ node }) => node.type === "element" && node.props?.className?.split(" ").includes("has-browser-window"),
 
@@ -47,3 +47,5 @@ export const webBrowser  = {
     return node;
   },
 };
+
+export default webBrowser;
