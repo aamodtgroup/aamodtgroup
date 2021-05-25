@@ -1,13 +1,13 @@
 const settings = {
-  name: "aamodtgroup",
-  state: {
-    frontity: {
-      url: "https://aamodtgroup.com",
-      title: "Aamodt Group",
-      description: "Konsulenter innen utvikling og drift"
+  "name": "aamodtgroup",
+  "state": {
+    "frontity": {
+      "url": "https://aamodtgroup.com",
+      "title": "Aamodt Group",
+      "description": "Konsulenter innen utvikling og drift"
     }
   },
-  packages: [
+  "packages": [
     {
       "name": "@aamodtgroup/agtech",
     },
