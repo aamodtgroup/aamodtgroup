@@ -18,6 +18,9 @@ const settings = {
           "url": "https://wp.aamodtgroup.com",
           "homepage": "hjem",
           "categoryBase": "kategori",
+          "params": {
+            "per_page": 12,
+          },
           "postTypes": [
             {
               "type": "blogg",
@@ -28,6 +31,10 @@ const settings = {
               "type": "prosjekter",
               "endpoint": "prosjekter",
               "archive": "prosjekter"
+            },
+            {
+              "type": "tjenester",
+              "endpoint": "tjenester"
             }
           ],
         }

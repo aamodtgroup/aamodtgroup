@@ -55,8 +55,7 @@ const Theme = ({ state }) => {
           <Loading when={data.isFetching} />
           <List when={data.isArchive} />
           <HomePage when={data.isHome} />
-          <Page when={data.isPage} />
-          <Page when={data.isProsjekter} />
+          <Page when={data.isPage || data.isProsjekter || data.isTjenester} />
           <Post when={data.isPostType} />
           <PageError when={data.isError} />
         </Switch>

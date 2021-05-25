@@ -8,6 +8,8 @@ const List = ({ state }) => {
   // Get the data of the current list.
   const data = state.source.get(state.router.link);
 
+  const category = state.source.category
+
   if(data.isBloggArchive) {
     var title = 'Blogg';
   } else if(data.isProsjekterArchive) {
@@ -20,26 +22,25 @@ const List = ({ state }) => {
 
   return (
     <Container>
-      {/* Iterate over the items of the list. */}
       <div className="wp-block-section">
         <div className="wp-block-section__inner-container">
           <h2>{title}</h2>
-          <div className="category-list">
-            <Link link="/blogg/" className="category-button">Alle</Link>
-            <Link link="/kategori/frontity/" className="category-button">Frontity</Link>
-            <Link link="/kategori/wordpress/" className="category-button">WordPress</Link>
-          </div>
+          {/* { ( data.isBloggArchive || data.isCategory ) &&
+            <div className="category-list">
+              <Link link="/blogg/" className="category-button">Alle</Link>
+              <Link link="/kategori/frontity/" className="category-button">Frontity</Link>
+              <Link link="/kategori/wordpress/" className="category-button">WordPress</Link>
+            </div>
+          } */}
           <div className="ag-grid">
-            <>
+            {/* Iterate over the items of the list. */}
             {data.items.map(({ type, id }) => {
               const item = state.source[type][id];
               return <Item key={item.id} item={item} />;
             })}
-            </>
           </div>
         </div>
       </div>
-      
       <Pagination />
     </Container>
   );

@@ -220,7 +220,7 @@ const customStyle = css`
     font-weight: 400;
   }
   a {
-    font-size: 1rem;
+    font-size: inherit;
     color: var(--link);
     transition: font-size var(--transition) !important;
 

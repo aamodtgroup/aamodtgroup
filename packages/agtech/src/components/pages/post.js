@@ -49,6 +49,10 @@ const Post = ({ state, actions, libraries }) => {
         <div className="title-excerpt">
           <div>
             <p className="date"><span>{date}</span> - <Link link={categorylink}><span className="capitalize">{category}</span></Link></p>
+            {/* {post.categories.map((categoryId) => {
+              const category = state.source.category[categoryId];
+              return <Link link={category.link}>{category.name}</Link>;
+            })} */}
             <h1>{post.title.rendered}</h1>
             <div className="excerpt"><Html2React html={post.excerpt.rendered} /></div>
           </div>
