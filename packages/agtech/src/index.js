@@ -3,7 +3,7 @@ import image from "@frontity/html2react/processors/image";
 import iframe from "@frontity/html2react/processors/iframe";
 import link from "@frontity/html2react/processors/link";
 import menuHandler from "./components/handlers/menu-handler";
-import { webBrowser } from "./processors/web-browser.js";
+import webBrowser from "./processors/web-browser";
 
 const agtech = {
   name: "@aamodtgroup/agtech",
