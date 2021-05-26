@@ -10,9 +10,9 @@ import SearchModal from "../search/search-modal";
 const Header = () => {
   const [ref, inView] = useInView();
   const transitions = useTransition(!inView, {
-    from: { position: "fixed", top: 0, left: 0, transform: "translateY(-100%)", zIndex:99, width:"100%", maxWidth:"100%" },
-    enter: { transform: "translateY(0)" },
-    leave: { transform: "translateY(-100%)" },
+    from: { transform: "translate3d(0,-100%,0)" },
+    enter: { transform: "translate3d(0,0px,0)" },
+    leave: { transform: "translate3d(0,-100%,0)" },
   });
   
   return (
@@ -22,9 +22,11 @@ const Header = () => {
       </div>
       {transitions((props, item, key) =>
           item && (
-            <animated.div key={key} style={props}>
-              <Navbar />
-            </animated.div>
+            <Animated>
+              <animated.div key={key} style={props}>
+                <Navbar />
+              </animated.div>
+            </Animated>
           )
       )}
       <SearchModal />
@@ -33,3 +35,13 @@ const Header = () => {
 };
 
 export default connect(Header);
+
+const Animated = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99; 
+  width: 100%;
+  max-width: 100%;
+`;

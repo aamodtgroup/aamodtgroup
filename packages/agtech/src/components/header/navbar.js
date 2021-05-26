@@ -26,6 +26,9 @@ const NavContainer = styled.nav`
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
+  transition: padding 0.5s ease;
+  background-color: var(--background);
+  transition: background-color var(--transition);
   padding: 0 15px;
   border-bottom: 1px solid var(--border);
   .buttons {
