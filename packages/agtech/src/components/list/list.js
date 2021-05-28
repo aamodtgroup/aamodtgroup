@@ -25,13 +25,14 @@ const List = ({ state }) => {
       <div className="wp-block-section">
         <div className="wp-block-section__inner-container">
           <h2>{title}</h2>
-          {/* { ( data.isBloggArchive || data.isCategory ) &&
+          { ( data.isBloggArchive || data.isCategory ) &&
             <div className="category-list">
               <Link link="/blogg/" className="category-button">Alle</Link>
               <Link link="/kategori/frontity/" className="category-button">Frontity</Link>
               <Link link="/kategori/wordpress/" className="category-button">WordPress</Link>
+              <Link link="/kategori/design/" className="category-button">Design</Link>
             </div>
-          } */}
+          }
           <div className="ag-grid">
             {/* Iterate over the items of the list. */}
             {data.items.map(({ type, id }) => {

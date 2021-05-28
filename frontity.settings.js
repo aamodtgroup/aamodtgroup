@@ -37,6 +37,13 @@ const settings = {
               "endpoint": "tjenester"
             }
           ],
+          "taxonomies": [
+            {
+              "taxonomy": "category",
+              "endpoint": "categories",
+              "postTypeEndpoint": "blogg",
+            },
+          ]
         }
       }
     },
