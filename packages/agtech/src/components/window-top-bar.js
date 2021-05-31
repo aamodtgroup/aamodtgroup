@@ -17,7 +17,9 @@ const WindowTopBar = () => (
     css={css`
       height: 32px;
       padding-left: 10px;
-      margin: 0;
+      margin: 0 !important;
+      max-width: 100% !important;
+      width: 100% !important;
     `}
   >
     <Dot />
