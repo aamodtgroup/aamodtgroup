@@ -53,7 +53,7 @@ const Post = ({ state, actions, libraries }) => {
               const category = state.source.category[categoryId];
               return <Link link={category.link}>{category.name}</Link>;
             })} */}
-            <h1>{post.title.rendered}</h1>
+            <div><Html2React html={post.excerpt.rendered} /></div>
             <div className="excerpt"><Html2React html={post.excerpt.rendered} /></div>
           </div>
         </div>
