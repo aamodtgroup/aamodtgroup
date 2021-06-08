@@ -1,7 +1,7 @@
 import React from "react";
 import { styled } from "frontity";
 import Lottie from "react-lottie-player";
-import animationData from "../../lottie/space.json";
+import animationData from "../../lottie/pride.json";
 
 const Loading = () => (
   <Container>
