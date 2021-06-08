@@ -52,7 +52,7 @@ const HeaderContainer = styled.div`
     position: fixed;
     insert: 0;
     z-index: 999;
-    height: 5px;
+    height: 8px;
     width: 100vw;
     background: linear-gradient(
       90deg,
