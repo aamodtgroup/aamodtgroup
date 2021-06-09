@@ -16,8 +16,7 @@ const Header = () => {
   });
   
   return (
-    <HeaderContainer>
-      <div className="rainbow"></div>
+    <>
       <div ref={ref}>
         <TopNavbar />
       </div>
@@ -31,7 +30,7 @@ const Header = () => {
           )
       )}
       <SearchModal />
-    </HeaderContainer>
+    </>
   );
 };
 
@@ -45,33 +44,4 @@ const Animated = styled.div`
   z-index: 99; 
   width: 100%;
   max-width: 100%;
-`;
-
-const HeaderContainer = styled.div`
-  .rainbow {
-    position: fixed;
-    insert: 0;
-    z-index: 999;
-    height: 8px;
-    width: 100vw;
-    background: linear-gradient(
-      90deg,
-      #000,
-      #000 12.5%,
-      #784f16 12.5%,
-      #784f16 25%,
-      #e40303 25%,
-      #e40303 37.5%,
-      #ff8c00 37.5%,
-      #ff8c00 50%,
-      #ffed00 50%,
-      #ffed00 62.5%,
-      #008026 62.5%,
-      #008026 75%,
-      #004dff 75%,
-      #004dff 87.5%,
-      #750787 87.5%,
-      #750787
-    );
-  }
 `;
