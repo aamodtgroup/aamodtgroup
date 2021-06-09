@@ -8,7 +8,8 @@ import Nav from "./nav";
 
 const TopNavBar = () => {
   return (
-    <>
+    <Container>
+      <div className="rainbow"></div>
       <TopNavContainer>
           <Logo />
           <Nav />
@@ -17,7 +18,7 @@ const TopNavBar = () => {
             <MobileMenu />
           </div>
       </TopNavContainer>
-    </>
+    </Container>
   );
 };
 
@@ -37,5 +38,32 @@ const TopNavContainer = styled.nav`
   //border-bottom: 1px solid var(--border);
   .buttons {
     display: flex;
+  }
+`;
+
+
+const Container = styled.div`
+  .rainbow {
+    height: 8px;
+    width: 100vw;
+    background: linear-gradient(
+      90deg,
+
+      #000 12.5%,
+
+      #784f16 25%,
+
+      #e40303 37.5%,
+
+      #ff8c00 50%,
+
+      #ffed00 62.5%,
+
+      #008026 75%,
+
+      #004dff 87.5%,
+
+      #750787 100%
+    );
   }
 `;
