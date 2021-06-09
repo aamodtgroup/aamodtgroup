@@ -15,7 +15,7 @@ const List = ({ state }) => {
   } else if(data.isProsjekterArchive) {
     var title = 'Prosjekter';
   } else if(data.isTaxonomy) {
-    var title = decode(state.source[data.taxonomy][data.id].name)
+    var title = 'Blogg - ' + decode(state.source[data.taxonomy][data.id].name);
   } else {
     var title = '';
   }
