@@ -54,11 +54,3 @@ const Article = styled.article`
     transform: scale(1.05);
   }
 `;
-
-const Title = styled.h2`
-  font-size: 24px;
-  font-weight: 500;
-  margin: 0px;
-  margin-left: 10px;
-  box-sizing: border-box;
-`;

@@ -8,25 +8,13 @@ const Toggle = ({ actions, state }) => {
     return (
         <ToggleContainer>
             <Box onClick={ isSearchModalOpen === false ? openSearchModal  : closeSearchModal } aria-label="Click to open search bar">
-                {isMobileMenuOpen ? (
-                    <SearchIcon color="#fff" size="25px" />
-                ) : (
-                    <SearchIcon color="var(--text)" size="25px" />
-                )}
+                <SearchIcon color="var(--text)" size="25px" />
             </Box>
             <Box onClick={ text === "normal" ? setLargeText  : setNormalText } aria-label="Click to set large text">
-                {isMobileMenuOpen ? (
-                    <TextSizeIcon color="#fff" size="25px" />
-                ) : (
-                    <TextSizeIcon color="var(--text)" size="25px" />
-                )}
+                <TextSizeIcon color="var(--text)" size="25px" />
             </Box>
             <Box onClick={ mode === "light" ? setDarkMode  : setLightMode } aria-label="Click to toggle darkmode">
-                {isMobileMenuOpen ? (
-                    <DarkModeIcon color="#fff" size="25px" />
-                ) : (
-                    <DarkModeIcon color="var(--text)" size="25px" />
-                )}
+                <DarkModeIcon color="var(--text)" size="25px" />
             </Box>
         </ToggleContainer>
     )
