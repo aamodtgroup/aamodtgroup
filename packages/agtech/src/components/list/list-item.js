@@ -1,5 +1,6 @@
 import React from "react";
 import { connect, styled } from "frontity";
+import dayjs from "dayjs";
 import Link from "../link";
 import postimage from "../../images/agtechcard.png";
 /**
@@ -11,23 +12,40 @@ import postimage from "../../images/agtechcard.png";
  * - FeaturedMedia: the featured image/video of the post
  */
 const Item = ({ state, item }) => {
+  
+  // Get a human readable date.
+  const date = dayjs(item.date).format("DD. MMM");
+  // Get the data of the author.
+  const author = state.source.author[item.author];
+
   if(item.featured_media) {
     var featuredImage = state.source.attachment[item.featured_media].source_url;
   } else {
     var featuredImage = postimage;
   }
 
+  
+
   return (
     <>
       <Article className="ag-card">
-        <Link link={item.link}>
-          <div className="ag-image">
+        {/* <Link link={item.link}> */}
+          <div className="image">
             <img src={featuredImage}/>
           </div>
-          <div className="ag-title">
-          <h2 dangerouslySetInnerHTML={{ __html: item.title.rendered }} />
+          <div className="post-info">
+            <p>{date}</p>
+            <div className="ag-title">
+              <h2 dangerouslySetInnerHTML={{ __html: item.title.rendered }} />
+            </div>
+            <div className="author-category">
+              <div className="author-grid">
+                <img src={author.avatar_urls[48]} />
+                <Link link={author.link} className="author-name"><p className="author-name">{author.name}</p></Link>
+              </div>
+            </div>
           </div>
-        </Link>
+        {/* </Link> */}
       </Article>
     </>
   );
@@ -37,21 +55,50 @@ const Item = ({ state, item }) => {
 export default connect(Item);
 
 const Article = styled.article`
+  background-color: #f2f5f7;
+  width: 100%;
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease 0s;
   .image {
-    overflow: hidden;
-    height: 300px;
-    width: 100%;
-    border-radius: 5px;
+    position: relative;
     margin-bottom: 1rem;
   }
   .image img {
-    transition: transform 0.5s ease;
     object-fit: cover;
-    height: 300px;
+    height: 144px;
+    object-position: center center;
     width: 100%;
   }
-  :hover img {
-    transform: scale(1.05);
+  .post-info {
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 100%;
+
+    h2 {
+      font-size: 1rem;
+    }
+  }
+  .author-category {
+    padding-top: 24px;
+    margin-top: auto;
+  }
+  .author-grid {
+    display: grid;
+    gap: 8px;
+    grid-template-columns: minmax(0px, max-content) 1fr;
+    margin-bottom: 8px;
+    text-decoration: none;
+    border-radius: 8px;
+
+    .author-name {
+      margin: auto 0;
+    }
   }
 `;
 
