@@ -15,7 +15,7 @@ const DarkMode = ({ state }) => {
                     --text: ${mode === 'light' ? '#212121': '#fff'};
                     --darktext: ${mode === 'light' ? '#fff': '#fff'};
                     --background: ${mode === 'light' ? '#fff': '#121212'};
-                    --menubackground: ${mode === 'light' ? '#0077b5': '#121212'};
+                    --menubackground: ${mode === 'light' ? '#fff': '#1E1E1E'};
                     --postbackground: ${mode === 'light' ? '#F2F3FC': '#1E1E1E'};
                     --darkbackground: ${mode === 'light' ? '#042a4e': '#1E1E1E'};
                     --border: ${mode === 'light' ? '#e0e0e0': '#333'};
