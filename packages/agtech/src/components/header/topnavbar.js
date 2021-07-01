@@ -9,7 +9,7 @@ import Nav from "./nav";
 const TopNavBar = () => {
   return (
     <Container>
-      <div className="rainbow"></div>
+      {/* <div className="rainbow"></div> */}
       <TopNavContainer>
           <Logo />
           <Nav />
