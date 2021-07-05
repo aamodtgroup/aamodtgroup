@@ -184,6 +184,10 @@ const Content = styled.div`
   h2 {
     font-size: 1.75rem;
   }
+  
+  h3 {
+    font-size: 1.5rem;
+  }
 
   img {
     width: 100%;
