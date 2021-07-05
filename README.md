@@ -71,4 +71,4 @@ _No bootstrap JS included_
 
 ## Credits
 - Frontity Team [ [1](https://frontity.org/blog/how-to-create-a-react-theme-in-30-minutes/), [2](https://docs.frontity.org/guides/understanding-mars-theme-1) ]
-- [frontity-contact-form-7](https://github.com/imranhsayed/frontity-contact-form-7) package by Imran Sayed
+- [@aamodtgroup/frontity-contact-form-7](https://github.com/aamodtgroup/frontity-contact-form-7) package by Aamodt Group
