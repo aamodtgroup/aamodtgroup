@@ -1,51 +1,53 @@
-import { css } from "frontity";
+import { css } from 'frontity';
 
-import TopBar from "../components/window-top-bar.js";
+import TopBar from '../components/window-top-bar.js';
 
-const webBrowser  = {
-  name: "web-browser",
-  test: ({ node }) => node.type === "element" && node.props?.className?.split(" ").includes("has-browser-window"),
+const webBrowser = {
+    name: 'web-browser',
+    test: ({ node }) =>
+        node.type === 'element' &&
+        node.props?.className?.split(' ').includes('has-browser-window'),
 
-  processor: ({ node }) => {
-    const topFrame = {
-      type: "element",
-      component: TopBar,
-      props: {},
-      // we need to pass empty props, because other processors might
-      // expect `.props` to exist
-    };
+    processor: ({ node }) => {
+        const topFrame = {
+            type: 'element',
+            component: TopBar,
+            props: {},
+            // we need to pass empty props, because other processors might
+            // expect `.props` to exist
+        };
 
-    node.children.unshift(topFrame);
+        node.children.unshift(topFrame);
 
-    node.props.css = css`
-      ${node.props.css};
-      box-shadow: 0 2px 4px rgb(0 0 0 / 16%);
-      background-color: var(--browserbar);
-      border-radius: 12px;
-      display: block;
-      flex-flow: column nowrap;
-      overflow: hidden;
-      width: 100%;
-      span {
-        margin: 0;
-      }
-      /* override the default WP styles */
-      .wp-block-image {
-        margin: 0;
-      }
-      /* override the default WP styles */
-      .wp-block-group__inner-container {
-        vertical-align: bottom;
-      }
-      img,
-      iframe,
-      video {
-        display: block;
-      }
-    `;
+        node.props.css = css`
+            ${node.props.css};
+            box-shadow: 0 2px 4px rgb(0 0 0 / 16%);
+            background-color: var(--browserbar);
+            border-radius: 12px;
+            display: block;
+            flex-flow: column nowrap;
+            overflow: hidden;
+            width: 100%;
+            span {
+                margin: 0;
+            }
+            /* override the default WP styles */
+            .wp-block-image {
+                margin: 0;
+            }
+            /* override the default WP styles */
+            .wp-block-group__inner-container {
+                vertical-align: bottom;
+            }
+            img,
+            iframe,
+            video {
+                display: block;
+            }
+        `;
 
-    return node;
-  },
+        return node;
+    },
 };
 
 export default webBrowser;
