@@ -42,7 +42,7 @@ const Theme = ({ state }) => {
             {/* Add some metatags to the <head> of the HTML. */}
             <Head>
                 <link rel="preconnect" href={state.source.api} />
-                <html lang="no" />
+                <html lang="en" />
             </Head>
 
             {/* Add the header of the site. */}
