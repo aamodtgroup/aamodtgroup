@@ -10,13 +10,13 @@ const List = ({ state }) => {
 
     const category = state.source.category;
 
-    if (data.isBloggArchive) {
-        var title = 'Blogg';
-    } else if (data.isProsjekterArchive) {
-        var title = 'Prosjekter';
+    if (data.isBlogArchive) {
+        var title = 'Blog';
+    } else if (data.isProjectsArchive) {
+        var title = 'Projects';
     } else if (data.isTaxonomy) {
         var title =
-            'Blogg - ' + decode(state.source[data.taxonomy][data.id].name);
+            'Blog - ' + decode(state.source[data.taxonomy][data.id].name);
     } else {
         var title = '';
     }
@@ -26,25 +26,25 @@ const List = ({ state }) => {
             <div className="wp-block-section">
                 <div className="wp-block-section__inner-container">
                     <h2>{title}</h2>
-                    {(data.isBloggArchive || data.isCategory) && (
+                    {(data.isBlogArchive || data.isCategory) && (
                         <div className="category-list">
-                            <Link link="/blogg/" className="category-button">
-                                Alle
+                            <Link link="/blog/" className="category-button">
+                                All
                             </Link>
                             <Link
-                                link="/kategori/frontity/"
+                                link="/category/frontity/"
                                 className="category-button"
                             >
                                 Frontity
                             </Link>
                             <Link
-                                link="/kategori/wordpress/"
+                                link="/category/wordpress/"
                                 className="category-button"
                             >
                                 WordPress
                             </Link>
                             <Link
-                                link="/kategori/design/"
+                                link="/category/design/"
                                 className="category-button"
                             >
                                 Design

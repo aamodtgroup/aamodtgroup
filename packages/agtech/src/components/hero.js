@@ -9,20 +9,19 @@ const Hero = () => {
         <>
             <HeroContainer className="wp-block-section">
                 <div className="wp-block-section__inner-container">
-                    <h1>Aamodt Group - Konsulenter innen utvikling og drift</h1>
+                    <h1>Aamodt Group - Consultants in development and operations</h1>
                     <p>
-                        Vi hjelper deg med alle dine behov innen utvikling og
-                        drift.
+                        We help you with all your needs in development and operation.
                     </p>
                     <div className="buttons">
-                        <Link link="/blogg/">
+                        <Link link="/blog/">
                             <button className="wp-block-button__link underline">
-                                Blogg
+                                Blog
                             </button>
                         </Link>
-                        <Link link="/kontakt-oss/">
+                        <Link link="/contact/">
                             <button className="wp-block-button__link underline">
-                                Kontakt oss
+                                Contact
                             </button>
                         </Link>
                     </div>

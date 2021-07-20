@@ -12,31 +12,31 @@ const Footer = () => {
                         <ul className="widget-list">
                             <li>
                                 <Link className="widget-list-link" link="/">
-                                    Hjem
+                                    Home
                                 </Link>
                             </li>
                             <li>
                                 <Link
                                     className="widget-list-link"
-                                    link="/prosjekter/"
+                                    link="/projects/"
                                 >
-                                    Prosjekter
+                                    Projects
                                 </Link>
                             </li>
                             <li>
                                 <Link
                                     className="widget-list-link"
-                                    link="/blogg/"
+                                    link="/blog/"
                                 >
-                                    Blogg
+                                    Blog
                                 </Link>
                             </li>
                             <li>
                                 <Link
                                     className="widget-list-link"
-                                    link="/kontakt-oss/"
+                                    link="/contact/"
                                 >
-                                    Kontakt oss
+                                    Contact
                                 </Link>
                             </li>
                         </ul>
@@ -77,7 +77,7 @@ const Footer = () => {
                         </ul>
                     </div>
                     <div className="footer-widget">
-                        <h2 className="widget-title">Følg oss</h2>
+                        <h2 className="widget-title">Follow us</h2>
                         <ul className="widget-list">
                             <li>
                                 <Link
@@ -112,7 +112,7 @@ const Footer = () => {
                         </ul>
                     </div>
                     <div className="footer-widget">
-                        <h2 className="widget-title">Kontakt</h2>
+                        <h2 className="widget-title">Contact</h2>
                         <ul className="widget-list">
                             <li>
                                 <Link
@@ -139,7 +139,7 @@ const Footer = () => {
                     </div>
                     <div className="column2">
                         <p className="copyright">
-                            <Link link="/personvern">Personvern</Link>
+                            <Link link="/privacy">Privacy</Link>
                         </p>
                     </div>
                 </div>

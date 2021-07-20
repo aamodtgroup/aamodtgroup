@@ -22,8 +22,8 @@ const Post = ({ state, actions, libraries }) => {
         var category = state.source.category[categoryId].name;
         var categorylink = state.source.category[categoryId].link;
     } else {
-        var category = 'Blogg';
-        var categorylink = '/blogg/';
+        var category = 'Blog';
+        var categorylink = '/blog/';
     }
 
     if (post.featured_media) {
