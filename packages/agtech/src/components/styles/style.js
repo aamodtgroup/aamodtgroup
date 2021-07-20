@@ -144,6 +144,8 @@ const customStyle = css`
         min-height: 44px;
         padding: 0.6875rem 1.6875rem 0.75rem;
         margin-bottom: 1rem;
+        width: 100%;
+        max-width: 450px;
     }
 
     * {
