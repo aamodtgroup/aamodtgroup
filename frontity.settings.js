@@ -18,6 +18,7 @@ const settings = {
                     url: 'https://wp.aamodtgroup.com',
                     homepage: 'home',
                     categoryBase: 'category',
+                    redirections: '404',
                     params: {
                         per_page: 12,
                     },
