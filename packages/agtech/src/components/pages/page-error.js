@@ -6,13 +6,13 @@ import animationData from '../../lottie/space404.json';
 
 const description404 = (
     <>
-        <strong>Denne siden kan ikke bli funnet </strong>
+        <strong>This page could not be found </strong>
         <span role="img" aria-label="confused face">
             😕
         </span>
         <br></br>
         <button className="wp-block-button__link">
-            <Link link="/">Tilbake til hjem</Link>
+            <Link link="/">Back to home</Link>
         </button>
     </>
 );
