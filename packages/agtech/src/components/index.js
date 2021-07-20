@@ -57,7 +57,7 @@ const Theme = ({ state }) => {
                     <HomePage when={data.isHome} />
                     <Page
                         when={
-                            data.isPage || data.isProsjekter || data.isTjenester
+                            data.isPage || data.isProjects || data.isServices
                         }
                     />
                     <Post when={data.isPostType} />

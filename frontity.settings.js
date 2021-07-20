@@ -16,32 +16,32 @@ const settings = {
             state: {
                 source: {
                     url: 'https://wp.aamodtgroup.com',
-                    homepage: 'hjem',
-                    categoryBase: 'kategori',
+                    homepage: 'home',
+                    categoryBase: 'category',
                     params: {
                         per_page: 12,
                     },
                     postTypes: [
                         {
-                            type: 'blogg',
-                            endpoint: 'blogg',
-                            archive: 'blogg',
+                            type: 'blog',
+                            endpoint: 'blog',
+                            archive: 'blog',
                         },
                         {
-                            type: 'prosjekter',
-                            endpoint: 'prosjekter',
-                            archive: 'prosjekter',
+                            type: 'projects',
+                            endpoint: 'projects',
+                            archive: 'projects',
                         },
                         {
-                            type: 'tjenester',
-                            endpoint: 'tjenester',
+                            type: 'services',
+                            endpoint: 'services',
                         },
                     ],
                     taxonomies: [
                         {
                             taxonomy: 'category',
                             endpoint: 'categories',
-                            postTypeEndpoint: 'blogg',
+                            postTypeEndpoint: 'blog',
                         },
                     ],
                 },
