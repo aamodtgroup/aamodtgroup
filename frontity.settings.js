@@ -16,7 +16,7 @@ const settings = {
             state: {
                 source: {
                     url: 'https://wp.aamodtgroup.com',
-                    homepage: 'hjem',
+                    homepage: 'home',
                     categoryBase: 'category',
                     params: {
                         per_page: 12,
