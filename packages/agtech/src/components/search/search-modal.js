@@ -56,9 +56,9 @@ const SearchModal = ({ state, actions }) => {
     };
 
     if (data.isProsjekterArchive) {
-        var placeholder = 'Søk etter prosjekter:';
+        var placeholder = 'Search in projects:';
     } else {
-        var placeholder = 'Søk etter blogginnlegg:';
+        var placeholder = 'Search in blog posts:';
     }
 
     return (
@@ -104,7 +104,7 @@ const SearchModal = ({ state, actions }) => {
                                     <SectionInner ref={containerRef}>
                                         <SearchForm
                                             role="search"
-                                            aria-label="Søk etter blogginnlegg:"
+                                            aria-label="Search in blog posts:"
                                             onSubmit={handleSubmit}
                                         >
                                             <SearchInput
