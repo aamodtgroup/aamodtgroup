@@ -36,9 +36,9 @@ const SearchModal = ({ state, actions }) => {
         const searchString = inputRef.current.value;
 
         if (data.isProsjekterArchive) {
-            var link = '/prosjekter/';
+            var link = '/projects/';
         } else {
-            var link = '/blogg/';
+            var link = '/blog/';
         }
 
         // If the typed search string is not empty
