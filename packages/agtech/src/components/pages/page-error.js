@@ -4,16 +4,24 @@ import Link from '../link';
 import Lottie from 'react-lottie-player';
 import animationData from '../../lottie/space404.json';
 
+const Button = styled.button`
+    margin-top: 1rem;
+
+    a {
+        color: #fff;
+    }
+`;
+
 const description404 = (
     <>
         <strong>This page could not be found </strong>
         <span role="img" aria-label="confused face">
             😕
         </span>
-        <br></br>
-        <button className="wp-block-button__link">
+        <br />
+        <Button className="wp-block-button__link">
             <Link link="/">Back to home</Link>
-        </button>
+        </Button>
     </>
 );
 
@@ -29,7 +37,7 @@ const description = (
 const Page404 = ({ state }) => {
     const data = state.source.get(state.router.link);
 
-    const title = 'Oops! Noe gikk galt';
+    const title = 'Oops! Something went wrong';
 
     return (
         <Container>
@@ -81,4 +89,8 @@ const Description = styled.div`
     line-height: 1.6em;
     color: var(--text);
     margin: 24px 0;
+
+    .wp-block-button__link {
+        color: var(--text);
+    }
 `;
