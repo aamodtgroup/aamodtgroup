@@ -22,6 +22,7 @@ const agtech = {
         theme: {
             autoPrefetch: 'in-view',
             menuUrl: 'menu',
+            blogMenuUrl: 'blog-cat',
             mode: 'light',
             text: 'normal',
             isMobileMenuOpen: false,
@@ -87,6 +88,7 @@ const agtech = {
             },
             beforeSSR: async ({ state, actions }) => {
                 await actions.source.fetch(`/menu/${state.theme.menuUrl}/`);
+                await actions.source.fetch(`/menu/${state.theme.blogMenuUrl}/`);
             },
         },
     },

@@ -56,9 +56,7 @@ const Theme = ({ state }) => {
                     <List when={data.isArchive} />
                     <HomePage when={data.isHome} />
                     <Page
-                        when={
-                            data.isPage || data.isProjects || data.isServices
-                        }
+                        when={data.isPage || data.isProjects || data.isServices}
                     />
                     <Post when={data.isPostType} />
                     <PageError when={data.isError} />

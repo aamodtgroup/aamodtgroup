@@ -78,9 +78,6 @@ const NavItem = styled.div`
         display: inline-block;
         color: var(--text);
         line-height: 2em;
-        :[aria-current="page"]  {
-            border-bottom: 2px solid var(--link);
-        }
         :hover {
             color: var(--brand) !important;
         }

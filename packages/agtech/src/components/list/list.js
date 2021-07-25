@@ -10,6 +10,8 @@ const List = ({ state }) => {
 
     const category = state.source.category;
 
+    const items = state.source.get(`/menu/${state.theme.blogMenuUrl}/`).items;
+
     if (data.isBlogArchive) {
         var title = 'Blog';
     } else if (data.isProjectsArchive) {
@@ -28,31 +30,20 @@ const List = ({ state }) => {
                     <h2>{title}</h2>
                     {(data.isBlogArchive || data.isCategory) && (
                         <div className="category-list">
-                            <Link link="/blog/" className="category-button">
-                                All
-                            </Link>
-                            <Link
-                                link="/category/frontity/"
-                                className="category-button"
-                            >
-                                Frontity
-                            </Link>
-                            <Link
-                                link="/category/wordpress/"
-                                className="category-button"
-                            >
-                                WordPress
-                            </Link>
-                            <Link
-                                link="/category/design/"
-                                className="category-button"
-                            >
-                                Design
-                            </Link>
+                            {items.map((item, key) => {
+                                return (
+                                    <Link
+                                        link={item.url}
+                                        key={key}
+                                        className="category-button"
+                                    >
+                                        {item.title}
+                                    </Link>
+                                );
+                            })}
                         </div>
                     )}
                     <div className="ag-grid">
-                        {/* Iterate over the items of the list. */}
                         {data.items.map(({ type, id }) => {
                             const item = state.source[type][id];
                             return <Item key={item.id} item={item} />;
