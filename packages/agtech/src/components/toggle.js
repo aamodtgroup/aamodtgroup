@@ -11,7 +11,7 @@ const Toggle = ({ actions, state }) => {
         setNormalText,
         setLargeText,
     } = actions.theme;
-    const { isMobileMenuOpen, isSearchModalOpen, mode, text } = state.theme;
+    const { isSearchModalOpen, mode, text } = state.theme;
     return (
         <ToggleContainer>
             <Box

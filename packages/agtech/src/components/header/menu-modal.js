@@ -43,11 +43,6 @@ const MenuModal = ({ state }) => {
 
 export default connect(MenuModal);
 
-const onClick = () => {
-    if (state.theme.isMobileMenuOpen) {
-        actions.theme.closeMobileMenu();
-    }
-};
 
 const MenuContent = styled.div`
     z-index: 1;

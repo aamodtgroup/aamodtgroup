@@ -4,7 +4,7 @@ import { CloseIcon, HamburgerIcon } from '../icons';
 import MenuModal from './menu-modal';
 
 function MobileMenu({ state, actions }) {
-    const { isMobileMenuOpen, mode } = state.theme;
+    const { isMobileMenuOpen } = state.theme;
     return (
         <>
             <MenuToggle onClick={actions.theme.toggleMobileMenu}>

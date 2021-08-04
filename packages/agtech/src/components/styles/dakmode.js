@@ -76,9 +76,7 @@ const DarkMode = ({ state }) => {
                     }
 
                     .buttons .wp-block-button__link.underline:after {
-                        background-image: url(${mode === 'light'
-                            ? arrow
-                            : arrowWhite});
+                        background-image: url(${mode === 'light' ? arrow : arrowWhite});
                     }
                 `}
             />
