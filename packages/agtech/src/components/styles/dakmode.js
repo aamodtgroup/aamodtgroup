@@ -17,6 +17,7 @@ const DarkMode = ({ state }) => {
                         --menubackground: ${mode === 'light'
                             ? '#fff'
                             : '#1E1E1E'};
+                        --childmenubackground : ${mode === 'light' ? '#fff' : '#1E1E1E'};
                         --postbackground: ${mode === 'light'
                             ? '#F2F3FC'
                             : '#1E1E1E'};
