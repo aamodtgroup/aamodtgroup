@@ -101,7 +101,6 @@ const MenuLink = styled(Link)`
 const NavItemWithChildMobile = styled.div`
     position: relative;
     display: block;
-    border-bottom: 1px solid var(--border);
 
     @media (min-width: 745px) {
         :hover .submenu_mobile {

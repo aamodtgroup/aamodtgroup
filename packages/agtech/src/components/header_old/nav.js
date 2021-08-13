@@ -76,7 +76,7 @@ const NavItem = styled.div`
     transition-property: background, color, opacity;
     & > a {
         display: inline-block;
-        color: var(--toggle);
+        color: var(--text);
         line-height: 2em;
         :hover {
             color: var(--brand) !important;

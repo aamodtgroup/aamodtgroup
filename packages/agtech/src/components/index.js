@@ -49,7 +49,7 @@ const Theme = ({ state }) => {
             <Header />
 
             {/* Add the main section. It renders a different component depending
-      on the type of URL we are in. */}
+            on the type of URL we are in. */}
             <Main>
                 <Switch>
                     <Loading when={data.isFetching} />
@@ -76,10 +76,10 @@ export default connect(Theme);
 const FooterContainer = styled.div`
     display: flex;
     width: 100%;
-    background-color: #121212;
 `;
 
 const Main = styled.div`
     display: flex;
     justify-content: center;
+    margin-top: 90px;
 `;
