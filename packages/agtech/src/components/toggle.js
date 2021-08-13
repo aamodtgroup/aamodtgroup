@@ -22,19 +22,19 @@ const Toggle = ({ actions, state }) => {
                 }
                 aria-label="Click to open search bar"
             >
-                <SearchIcon color="var(--text)" size="25px" />
+                <SearchIcon color="var(--toggle)" size="25px" />
             </Box>
             <Box
                 onClick={text === 'normal' ? setLargeText : setNormalText}
                 aria-label="Click to set large text"
             >
-                <TextSizeIcon color="var(--text)" size="25px" />
+                <TextSizeIcon color="var(--toggle)" size="25px" />
             </Box>
             <Box
                 onClick={mode === 'light' ? setDarkMode : setLightMode}
                 aria-label="Click to toggle darkmode"
             >
-                <DarkModeIcon color="var(--text)" size="25px" />
+                <DarkModeIcon color="var(--toggle)" size="25px" />
             </Box>
         </ToggleContainer>
     );

@@ -17,7 +17,10 @@ const DarkMode = ({ state }) => {
                         --menubackground: ${mode === 'light'
                             ? '#fff'
                             : '#1E1E1E'};
-                        --childmenubackground : ${mode === 'light' ? '#fff' : '#1E1E1E'};
+                        --headerbackground: ${mode === 'light'
+                            ? '#121212'
+                            : '#1E1E1E'};
+                        --childmenubackground : ${mode === 'light' ? '#1E1E1E' : '#1E1E1E'};
                         --postbackground: ${mode === 'light'
                             ? '#F2F3FC'
                             : '#1E1E1E'};
@@ -28,6 +31,7 @@ const DarkMode = ({ state }) => {
                         --title: ${mode === 'light' ? '#0077b5' : '#80bbda'};
                         --link: ${mode === 'light' ? '#0077b5' : '#80bbda'};
                         --button: ${mode === 'light' ? '#0077b5' : '#1E1E1E'};
+                        --toggle: ${mode === 'light' ? '#fff' : '#fff'};
                         --menutogglehover: ${mode === 'light'
                             ? '#0077b5'
                             : '#80bbda'};

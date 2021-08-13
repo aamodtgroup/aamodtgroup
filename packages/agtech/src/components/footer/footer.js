@@ -177,10 +177,9 @@ const Container = styled.footer`
             text-align: center;
         }
         .widget-title {
-            color: white;
             margin-bottom: 0.5rem;
             font-size: var(--h6size);
-            font-weight: 600;
+            font-weight: 500;
         }
         .widget-list {
             list-style: none;
@@ -189,11 +188,11 @@ const Container = styled.footer`
                 margin: 0 !important;
                 margin-bottom: 0.5rem;
                 .widget-list-link {
+                    color: var(--text);
                     text-decoration: none;
                     transition: all 0.3s ease;
-                    color: white;
                     &:hover {
-                        opacity: 0.8;
+                        color: var(--brand) !important;
                     }
                 }
             }
@@ -206,10 +205,8 @@ const Container = styled.footer`
     .copyright {
         font-size: 1rem;
         margin: 1rem 0;
-        color: white;
     }
     .copyright a {
-        color: white;
         font-size: 1rem;
     }
     @media screen and (max-width: 800px) {

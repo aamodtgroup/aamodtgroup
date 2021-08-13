@@ -11,7 +11,7 @@ const Logo = ({ state }) => {
         <>
             <Link link="/" alt="Forside link">
                 <img
-                    src={mode === 'light' ? whiteLogo : whiteLogo}
+                    src={mode === 'light' ? blackLogo : whiteLogo}
                     width="64px"
                     height="64px"
                 />
