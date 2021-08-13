@@ -14,7 +14,7 @@ function MobileMenu({ state, actions }) {
                         <CloseIcon color="var(--text)" size="25px" />
                     </>
                 ) : (
-                    <HamburgerIcon color="var(--text)" size="25px" />
+                    <HamburgerIcon color="var(--toggle)" size="25px" />
                 )}
             </MenuToggle>
             {isMobileMenuOpen && <MenuModal />}

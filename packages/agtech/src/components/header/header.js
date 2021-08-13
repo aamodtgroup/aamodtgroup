@@ -30,11 +30,6 @@ const Container = styled.div`
     padding: 0 15px;
     padding-top: 30px;
     z-index: 999;
-
-    @media (max-width: 768px) {
-        padding: 0 5px;
-        padding-top: 10px;
-    }
 `;
 
 const NavContainer = styled.div`
