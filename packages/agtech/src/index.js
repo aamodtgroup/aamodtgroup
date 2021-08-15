@@ -27,6 +27,7 @@ const agtech = {
             text: 'normal',
             isMobileMenuOpen: false,
             isSearchModalOpen: false,
+            isToggleOpen: false,
             filter: '',
             featured: {
                 showOnList: false,
@@ -52,6 +53,12 @@ const agtech = {
             },
             closeSearchModal: ({ state }) => {
                 state.theme.isSearchModalOpen = false;
+            },
+            openToggleModal: ({ state }) => {
+                state.theme.isToggleOpen = !state.theme.isToggleOpen;
+            },
+            closeToggleModal: ({ state }) => {
+                state.theme.isToggleOpen = false;
             },
             afterCSR: ({ state }) => {
                 const prefersDarkScheme = window.matchMedia(

@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect, styled } from 'frontity';
-import { DarkModeIcon, TextSizeIcon, SearchIcon } from './icons';
+import { DarkModeIcon, TextSizeIcon, SearchIcon } from '../icons';
 
-const Toggle = ({ actions, state }) => {
+const ToggleModal = ({ actions, state }) => {
     const {
         setLightMode,
         setDarkMode,
@@ -14,16 +14,12 @@ const Toggle = ({ actions, state }) => {
     const { isSearchModalOpen, mode, text } = state.theme;
     return (
         <ToggleContainer>
-            <Box
-                onClick={
-                    isSearchModalOpen === false
-                        ? openSearchModal
-                        : closeSearchModal
-                }
+            {/* <Box
+                onClick={ isSearchModalOpen === false ? openSearchModal : closeSearchModal }
                 aria-label="Click to open search bar"
             >
                 <SearchIcon color="var(--toggle)" size="25px" />
-            </Box>
+            </Box> */}
             <Box
                 onClick={text === 'normal' ? setLargeText : setNormalText}
                 aria-label="Click to set large text"
@@ -40,13 +36,25 @@ const Toggle = ({ actions, state }) => {
     );
 };
 
-export default connect(Toggle);
+export default connect(ToggleModal);
 
 const ToggleContainer = styled.div`
     display: flex;
+    flex-wrap: wrap;
     height: auto;
-    width: auto;
+    width: 40px;
     z-index: 5;
+    background-color: #000;
+    border-radius: 50px;
+    position: fixed;
+    bottom: 110px;
+    right: 55px;
+    padding: 2.5px 5px;
+
+    @media (max-width: 768px) {
+        right: 30px;
+        bottom: 80px;
+    }
 `;
 
 const Box = styled.button`
