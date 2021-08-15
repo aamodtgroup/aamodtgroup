@@ -10,8 +10,8 @@ const Header = () => {
         <Container>
             <NavContainer>
                 <Logo />
-                <Nav />
                 <div className="buttons">
+                    <Nav />
                     <MobileMenu />
                 </div>
             </NavContainer>
