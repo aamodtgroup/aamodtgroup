@@ -44,7 +44,8 @@ const ToggleContainer = styled.div`
     height: auto;
     width: 40px;
     z-index: 5;
-    background-color: #000;
+    background-color: var(--headerbackground);
+    opacity: .95;
     border-radius: 50px;
     position: fixed;
     bottom: 110px;
@@ -52,8 +53,8 @@ const ToggleContainer = styled.div`
     padding: 2.5px 5px;
 
     @media (max-width: 768px) {
-        right: 30px;
-        bottom: 80px;
+        right: 20px;
+        bottom: 85px;
     }
 `;
 

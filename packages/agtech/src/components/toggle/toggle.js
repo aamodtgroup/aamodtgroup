@@ -29,7 +29,8 @@ const ToggleButton = styled.button`
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #000;
+    background-color: var(--headerbackground);
+    opacity: .95;
     border: 0;
     padding: 0px;
     border-radius: 50%;
@@ -43,8 +44,8 @@ const ToggleButton = styled.button`
     }
 
     @media (max-width: 768px) {
-        right: 25px;
-        bottom: 25px;
+        right: 15px;
+        bottom: 30px;
     }
 `;
 
