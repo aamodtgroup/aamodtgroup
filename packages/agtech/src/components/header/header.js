@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect, styled } from 'frontity';
 import MobileMenu from './menu';
-import Toggle from '../toggle';
 import Logo from './logo';
 import Nav from './nav';
 import SearchModal from '../search/search-modal';
@@ -13,7 +12,6 @@ const Header = () => {
                 <Logo />
                 <Nav />
                 <div className="buttons">
-                    <Toggle />
                     <MobileMenu />
                 </div>
             </NavContainer>

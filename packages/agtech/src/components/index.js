@@ -15,6 +15,7 @@ import gutenbergTheme from './styles/gutenberg/theme.min.css';
 import BootstrapCss from './styles/bootstrap.css';
 import customStyle from './styles/style';
 import Header from './header/header';
+import Toggle from './toggle/toggle';
 
 /**
  * Theme is the root React component of our theme. The one we will export
@@ -38,6 +39,9 @@ const Theme = ({ state }) => {
 
             {/* Loads darkmode. */}
             <DarkMode />
+
+            {/* Loads toggle. */}
+            <Toggle />
 
             {/* Add some metatags to the <head> of the HTML. */}
             <Head>
