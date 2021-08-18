@@ -79,7 +79,7 @@ export const SearchIcon = ({ size, color, className }) => {
         <svg
             height={size}
             width={size}
-            viewBox="-2 2 25 20"
+            viewBox="-1 2 25 20"
             color={color}
             className={className}
             xmlns="http://www.w3.org/2000/svg"
