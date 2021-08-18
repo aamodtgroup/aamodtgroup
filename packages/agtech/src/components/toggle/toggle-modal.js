@@ -7,46 +7,36 @@ const ToggleModal = ({ actions, state }) => {
     const {
         setLightMode,
         setDarkMode,
-        openSearchModal,
-        closeSearchModal,
         setNormalText,
         setLargeText,
     } = actions.theme;
-    const { isSearchModalOpen, mode, text } = state.theme;
+    const { mode, text } = state.theme;
     return (
         <ToggleContainer>
-            <Header>
-                <h2>
-                    Accessibility settings
-                </h2>
-            </Header>
             <Grid>
                 <Box
                     onClick={text === 'normal' ? setLargeText : setNormalText}
                     aria-label="Click to set large text"
-                    className="text-toggle"
+                    className={text === 'normal' ? '' : 'checked'}
                 >
-                    <TextSizeIcon color="var(--toggle)" size="25px" />
+                    <TextSizeIcon color="#fff" className={text === 'normal' ? '' : 'checked'} size="25px" />
                     <label>
                         <span>Large text</span>
                     </label>
+                    <p>{text === 'normal' ? 'Off' : 'On'}</p>
                 </Box>
                 <Box
                     onClick={mode === 'light' ? setDarkMode : setLightMode}
                     aria-label="Click to toggle darkmode"
-                    className="darkmode-toggle"
+                    className={mode === 'light' ? '' : 'checked'}
                 >
-                    <DarkModeIcon color="var(--toggle)" size="25px" />
+                    <DarkModeIcon color="#fff" className={mode === 'light' ? '' : 'checked'} size="25px" />
                     <label>
                         <span>Dark mode</span>
                     </label>
+                    <p>{mode === 'light' ? 'Off' : 'On'}</p>
                 </Box>
             </Grid>
-            <Footer>
-                <p>
-                    Read more about our commitment to accessibility
-                </p>
-            </Footer>
         </ToggleContainer>
     );
 };
@@ -56,12 +46,12 @@ export default connect(ToggleModal);
 const ToggleContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
-    height: 75%;
+    height: auto;
     width: 500px;
     z-index: 9999999;
-    background-color: #fff;
+    background: linear-gradient(360deg,#383836 10%,#4a4a4a 360%);
     opacity: 1;
-    border-radius: 50px;
+    border-radius: 30px;
     position: fixed;
     bottom: 110px;
     right: 55px;
@@ -77,49 +67,6 @@ const ToggleContainer = styled.div`
     }
 `;
 
-const Header = styled.div`
-    width: 100%;
-    height: 15%;
-    background-color: #0077b5;
-    padding: 30px;
-    align-self: flex-start;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    h2 {
-        color: #fff;
-        font-size: 34px;
-        margin-bottom: 0;
-        text-align: center;
-
-        @media (max-width: 768px) {
-            font-size: 28px;
-        }
-    }
-`;
-
-const Footer = styled.div`
-    width: 100%;
-    height: 7.5%;
-    background-color: #0077b5;
-    padding: 0 15px;
-    align-self: flex-end;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    @media (max-width: 768px) {
-        height: 10%;
-    }
-
-    p {
-        color: #fff;
-        font-size: 16px;
-        margin-bottom: 0;
-        text-align: center;
-    }
-`;
 
 const Grid = styled.div`
     display: grid;
@@ -140,18 +87,23 @@ const Grid = styled.div`
         margin-bottom: 0;
     }
 
-    .darkmode-toggle {
+    /* .darkmode-toggle {
         background: var(--togglecolor);
     }
 
     .text-toggle {
         background: var(--togglecolor2);
-    }
+    } */
 `;
 
 const Box = styled.div`
     display: flex;
     flex-wrap: wrap;
+    //background-color: #485461;
+    //background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
+    //background-color: #5b6467;
+    //background-image: linear-gradient(315deg, #5b6467 0%, #8b939a 74%);
+    background: linear-gradient(360deg, #1C1C1C 10%, #494949 360%);
     width: 100%;
     height: 100%;
     border-radius: 15px;
@@ -164,6 +116,21 @@ const Box = styled.div`
         outline: 0;
     }
 
+    &.checked {
+        //background-color: #b8c6db;
+        //background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);
+        background: linear-gradient(360deg, #dee1e1 10%, #f4f4f4 360%);
+        //border: 1px solid #1e1e1e;
+
+        span, p {
+            color: #000;
+        }
+    }
+
+    .checked {
+        color: #000;
+    }
+
     label {
         width: 100%;
         margin: 20px 0;
@@ -171,5 +138,11 @@ const Box = styled.div`
         span {
             color: #fff;
         }
+    }
+
+    p {
+        color: #fff;
+        font-size: 18px;
+        margin-bottom: 0;
     }
 `;

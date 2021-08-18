@@ -38,14 +38,14 @@ export const CloseIcon = ({ size, color }) => {
     );
 };
 
-export const DarkModeIcon = ({ size, color }) => {
+export const DarkModeIcon = ({ size, color, className }) => {
     return (
         <svg
             height={size}
             width={size}
             viewBox="0 0 29 29"
             color={color}
-            className="darkmodesvg"
+            className={className}
             xmlns="http://www.w3.org/2000/svg"
         >
             <title>Darkmode</title>
@@ -56,14 +56,14 @@ export const DarkModeIcon = ({ size, color }) => {
     );
 };
 
-export const TextSizeIcon = ({ size, color }) => {
+export const TextSizeIcon = ({ size, color, className }) => {
     return (
         <svg
             height={size}
             width={size}
             viewBox="0 0 25 20"
             color={color}
-            className="textsizesvg"
+            className={className}
             xmlns="http://www.w3.org/2000/svg"
         >
             <title>Text Size</title>
@@ -74,14 +74,14 @@ export const TextSizeIcon = ({ size, color }) => {
     );
 };
 
-export const SearchIcon = ({ size, color }) => {
+export const SearchIcon = ({ size, color, className }) => {
     return (
         <svg
             height={size}
             width={size}
             viewBox="-2 2 25 20"
             color={color}
-            className="searchsvg"
+            className={className}
             xmlns="http://www.w3.org/2000/svg"
         >
             <g fill="currentColor">
