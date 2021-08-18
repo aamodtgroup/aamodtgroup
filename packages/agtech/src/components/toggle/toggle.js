@@ -29,8 +29,8 @@ const ToggleButton = styled.button`
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--headerbackground);
-    opacity: .95;
+    background-color: #1764DE;
+    opacity: 1;
     border: 0;
     padding: 0px;
     border-radius: 50%;

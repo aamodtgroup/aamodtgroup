@@ -4,14 +4,21 @@ import MobileMenu from './menu';
 import Logo from './logo';
 import Nav from './nav';
 import SearchModal from '../search/search-modal';
+import SearchToggle from '../search/search-toggle';
+import { Button } from './buttons';
 
 const Header = () => {
     return (
         <Container>
             <NavContainer>
                 <Logo />
+                <Nav />
                 <div className="buttons">
-                    <Nav />
+                    <Button 
+                        buttonLink="/contact/"
+                        buttonText="Contact"
+                    />
+                    <SearchToggle />
                     <MobileMenu />
                 </div>
             </NavContainer>

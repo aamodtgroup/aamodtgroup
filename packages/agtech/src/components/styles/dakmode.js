@@ -70,6 +70,8 @@ const DarkMode = ({ state }) => {
                         --h6size: ${text === 'normal' ? '1.25rem' : '1.75rem'};
                         --footerp: ${text === 'normal' ? '16px' : '20px'};
                         --navlinks: ${text === 'normal' ? '18px' : '24px'};
+                        --togglecolor: ${mode === 'light' ? '#1E1E1E' : '#008000'};
+                        --togglecolor2: ${text === 'normal' ? '#1E1E1E' : '#008000'};
                     }
 
                     html {
