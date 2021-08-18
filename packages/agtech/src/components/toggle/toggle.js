@@ -29,7 +29,7 @@ const ToggleButton = styled.button`
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #0077b5;
+    background-color: #1764DE;
     opacity: 1;
     border: 0;
     padding: 0px;
