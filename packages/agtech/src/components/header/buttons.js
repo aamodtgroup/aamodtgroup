@@ -18,6 +18,10 @@ const ButtonDiv = styled.div`
     padding: 5px 10px;
     margin: 0 .5rem;
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     a {
         color: var(--toggle);
     }

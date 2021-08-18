@@ -28,6 +28,11 @@ const ToggleContainer = styled.div`
     height: auto;
     width: 40px;
     z-index: 5;
+
+    @media (max-width: 768px) {
+        display: none;
+        opacity: 0;
+    }
 `;
 
 const Box = styled.button`
