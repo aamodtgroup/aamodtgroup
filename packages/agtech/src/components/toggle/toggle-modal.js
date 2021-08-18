@@ -82,6 +82,11 @@ const Header = styled.div`
         color: #fff;
         font-size: 34px;
         margin-bottom: 0;
+        text-align: center;
+
+        @media (max-width: 768px) {
+            font-size: 28px;
+        }
     }
 `;
 
@@ -95,10 +100,15 @@ const Footer = styled.div`
     align-items: center;
     justify-content: center;
 
+    @media (max-width: 768px) {
+        height: 10%;
+    }
+
     p {
         color: #fff;
         font-size: 16px;
         margin-bottom: 0;
+        text-align: center;
     }
 `;
 
