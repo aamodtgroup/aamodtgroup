@@ -50,7 +50,6 @@ const ToggleContainer = styled.div`
     flex-wrap: wrap;
     height: 75%;
     width: 500px;
-    max-width: 90%;
     z-index: 9999999;
     background-color: #fff;
     opacity: 1;
@@ -63,7 +62,9 @@ const ToggleContainer = styled.div`
     box-shadow: 0 2px 4px rgb(0 0 0 / 16%);
 
     @media (max-width: 768px) {
-        right: 20px;
+        width: auto;
+        right: 15px;
+        left: 15px;
         bottom: 85px;
     }
 `;
@@ -94,7 +95,7 @@ const Footer = styled.div`
     width: 100%;
     height: 7.5%;
     background-color: #0077b5;
-    padding: 0 10px;
+    padding: 0 15px;
     align-self: flex-end;
     display: flex;
     align-items: center;
