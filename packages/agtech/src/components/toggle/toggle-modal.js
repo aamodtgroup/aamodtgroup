@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect, styled } from 'frontity';
 import { DarkModeIcon, TextSizeIcon, SearchIcon } from '../icons';
+import Switch from "react-switch";
 
 const ToggleModal = ({ actions, state }) => {
     const {
@@ -14,28 +15,30 @@ const ToggleModal = ({ actions, state }) => {
     const { isSearchModalOpen, mode, text } = state.theme;
     return (
         <ToggleContainer>
+            <Header>
+                <h2>
+                    Accessibility settings
+                </h2>
+            </Header>
             <Grid>
-                {/* <Box
-                    onClick={ isSearchModalOpen === false ? openSearchModal : closeSearchModal }
-                    aria-label="Click to open search bar"
-                >
-                    <SearchIcon color="var(--toggle)" size="25px" />
-                </Box> */}
-                <Box
-                    onClick={text === 'normal' ? setLargeText : setNormalText}
-                    aria-label="Click to set large text"
-                >
-                    <TextSizeIcon color="var(--toggle)" size="25px" />
-                    <p>Toogle Large text</p>
+                <Box>
+                    <label>
+                        <span>Toogle Large text</span>
+                    </label>
+                    <Switch onChange={text === 'normal' ? setLargeText : setNormalText} checked={text === 'normal' ? false : true} />
                 </Box>
-                <Box
-                    onClick={mode === 'light' ? setDarkMode : setLightMode}
-                    aria-label="Click to toggle darkmode"
-                >
-                    <DarkModeIcon color="var(--toggle)" size="25px" />
-                    <p>Toogle dark mode</p>
+                <Box>
+                    <label>
+                        <span>Toogle dark mode</span>
+                    </label>
+                    <Switch onChange={mode === 'light' ? setDarkMode : setLightMode} checked={mode === 'light' ? false : true} />
                 </Box>
             </Grid>
+            <Footer>
+                <p>
+                    Read more about our commitment to accessibility
+                </p>
+            </Footer>
         </ToggleContainer>
     );
 };
@@ -44,16 +47,20 @@ export default connect(ToggleModal);
 
 const ToggleContainer = styled.div`
     display: flex;
-    height: auto;
-    width: 250px;
-    z-index: 5;
-    background-color: var(--headerbackground);
+    flex-wrap: wrap;
+    height: 75%;
+    width: 500px;
+    max-width: 100%;
+    z-index: 9999999;
+    background-color: #fff;
     opacity: 1;
     border-radius: 50px;
     position: fixed;
     bottom: 110px;
     right: 55px;
-    padding: 30px;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 16%);
 
     @media (max-width: 768px) {
         right: 20px;
@@ -61,13 +68,60 @@ const ToggleContainer = styled.div`
     }
 `;
 
+const Header = styled.div`
+    width: 100%;
+    height: 15%;
+    background-color: #0077b5;
+    padding: 30px;
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h2 {
+        color: #fff;
+        font-size: 34px;
+        margin-bottom: 0;
+    }
+`;
+
+const Footer = styled.div`
+    width: 100%;
+    height: 7.5%;
+    background-color: #0077b5;
+    padding: 0 10px;
+    align-self: flex-end;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    p {
+        color: #fff;
+        font-size: 16px;
+        margin-bottom: 0;
+    }
+`;
+
 const Grid = styled.div`
     display: flex;
     flex-wrap: wrap;
     align-self: flex-start;
+    width: 100%;
+    padding: 0 15px;
+
+    span {
+        color: #000;
+        font-size: 18px;
+        margin-bottom: 0;
+    }
+
+    label {
+        width: 100%;
+        margin-bottom: 0;
+    }
 `;
 
-const Box = styled.button`
+const Box = styled.div`
     display: flex;
     background: transparent;
     margin: 10px 0;
@@ -78,17 +132,7 @@ const Box = styled.button`
     outline: 0;
     cursor: pointer;
     transition: all 0.3s ease;
-    :not(:last-of-type) {
-        border-bottom: 1px solid #fff;
-        padding-bottom: 15px;
-    }
     &:focus {
         outline: 0;
-    }
-    p {
-        color: var(--toggle);
-        margin-left: 10px;
-        font-size: 18px;
-        margin-bottom: 0;
     }
 `;
