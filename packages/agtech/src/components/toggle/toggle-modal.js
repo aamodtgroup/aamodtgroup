@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect, styled } from 'frontity';
 import { DarkModeIcon, TextSizeIcon, SearchIcon } from '../icons';
-import Switch from "react-switch";
 
 const ToggleModal = ({ actions, state }) => {
     const {
