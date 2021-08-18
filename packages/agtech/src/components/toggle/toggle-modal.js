@@ -50,7 +50,7 @@ const ToggleContainer = styled.div`
     flex-wrap: wrap;
     height: 75%;
     width: 500px;
-    max-width: 100%;
+    max-width: 90%;
     z-index: 9999999;
     background-color: #fff;
     opacity: 1;
