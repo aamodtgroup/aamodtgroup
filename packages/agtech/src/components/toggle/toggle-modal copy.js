@@ -21,25 +21,17 @@ const ToggleModal = ({ actions, state }) => {
                 </h2>
             </Header>
             <Grid>
-                <Box
-                    onClick={text === 'normal' ? setLargeText : setNormalText}
-                    aria-label="Click to set large text"
-                    className="text-toggle"
-                >
-                    <TextSizeIcon color="var(--toggle)" size="25px" />
+                <Box>
                     <label>
-                        <span>Large text</span>
+                        <span>Toogle Large text</span>
                     </label>
+                    <Switch onChange={text === 'normal' ? setLargeText : setNormalText} checked={text === 'normal' ? false : true} />
                 </Box>
-                <Box
-                    onClick={mode === 'light' ? setDarkMode : setLightMode}
-                    aria-label="Click to toggle darkmode"
-                    className="darkmode-toggle"
-                >
-                    <DarkModeIcon color="var(--toggle)" size="25px" />
+                <Box>
                     <label>
-                        <span>Dark mode</span>
+                        <span>Toogle dark mode</span>
                     </label>
+                    <Switch onChange={mode === 'light' ? setDarkMode : setLightMode} checked={mode === 'light' ? false : true} />
                 </Box>
             </Grid>
             <Footer>
@@ -122,12 +114,11 @@ const Footer = styled.div`
 `;
 
 const Grid = styled.div`
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
     align-self: flex-start;
     width: 100%;
-    padding: 20px;
+    padding: 0 15px;
 
     span {
         color: #000;
@@ -139,37 +130,20 @@ const Grid = styled.div`
         width: 100%;
         margin-bottom: 0;
     }
-
-    .darkmode-toggle {
-        background: var(--togglecolor);
-    }
-
-    .text-toggle {
-        background: var(--togglecolor2);
-    }
 `;
 
 const Box = styled.div`
     display: flex;
-    flex-wrap: wrap;
+    background: transparent;
+    margin: 10px 0;
     width: 100%;
-    height: 100%;
-    border-radius: 15px;
-    padding: 20px;
+    border: 0;
+    padding: 0;
     z-index: 5;
     outline: 0;
     cursor: pointer;
     transition: all 0.3s ease;
     &:focus {
         outline: 0;
-    }
-
-    label {
-        width: 100%;
-        margin: 20px 0;
-
-        span {
-            color: #fff;
-        }
     }
 `;
