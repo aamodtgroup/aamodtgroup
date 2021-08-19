@@ -47,6 +47,9 @@ const ToggleButton = styled.button`
         right: 15px;
         bottom: 30px;
     }
+    :hover {
+        transform: scale(1.1);
+    }
 `;
 
 export default connect(Toggle);
