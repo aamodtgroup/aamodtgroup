@@ -135,7 +135,7 @@ const Footer = () => {
                 </div>
                 <div className="copyright-grid">
                     <div className="column1">
-                        <p className="copyright">© 2021 Aamodt Group</p>
+                        <p className="copyright">© 2021 Aamodt Group &#124; <Link link="https://w2.brreg.no/enhet/sok/detalj.jsp?orgnr=923248404">923 248 404 MVA</Link></p>
                     </div>
                     <div className="column2">
                         <p className="copyright">
