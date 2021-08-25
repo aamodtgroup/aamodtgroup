@@ -135,7 +135,7 @@ const Footer = () => {
                 </div>
                 <div className="copyright-grid">
                     <div className="column1">
-                        <p className="copyright">© 2021 Aamodt Group &#124; <Link link="https://w2.brreg.no/enhet/sok/detalj.jsp?orgnr=923248404">923 248 404 MVA</Link></p>
+                        <p className="copyright">© 2021 Aamodt Group &#124; <Link link="https://w2.brreg.no/enhet/sok/detalj.jsp?orgnr=923248404" target="_blank">923 248 404 MVA</Link></p>
                     </div>
                     <div className="column2">
                         <p className="copyright">
@@ -208,6 +208,7 @@ const Container = styled.footer`
     }
     .copyright a {
         font-size: 1rem;
+        color: var(--text);
     }
     @media screen and (max-width: 800px) {
         padding: 0 15px;
