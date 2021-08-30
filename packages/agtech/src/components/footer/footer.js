@@ -84,6 +84,16 @@ const Footer = () => {
                                     className="widget-list-link"
                                     target="_blank"
                                     rel="nofollow noopener"
+                                    link="https://twitter.com/aamodtgroup/"
+                                >
+                                    Twitter
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    className="widget-list-link"
+                                    target="_blank"
+                                    rel="nofollow noopener"
                                     link="https://www.linkedin.com/company/aamodtgroup/"
                                 >
                                     LinkedIn
