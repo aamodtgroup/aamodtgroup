@@ -34,6 +34,7 @@ export default connect(Page);
 const Content = styled.div`
     width: 100%;
     position: relative;
+    margin-top: 94px;
     .wp-block-group__inner-container {
         width: 100%;
         max-width: 1200px;

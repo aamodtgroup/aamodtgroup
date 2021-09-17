@@ -8,8 +8,9 @@ const Nav = ({ state }) => {
         <NavContainer>
             {items.map((item) => {
                 if (!item.child_items) {
+                    const classes = item.classes;
                     return (
-                        <NavItem key={item.ID} className="without_child">
+                        <NavItem key={item.ID} className={(classes.map((classname) => (classname))) + " without_child"}>
                             <Link link={item.url}>{item.title}</Link>
                         </NavItem>
                     );
@@ -76,7 +77,7 @@ const NavItem = styled.div`
     transition-property: background, color, opacity;
     & > a {
         display: inline-block;
-        color: var(--toggle);
+        color: #000;
         line-height: 2em;
         :hover {
             color: var(--brand) !important;

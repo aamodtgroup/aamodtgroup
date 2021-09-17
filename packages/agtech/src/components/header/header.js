@@ -3,9 +3,6 @@ import { connect, styled } from 'frontity';
 import MobileMenu from './menu';
 import Logo from './logo';
 import Nav from './nav';
-import SearchModal from '../search/search-modal';
-import SearchToggle from '../search/search-toggle';
-import { Button } from './buttons';
 
 const Header = () => {
     return (
@@ -13,16 +10,8 @@ const Header = () => {
             <NavContainer>
                 <Logo />
                 <Nav />
-                <div className="buttons">
-                    <Button 
-                        buttonLink="/contact/"
-                        buttonText="Contact"
-                    />
-                    <SearchToggle />
-                    <MobileMenu />
-                </div>
+                <MobileMenu />
             </NavContainer>
-            <SearchModal />
         </Container>
     );
 };
@@ -31,10 +20,17 @@ export default connect(Header);
 
 const Container = styled.div`
     position: fixed;
-    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    margin: 0;
     padding: 0 15px;
     padding-top: 15px;
     z-index: 999;
+    
+    @media (max-width: 800px) {
+        width: 100%;
+    }
 `;
 
 const NavContainer = styled.div`
@@ -43,12 +39,13 @@ const NavContainer = styled.div`
     align-items: center;
     margin: 0 auto;
     transition: padding 0.5s ease;
-    background-color: var(--headerbackground);
+    background: rgba( 255, 255, 255, 0.75 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 7.5px );
+    -webkit-backdrop-filter: blur( 7.5px );
     //opacity: .95;
     transition: background-color var(--transition);
     padding: 0 15px;
-    max-width: 1250px;
-    width: 100%;
     border-radius: 50px;
     .buttons {
         display: flex;

@@ -5,7 +5,6 @@ import Link from '../link';
 const Footer = () => {
     return (
         <>
-        <FooterContainer>
             <Container>
                 <div className="footer-grid">
                     <div className="footer-widget">
@@ -155,7 +154,6 @@ const Footer = () => {
                     </div>
                 </div>
             </Container>
-        </FooterContainer>
         </>
     );
 };
@@ -166,9 +164,9 @@ export default connect(Footer);
 const Container = styled.footer`
     display: block;
     width: 100%;
-    max-width: 1250px;
+    max-width: 100%;
     justify-content: center;
-    margin: 2rem auto;
+    margin: 2rem;
     padding: 2rem;
     background-color: var(--headerbackground);
     border-radius: 25px;
@@ -245,9 +243,4 @@ const Container = styled.footer`
             flex-wrap: wrap;
         }
     }
-`;
-
-const FooterContainer = styled.div`
-    width: 100%;
-    padding: 0 15px;
 `;
