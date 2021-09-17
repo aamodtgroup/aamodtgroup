@@ -45,12 +45,16 @@ const HeroContainer = styled.div`
         max-width: 1200px;
         display: grid;
         grid-template-columns: 60% 40%;
+
+        @media (max-width: 786px) {
+            grid-template-columns: auto;
+        }
     }
 
     @media (max-width: 800px) {
         margin: 47px 7px;
         height: auto;
-        padding: 4rem 0;
+        padding: 4rem 15px;
     }
 
     .col1 {
@@ -62,6 +66,10 @@ const HeroContainer = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
+
+        @media (max-width: 786px) {
+            display: none;
+        }
     }
 
     h1 {
