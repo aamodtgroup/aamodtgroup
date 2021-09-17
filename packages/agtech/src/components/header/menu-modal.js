@@ -49,6 +49,7 @@ const MenuContent = styled.div`
     width: 350px;
     position: absolute;
     text-align: center;
+    top: 0;
     right: 0;
     display: grid;
     grid-auto-rows: min-content;

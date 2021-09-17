@@ -1,21 +1,27 @@
-import React from 'react';
+import React, { useEffect } from "react";
 import { connect, styled } from 'frontity';
 import Link from './link';
-import arrow from '../images/arrow_right.svg';
-import arrowWhite from '../images/arrow_right_white.svg';
+import LatestPost from './latest';
 
 const Hero = () => {
     return (
         <>
             <HeroContainer>
-                <div className="wp-block-section__inner-container">
-                    <h1>
-                        Aamodt Group - Consultants in development and operations
-                    </h1>
-                    <p>
-                        We help you with all your needs in development and
-                        operation.
-                    </p>
+                <div className="__inner">
+                    <div className="col1">
+                        <div>
+                            <h1>
+                                Aamodt Group - Consultants in development and operations
+                            </h1>
+                            <p>
+                                We help you with all your needs in development and
+                                operation.
+                            </p>
+                        </div>
+                    </div>
+                    <div className="col2">
+                    <LatestPost />
+                    </div>
                 </div>
             </HeroContainer>
         </>
@@ -33,11 +39,29 @@ const HeroContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 1rem;
+
+    .__inner {
+        max-width: 1200px;
+        display: grid;
+        grid-template-columns: 60% 40%;
+    }
 
     @media (max-width: 800px) {
         margin: 47px 7px;
         height: auto;
         padding: 4rem 0;
+    }
+
+    .col1 {
+        display: flex;
+        align-items: center;
+    }
+
+    .col2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     h1 {

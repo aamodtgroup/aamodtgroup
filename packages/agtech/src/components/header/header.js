@@ -23,7 +23,6 @@ const Container = styled.div`
     left: 50%;
     transform: translateX(-50%);
     width: auto;
-    margin: 0;
     padding: 0 15px;
     padding-top: 15px;
     z-index: 999;

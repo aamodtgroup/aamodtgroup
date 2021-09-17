@@ -11,10 +11,10 @@ function MobileMenu({ state, actions }) {
                 {isMobileMenuOpen ? (
                     <>
                         <Global styles={{ body: { overflowY: 'hidden' } }} />
-                        <CloseIcon color="var(--toggle)" size="25px" />
+                        <CloseIcon color="#000" size="25px" />
                     </>
                 ) : (
-                    <HamburgerIcon color="var(--toggle)" size="25px" />
+                    <HamburgerIcon color="#000" size="25px" />
                 )}
             </MenuToggle>
             {isMobileMenuOpen && <MenuModal />}
