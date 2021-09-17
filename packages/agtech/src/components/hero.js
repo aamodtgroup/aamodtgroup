@@ -32,7 +32,7 @@ export default connect(Hero);
 
 const HeroContainer = styled.div`
     background-color: #0077b5;
-    height: calc(100vh - (47px * 2));
+    min-height: calc(100vh - (47px * 2));
     width: 100%;
     margin: 47px 2rem;
     border-radius: 25px;
