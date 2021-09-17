@@ -53,7 +53,7 @@ const HeroContainer = styled.div`
 
     @media (max-width: 800px) {
         margin: 47px 7px;
-        height: auto;
+        min-height: auto;
         padding: 4rem 15px;
     }
 
