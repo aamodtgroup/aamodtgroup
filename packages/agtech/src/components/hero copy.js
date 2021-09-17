@@ -7,7 +7,7 @@ import arrowWhite from '../images/arrow_right_white.svg';
 const Hero = () => {
     return (
         <>
-            <HeroContainer>
+            <HeroContainer className="wp-block-section">
                 <div className="wp-block-section__inner-container">
                     <h1>
                         Aamodt Group - Consultants in development and operations
@@ -16,6 +16,18 @@ const Hero = () => {
                         We help you with all your needs in development and
                         operation.
                     </p>
+                    <div className="buttons">
+                        <Link link="/blog/">
+                            <button className="wp-block-button__link underline">
+                                Blog
+                            </button>
+                        </Link>
+                        <Link link="/contact/">
+                            <button className="wp-block-button__link underline">
+                                Contact
+                            </button>
+                        </Link>
+                    </div>
                 </div>
             </HeroContainer>
         </>
@@ -25,30 +37,13 @@ const Hero = () => {
 export default connect(Hero);
 
 const HeroContainer = styled.div`
-    background-color: #0077b5;
-    height: calc(100vh - (47px * 2));
-    width: 100%;
-    margin: 47px 2rem;
-    border-radius: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    @media (max-width: 800px) {
-        margin: 47px 7px;
-        height: auto;
-        padding: 4rem 0;
-    }
-
     h1 {
         font-family: recoleta;
         font-weight: 500;
         margin-bottom: 1rem;
-        color: #fff;
     }
 
     p {
-        color: #fff;
         margin-bottom: 2rem;
     }
 

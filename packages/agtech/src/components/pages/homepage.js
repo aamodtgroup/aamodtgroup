@@ -22,13 +22,11 @@ const HomePage = ({ state, actions, libraries }) => {
 
     // Load the post, but only if the data is ready.
     return data.isReady ? (
-        <Content>
+        <>
             <Hero />
             <Html2React html={homepage.content.rendered} />
-        </Content>
+        </>
     ) : null;
 };
 
 export default connect(HomePage);
-
-const Content = styled.div``;

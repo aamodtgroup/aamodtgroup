@@ -5,6 +5,7 @@ import Link from '../link';
 const Footer = () => {
     return (
         <>
+        <FooterContainer>
             <Container>
                 <div className="footer-grid">
                     <div className="footer-widget">
@@ -154,6 +155,7 @@ const Footer = () => {
                     </div>
                 </div>
             </Container>
+        </FooterContainer>
         </>
     );
 };
@@ -163,14 +165,14 @@ export default connect(Footer);
 
 const Container = styled.footer`
     display: block;
-    width: 85%;
-    max-width: 1000px;
+    width: 100%;
+    max-width: 1250px;
     justify-content: center;
     margin: 2rem auto;
-    padding: 0;
+    padding: 2rem;
+    background-color: var(--headerbackground);
+    border-radius: 25px;
     .footer-grid {
-        padding-top: 50px;
-        padding-bottom: 50px;
         margin-bottom: 0;
         display: flex;
     }
@@ -187,6 +189,7 @@ const Container = styled.footer`
             text-align: center;
         }
         .widget-title {
+            color: #fff;
             margin-bottom: 0.5rem;
             font-size: var(--h6size);
             font-weight: 500;
@@ -198,7 +201,7 @@ const Container = styled.footer`
                 margin: 0 !important;
                 margin-bottom: 0.5rem;
                 .widget-list-link {
-                    color: var(--text);
+                    color: #fff;
                     text-decoration: none;
                     transition: all 0.3s ease;
                     &:hover {
@@ -215,13 +218,13 @@ const Container = styled.footer`
     .copyright {
         font-size: 1rem;
         margin: 1rem 0;
+        color: #fff;
     }
     .copyright a {
         font-size: 1rem;
-        color: var(--text);
+        color: #fff;
     }
     @media screen and (max-width: 800px) {
-        padding: 0 15px;
         .footer-grid {
             display: flex;
             flex-wrap: wrap;
@@ -237,5 +240,14 @@ const Container = styled.footer`
                 margin-left: 0;
             }
         }
+        .copyright-grid {
+            display: flex;
+            flex-wrap: wrap;
+        }
     }
+`;
+
+const FooterContainer = styled.div`
+    width: 100%;
+    padding: 0 15px;
 `;

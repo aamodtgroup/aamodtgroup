@@ -85,5 +85,5 @@ const FooterContainer = styled.div`
 const Main = styled.div`
     display: flex;
     justify-content: center;
-    margin-top: 90px;
+    flex-wrap: wrap;
 `;

@@ -33,7 +33,7 @@ const Container = styled.div`
     position: fixed;
     width: 100%;
     padding: 0 15px;
-    padding-top: 30px;
+    padding-top: 15px;
     z-index: 999;
 `;
 
@@ -44,7 +44,7 @@ const NavContainer = styled.div`
     margin: 0 auto;
     transition: padding 0.5s ease;
     background-color: var(--headerbackground);
-    opacity: .95;
+    //opacity: .95;
     transition: background-color var(--transition);
     padding: 0 15px;
     max-width: 1250px;
