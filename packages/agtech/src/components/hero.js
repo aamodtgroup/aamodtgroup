@@ -8,20 +8,25 @@ const Hero = () => {
         <>
             <HeroContainer>
                 <div className="__inner">
-                    <div className="col1">
-                        <div>
-                            <h1>
-                                Aamodt Group - Consultants in development and operations
-                            </h1>
-                            <p>
-                                We help you with all your needs in development and
-                                operation.
-                            </p>
+                        <h1>
+                            Aamodt Group - Consultants in development and operations
+                        </h1>
+                        <p>
+                            We help you with all your needs in development and
+                            operation.
+                        </p>
+                        <div className="buttons">
+                            <div className="custom-button">
+                                <Link link="/blog/" className="custom-button__link">
+                                    Blog
+                                </Link>
+                            </div>
+                            <div className="custom-button">
+                                <Link link="/contact/" className="custom-button__link">
+                                    Contact
+                                </Link>
+                            </div>
                         </div>
-                    </div>
-                    <div className="col2">
-                    <LatestPost />
-                    </div>
                 </div>
             </HeroContainer>
         </>
@@ -42,34 +47,45 @@ const HeroContainer = styled.div`
     padding: 1rem;
 
     .__inner {
-        max-width: 1200px;
-        display: grid;
-        grid-template-columns: 60% 40%;
+        max-width: 800px;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
 
-        @media (max-width: 786px) {
-            grid-template-columns: auto;
+    .buttons {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        width: 100%;
+        max-width: 425px;
+        margin: 0 auto;
+    }
+
+    .custom-button {
+        width: 100%;
+        transition: transform .25s ease;
+
+        .custom-button__link {
+            display: inline-block;
+            width: 100%;
+            background-color: #fff;
+            padding: 10px 30px;
+            border-radius: 25px;
+            text-align: center;
+            cursor: pointer;
+            color: var(--brand);
+        }
+
+        :hover {
+            transform: scale(1.025);
         }
     }
 
     @media (max-width: 800px) {
-        margin: 47px 7px;
         min-height: auto;
+        margin: 94px 7px 7px 7px;
         padding: 4rem 15px;
-    }
-
-    .col1 {
-        display: flex;
-        align-items: center;
-    }
-
-    .col2 {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        @media (max-width: 786px) {
-            display: none;
-        }
     }
 
     h1 {
@@ -77,11 +93,15 @@ const HeroContainer = styled.div`
         font-weight: 500;
         margin-bottom: 1rem;
         color: #fff;
+        text-align: center;
+        width: 100%;
     }
 
     p {
         color: #fff;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
+        text-align: center;
+        width: 100%;
     }
 
     .buttons .wp-block-button__link {
