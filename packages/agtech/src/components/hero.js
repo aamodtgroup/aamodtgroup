@@ -1,33 +1,32 @@
-import React from 'react';
+import React, { useEffect } from "react";
 import { connect, styled } from 'frontity';
 import Link from './link';
-import arrow from '../images/arrow_right.svg';
-import arrowWhite from '../images/arrow_right_white.svg';
+import LatestPost from './latest';
 
 const Hero = () => {
     return (
         <>
-            <HeroContainer className="wp-block-section">
-                <div className="wp-block-section__inner-container">
-                    <h1>
-                        Aamodt Group - Consultants in development and operations
-                    </h1>
-                    <p>
-                        We help you with all your needs in development and
-                        operation.
-                    </p>
-                    <div className="buttons">
-                        <Link link="/blog/">
-                            <button className="wp-block-button__link underline">
-                                Blog
-                            </button>
-                        </Link>
-                        <Link link="/contact/">
-                            <button className="wp-block-button__link underline">
-                                Contact
-                            </button>
-                        </Link>
-                    </div>
+            <HeroContainer>
+                <div className="__inner">
+                        <h1>
+                            Aamodt Group - Consultants in development and operations
+                        </h1>
+                        <p>
+                            We help you with all your needs in development and
+                            operation.
+                        </p>
+                        <div className="buttons">
+                            <div className="custom-button">
+                                <Link link="/blog/" className="custom-button__link">
+                                    Blog
+                                </Link>
+                            </div>
+                            <div className="custom-button">
+                                <Link link="/contact/" className="custom-button__link">
+                                    Contact
+                                </Link>
+                            </div>
+                        </div>
                 </div>
             </HeroContainer>
         </>
@@ -37,14 +36,72 @@ const Hero = () => {
 export default connect(Hero);
 
 const HeroContainer = styled.div`
+    background-color: #0077b5;
+    min-height: calc(100vh - (47px * 2));
+    width: 100%;
+    margin: 47px 2rem;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+
+    .__inner {
+        max-width: 800px;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .buttons {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        width: 100%;
+        max-width: 425px;
+        margin: 0 auto;
+    }
+
+    .custom-button {
+        width: 100%;
+        transition: transform .25s ease;
+
+        .custom-button__link {
+            display: inline-block;
+            width: 100%;
+            background-color: #fff;
+            padding: 10px 30px;
+            border-radius: 25px;
+            text-align: center;
+            cursor: pointer;
+            color: var(--brand);
+        }
+
+        :hover {
+            transform: scale(1.025);
+        }
+    }
+
+    @media (max-width: 600px) {
+        min-height: auto;
+        margin: 94px 7px 7px 7px;
+        padding: 4rem 15px;
+    }
+
     h1 {
         font-family: recoleta;
         font-weight: 500;
         margin-bottom: 1rem;
+        color: #fff;
+        text-align: center;
+        width: 100%;
     }
 
     p {
-        margin-bottom: 2rem;
+        color: #fff;
+        margin-bottom: 1rem;
+        text-align: center;
+        width: 100%;
     }
 
     .buttons .wp-block-button__link {

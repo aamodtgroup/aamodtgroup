@@ -59,6 +59,8 @@ const List = ({ state }) => {
 export default connect(List);
 
 const Container = styled.section`
+    margin-top: 94px;
+    
     .category-list {
         display: flex;
         gap: 1rem;

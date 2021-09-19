@@ -4,16 +4,21 @@ const customStyle = css`
     .wp-block-section {
         margin-top: 4rem;
         margin-bottom: 4rem;
+        padding: 0 2rem;
+
+        @media (max-width: 600px) {
+            padding: 0;
+        }
     }
 
     .wp-block-section__inner-container {
         width: 100%;
-        max-width: 1000px;
+        max-width: 1200px;
         margin: 0 auto;
         padding: 0;
 
-        @media (max-width: 1030px) {
-            max-width: 1030px;
+        @media (max-width: 600px) {
+            max-width: 630px;
             padding-right: 15px;
             padding-left: 15px;
             width: auto;
@@ -89,28 +94,46 @@ const customStyle = css`
         .ag-title h2 {
             font-weight: 400;
             font-size: 1.75rem;
-            :hover {
-                color: var(--brand);
-            }
         }
         .ag-card {
+            background-color: var(--background2);
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgb(0 0 0 / 16%);
+            transition: transform 0.5s ease;
+            border-radius: 15px;
+
+            .card-content {
+                padding: 1rem;
+            }
+
             .ag-image {
-                overflow: hidden;
                 height: 300px;
                 width: 100%;
-                border-radius: 8px;
-                margin-bottom: 1rem;
-                box-shadow: 0 2px 4px rgb(0 0 0 / 16%);
             }
+
             .ag-image img {
-                transition: transform 0.5s ease;
                 object-fit: cover;
                 height: 300px;
                 width: 100%;
                 box-sizing: border-box;
             }
-            :hover img {
-                transform: scale(1.05);
+
+            .ag-categories {
+                display: flex;
+                flex-wrap: wrap;
+                margin-bottom: 1rem;
+                gap: .5rem;
+            }
+
+            .ag-category span {
+                background-color: var(--background3);
+                padding: 5px 15px;
+                border-radius: 5px;
+                color: var(--text);
+            }
+
+            :hover {
+                transform: scale(1.025);
             }
         }
         @media (max-width: 1000px) {

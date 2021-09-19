@@ -8,8 +8,9 @@ const Nav = ({ state }) => {
         <NavContainer>
             {items.map((item) => {
                 if (!item.child_items) {
+                    const classes = item.classes;
                     return (
-                        <NavItem key={item.ID} className="without_child">
+                        <NavItem key={item.ID} className={(classes.map((classname) => (classname))) + " without_child"}>
                             <Link link={item.url}>{item.title}</Link>
                         </NavItem>
                     );
@@ -60,7 +61,7 @@ const NavContainer = styled.nav`
     .without_child {
         margin: 0px 1rem;
     }
-    @media (min-width: 800px) {
+    @media (min-width: 600px) {
         display: flex;
     }
 `;
@@ -76,7 +77,7 @@ const NavItem = styled.div`
     transition-property: background, color, opacity;
     & > a {
         display: inline-block;
-        color: var(--toggle);
+        color: #000;
         line-height: 2em;
         :hover {
             color: var(--brand) !important;
@@ -105,8 +106,7 @@ const ChildMenu = styled.div`
     text-align: left;
     font-size: 16px;
     z-index: 3;
-    background-color: var(--childmenubackground);
-    box-shadow: 0 9px 48px rgb(16 21 23 / 25%);
+    background-color: #fff;
     border-radius: 7px;
     visibility: hidden;
     opacity: 0;

@@ -3,26 +3,17 @@ import { connect, styled } from 'frontity';
 import MobileMenu from './menu';
 import Logo from './logo';
 import Nav from './nav';
-import SearchModal from '../search/search-modal';
-import SearchToggle from '../search/search-toggle';
-import { Button } from './buttons';
 
 const Header = () => {
     return (
         <Container>
-            <NavContainer>
-                <Logo />
-                <Nav />
-                <div className="buttons">
-                    <Button 
-                        buttonLink="/contact/"
-                        buttonText="Contact"
-                    />
-                    <SearchToggle />
+            <Container__inner>
+                <NavContainer>
+                    <Logo />
+                    <Nav />
                     <MobileMenu />
-                </div>
-            </NavContainer>
-            <SearchModal />
+                </NavContainer>
+            </Container__inner>
         </Container>
     );
 };
@@ -31,10 +22,21 @@ export default connect(Header);
 
 const Container = styled.div`
     position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    padding: 0 15px;
-    padding-top: 30px;
+    padding-top: 15px;
     z-index: 999;
+`;
+
+const Container__inner = styled.div`
+    width: auto;
+    padding: 0 15px;
+    
+    @media (max-width: 600px) {
+        width: 100%;
+    }
 `;
 
 const NavContainer = styled.div`
@@ -43,12 +45,13 @@ const NavContainer = styled.div`
     align-items: center;
     margin: 0 auto;
     transition: padding 0.5s ease;
-    background-color: var(--headerbackground);
-    opacity: .95;
+    background: rgba( 255, 255, 255, 0.75 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 7.5px );
+    -webkit-backdrop-filter: blur( 7.5px );
+    //opacity: .95;
     transition: background-color var(--transition);
     padding: 0 15px;
-    max-width: 1250px;
-    width: 100%;
     border-radius: 50px;
     .buttons {
         display: flex;
