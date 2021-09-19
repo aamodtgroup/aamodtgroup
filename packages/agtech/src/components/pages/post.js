@@ -18,13 +18,21 @@ const Post = ({ state, actions, libraries }) => {
     const Html2React = libraries.html2react.Component;
 
     const categoryId = post.categories;
+    if ( categoryId.length !== 0 ) {
+        var categories = [];
+        categoryId.forEach( post => {
+            categories.push(state.source.category[post].name);
+        })
+    };
+
+    /* const categoryId = post.categories;
     if (categoryId.length !== 0) {
         var category = state.source.category[categoryId].name;
         var categorylink = state.source.category[categoryId].link;
     } else {
         var category = 'Blog';
         var categorylink = '/blog/';
-    }
+    } */
 
     if (post.featured_media) {
         var featuredImage =
@@ -51,14 +59,13 @@ const Post = ({ state, actions, libraries }) => {
                     <div>
                         <p className="date">
                             <span>{date}</span> -{' '}
-                            <Link link={categorylink}>
-                                <span className="capitalize">{category}</span>
-                            </Link>
+                            {/* {categories.map((category, i) => (
+                                <span key={i} className="capitalize category">{category}</span>
+                            )).join()} */}
+                            <span>
+                            {categories.join(', ')}
+                            </span>
                         </p>
-                        {/* {post.categories.map((categoryId) => {
-              const category = state.source.category[categoryId];
-              return <Link link={category.link}>{category.name}</Link>;
-            })} */}
                         <h1>
                             <Html2React html={post.title.rendered} />
                         </h1>

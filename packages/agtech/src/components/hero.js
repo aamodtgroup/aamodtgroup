@@ -82,7 +82,7 @@ const HeroContainer = styled.div`
         }
     }
 
-    @media (max-width: 800px) {
+    @media (max-width: 600px) {
         min-height: auto;
         margin: 94px 7px 7px 7px;
         padding: 4rem 15px;

@@ -61,7 +61,7 @@ const NavContainer = styled.nav`
     .without_child {
         margin: 0px 1rem;
     }
-    @media (min-width: 800px) {
+    @media (min-width: 600px) {
         display: flex;
     }
 `;
@@ -106,8 +106,7 @@ const ChildMenu = styled.div`
     text-align: left;
     font-size: 16px;
     z-index: 3;
-    background-color: var(--childmenubackground);
-    box-shadow: 0 9px 48px rgb(16 21 23 / 25%);
+    background-color: #fff;
     border-radius: 7px;
     visibility: hidden;
     opacity: 0;

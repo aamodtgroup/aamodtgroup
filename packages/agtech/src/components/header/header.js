@@ -7,11 +7,13 @@ import Nav from './nav';
 const Header = () => {
     return (
         <Container>
-            <NavContainer>
-                <Logo />
-                <Nav />
-                <MobileMenu />
-            </NavContainer>
+            <Container__inner>
+                <NavContainer>
+                    <Logo />
+                    <Nav />
+                    <MobileMenu />
+                </NavContainer>
+            </Container__inner>
         </Container>
     );
 };
@@ -20,14 +22,19 @@ export default connect(Header);
 
 const Container = styled.div`
     position: fixed;
-    left: 50%;
-    transform: translateX(-50%);
-    width: auto;
-    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
     padding-top: 15px;
     z-index: 999;
+`;
+
+const Container__inner = styled.div`
+    width: auto;
+    padding: 0 15px;
     
-    @media (max-width: 800px) {
+    @media (max-width: 600px) {
         width: 100%;
     }
 `;

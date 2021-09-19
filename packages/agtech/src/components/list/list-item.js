@@ -18,6 +18,14 @@ const Item = ({ state, item }) => {
         var featuredImage = postimage;
     }
 
+    const categoryId = item.categories;
+    if ( categoryId.length !== 0 ) {
+        var categories = [];
+        categoryId.forEach( item => {
+            categories.push(state.source.category[item].name);
+        })
+    };
+
     return (
         <>
             <Article className="ag-card">
@@ -25,12 +33,21 @@ const Item = ({ state, item }) => {
                     <div className="ag-image">
                         <img src={featuredImage} />
                     </div>
-                    <div className="ag-title">
-                        <h2
-                            dangerouslySetInnerHTML={{
-                                __html: item.title.rendered,
-                            }}
-                        />
+                    <div className="card-content">
+                        <div className="ag-categories">
+                            {categories && categories.map((category, i) => (
+                                <div class="ag-category">
+                                    <span key={i} className="capitalize">{category}</span>
+                                </div>
+                            ))}
+                        </div>
+                        <div className="ag-title">
+                            <h2
+                                dangerouslySetInnerHTML={{
+                                    __html: item.title.rendered,
+                                }}
+                            />
+                        </div>
                     </div>
                 </Link>
             </Article>
@@ -54,8 +71,5 @@ const Article = styled.article`
         object-fit: cover;
         height: 300px;
         width: 100%;
-    }
-    :hover img {
-        transform: scale(1.05);
     }
 `;

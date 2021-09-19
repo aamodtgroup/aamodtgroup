@@ -37,7 +37,7 @@ const MenuToggle = styled.button`
     &:focus {
         outline: 0;
     }
-    @media (min-width: 800px) {
+    @media (min-width: 600px) {
         display: none;
     }
 `;
