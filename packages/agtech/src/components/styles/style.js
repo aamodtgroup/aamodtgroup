@@ -101,6 +101,7 @@ const customStyle = css`
             box-shadow: 0 2px 4px rgb(0 0 0 / 16%);
             transition: transform 0.5s ease;
             border-radius: 15px;
+            position: relative;
 
             .card-content {
                 padding: 1rem;
@@ -125,15 +126,30 @@ const customStyle = css`
                 gap: .5rem;
             }
 
-            .ag-category span {
+            .ag-category a {
                 background-color: var(--background3);
                 padding: 5px 15px;
                 border-radius: 5px;
-                color: var(--text);
             }
 
             :hover {
                 transform: scale(1.025);
+            }
+
+            .ag-link {
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 0;
+                opacity: 0;
+                height: 100%;
+                width: 100%;
+                text-decoration: none;
+            }
+
+            .cat-link {
+                position: relative;
+                z-index: 1;
             }
         }
         @media (max-width: 1000px) {

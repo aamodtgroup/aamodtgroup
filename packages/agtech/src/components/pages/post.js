@@ -21,7 +21,12 @@ const Post = ({ state, actions, libraries }) => {
     if ( categoryId.length !== 0 ) {
         var categories = [];
         categoryId.forEach( post => {
-            categories.push(state.source.category[post].name);
+            var cat_data = {
+                name: state.source.category[post].name,
+                link: state.source.category[post].link
+            };
+            console.log(cat_data);
+            categories.push(cat_data);
         })
     };
 
@@ -57,15 +62,16 @@ const Post = ({ state, actions, libraries }) => {
             <Header>
                 <div className="title-excerpt">
                     <div>
-                        <p className="date">
-                            <span>{date}</span> -{' '}
-                            {/* {categories.map((category, i) => (
-                                <span key={i} className="capitalize category">{category}</span>
-                            )).join()} */}
-                            <span>
-                            {categories.join(', ')}
-                            </span>
-                        </p>
+                        <div className="date">
+                            <span>{date}</span>
+                            {categories && categories.map((category, i) => (
+                                <span>
+                                    <Link link={category.link} key={i} className="capitalize category">
+                                        {category.name}
+                                    </Link>
+                                </span>
+                            ))}
+                        </div>
                         <h1>
                             <Html2React html={post.title.rendered} />
                         </h1>
@@ -131,9 +137,17 @@ const Header = styled.div`
         }
     }
 
-    .date span {
-        font-size: 0.9rem;
-        border-bottom: 2px solid var(--brand);
+    .date {
+        display: flex;
+        gap: .5rem;
+        margin-bottom: 1rem;
+        
+        span {
+            font-size: 0.9rem;
+            background-color: var(--background4);
+            border-radius: 5px;
+            padding: 5px 15px;
+        }
     }
 
     span {
