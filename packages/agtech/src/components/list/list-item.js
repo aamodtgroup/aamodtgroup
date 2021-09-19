@@ -2,6 +2,7 @@ import React from 'react';
 import { connect, styled } from 'frontity';
 import Link from '../link';
 import postimage from '../../images/agtechcard.png';
+import dayjs from 'dayjs';
 /**
  * Item Component
  *
@@ -11,6 +12,8 @@ import postimage from '../../images/agtechcard.png';
  * - FeaturedMedia: the featured image/video of the post
  */
 const Item = ({ state, item }) => {
+    const date = dayjs(item.date).format('MMMM D, YYYY');
+
     if (item.featured_media) {
         var featuredImage =
             state.source.attachment[item.featured_media].source_url;
@@ -21,15 +24,19 @@ const Item = ({ state, item }) => {
     const categoryId = item.categories;
     if ( categoryId.length !== 0 ) {
         var categories = [];
-        categoryId.forEach( item => {
-            categories.push(state.source.category[item].name);
+        categoryId.forEach( post => {
+            var cat_data = {
+                name: state.source.category[post].name,
+                link: state.source.category[post].link
+            };
+            console.log(cat_data);
+            categories.push(cat_data);
         })
     };
 
     return (
         <>
             <Article className="ag-card">
-                <Link link={item.link}>
                     <div className="ag-image">
                         <img src={featuredImage} />
                     </div>
@@ -37,7 +44,9 @@ const Item = ({ state, item }) => {
                         <div className="ag-categories">
                             {categories && categories.map((category, i) => (
                                 <div class="ag-category">
-                                    <span key={i} className="capitalize">{category}</span>
+                                    <Link key={i} link={category.link} className="cat-link">
+                                        {category.name}
+                                    </Link>
                                 </div>
                             ))}
                         </div>
@@ -48,8 +57,11 @@ const Item = ({ state, item }) => {
                                 }}
                             />
                         </div>
+                        <div className="ag-date">
+                            <p>{date}</p>
+                        </div>
                     </div>
-                </Link>
+                    <Link link={item.link} className="ag-link"></Link>
             </Article>
         </>
     );
