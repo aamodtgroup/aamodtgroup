@@ -2,9 +2,7 @@ import { css } from 'frontity';
 
 const customStyle = css`
     .wp-block-section {
-        margin-top: 4rem;
-        margin-bottom: 4rem;
-        padding: 0 2rem;
+        padding: 2rem 2rem;
 
         @media (max-width: 600px) {
             padding: 0;
@@ -16,6 +14,10 @@ const customStyle = css`
         max-width: 1200px;
         margin: 0 auto;
         padding: 0;
+        background-color: var(--background4);
+        padding: 2rem;
+        border-radius: 25px;
+        box-shadow: 0 2px 4px rgb(0 0 0 / 16%);
 
         @media (max-width: 600px) {
             max-width: 630px;
