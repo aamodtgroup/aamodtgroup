@@ -129,7 +129,7 @@ const customStyle = css`
             }
 
             .ag-category a {
-                background-color: var(--background3);
+                background-color: var(--background5);
                 padding: 5px 15px;
                 border-radius: 5px;
             }

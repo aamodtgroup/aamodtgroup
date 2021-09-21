@@ -13,10 +13,11 @@ const DarkMode = ({ state }) => {
                         --brand: #0077b5;
                         --text: ${mode === 'light' ? '#212121' : '#fff'};
                         --darktext: ${mode === 'light' ? '#fff' : '#fff'};
-                        --background: ${mode === 'light' ? '#fff' : '#121212'};
-                        --background2: ${mode === 'light' ? '#fff' : '#1E1E1E'};
+                        --background: ${mode === 'light' ? '#eee' : '#121212'};
+                        --background2: ${mode === 'light' ? '#fff' : '#121212'};
                         --background3: ${mode === 'light' ? '#eee' : '#121212'};
-                        --background4: ${mode === 'light' ? '#eee' : '#1E1E1E'};
+                        --background4: ${mode === 'light' ? '#fff' : '#1E1E1E'};
+                        --background5: ${mode === 'light' ? '#eee' : '#1E1E1E'};
                         --menubackground: ${mode === 'light'
                             ? '#fff'
                             : '#1E1E1E'};
