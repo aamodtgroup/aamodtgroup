@@ -26,7 +26,7 @@
         "@frontity/wp-source": "^1.11.5",
         "@frontity/yoast": "^2.1.1",
         "dayjs": "^1.10.7",
-        "frontity": "^1.17.0",
+        "frontity": "^1.17.1",
         "react-intersection-observer": "^8.32.1",
         "react-lottie-player": "^1.4.0",
         "react-spring": "^9.2.4"
