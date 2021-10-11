@@ -47,6 +47,7 @@ const Theme = ({ state }) => {
             <Head>
                 <link rel="preconnect" href={state.source.api} />
                 <html lang="en" />
+                <script async defer data-domain="aamodtgroup.com" src="https://analytics.brainify.no/js/plausible.js"></script>
             </Head>
 
             {/* Add the header of the site. */}
