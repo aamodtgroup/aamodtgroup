@@ -23,7 +23,7 @@
         "@frontity/google-tag-manager-analytics": "^1.2.1",
         "@frontity/html2react": "^1.7.0",
         "@frontity/tiny-router": "^1.4.4",
-        "@frontity/wp-source": "^1.11.6",
+        "@frontity/wp-source": "^1.11.7",
         "@frontity/yoast": "^2.1.1",
         "dayjs": "^1.10.7",
         "frontity": "^1.17.1",
