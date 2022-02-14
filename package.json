@@ -18,7 +18,7 @@
     },
     "dependencies": {
         "@aamodtgroup/agtech": "./packages/agtech",
-        "@aamodtgroup/frontity-contact-form-7": "^0.2.7",
+        "@aamodtgroup/frontity-contact-form-7": "^0.2.14",
         "@frontity/core": "^1.14.3",
         "@frontity/google-tag-manager-analytics": "^1.2.1",
         "@frontity/html2react": "^1.7.0",
